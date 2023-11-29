@@ -40,7 +40,7 @@ else{
                </li>
             
         </ul>
-    </div>
+    </div>font 
 </nav>
 <section id="home">
     <img src="images/gaming-pad-alt-1-svgrepo-com.svg" class="logo-home" alt="Gravey Logo" />
