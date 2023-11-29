@@ -49,6 +49,7 @@ else{
     <a href="Products.php" id="btn-to-products">Shop Now</a>
 </section>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, laudantium! Quod natus modi molestiae fuga maiores iusto totam velit, hic saepe. Temporibus, aperiam a modi eveniet placeat maiores doloremque ipsa.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, debitis quasi reprehenderit, itaque ab vel harum dolorum minima totam consequuntur molestias nostrum tempore laboriosam quidem cum perspiciatis suscipit id ea.</p>
 </body>
 </html>
 <?php
