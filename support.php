@@ -81,7 +81,7 @@ if(isset($_POST['submit'])){
                                  <div id="errMessage" class="erreurmsg"><?php echo $erreurMessage; ?></div>
                          <?php endif; ?>
                     <div class="titre"><h2 style="font-family: monospace; font-size:50px">Contact Support</h2>
-                    <p style="color: #fff;">Fill out the form below to get in touch with our support team.</p>
+                    <p style="color: #fff;">Fill out the form below to get in touch with our support team :).</p>
                 </div>  
     
                     <form class="support" action="support.php" method="post" id="contactForm" name="contactForm" novalidate="novalidate">
