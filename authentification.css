@@ -1,0 +1,73 @@
+.container{
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  form{
+    background-color: rgb(255, 255, 249);
+    padding: 20px;
+    border: 1px solid rgb(222, 222, 222);
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0,0.1);
+    margin-top: 140px;
+  }
+  .form-control {
+    padding: 10px;
+    border: 1px solid #484646;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .form-group {
+    margin-bottom: 20px;
+}
+  .btn {
+    background-color:rgb(3, 85, 227);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #1240a3;
+}
+div.confirmationmsg{
+    border: 1px solid green;
+    color: darkgreen;
+    padding: 6px;
+    border-radius: 6px;
+    background-color:rgb(145, 228, 145);
+    text-align: center;
+    
+    
+    }
+    div.erreurmsg{
+    border: 1px solid darkred;
+    color: darkred;
+    padding: 6px;
+    border-radius: 6px;
+    background-color:rgb(228, 145, 145);
+    text-align: center;
+    }
+    .hide-message {
+        display: none;
+      }
+
+    body {
+        background-image: url('images/loginbackground.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .title{
+        text-align: center;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+      }
+      a{
+        text-decoration: none;
+        color: rgb(43, 144, 226);
+      }

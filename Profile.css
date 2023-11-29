@@ -1,0 +1,78 @@
+
+.title-profile{
+    margin-bottom: 70px;
+    font-size: 40px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    color: #000000;
+  }
+  #mod-info,#logout_para{
+    font-size: 20px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 30px;
+    padding-top: 30px;
+  }
+  .change{
+    border: 1px solid rgb(212, 208, 208);
+   border-radius: 5px;
+  
+  }
+  input[type="submit"] {
+    background-color: #c66fc9;
+    color: white; 
+    padding: 6px 15px;
+    border-radius: 5px;
+    cursor: pointer; 
+    font-size: 16px; 
+}
+input[type="submit"]:hover{
+ background-color: #aa2aaf;
+}
+
+#logout-btn{
+    background-color: rgb(231, 67, 67);
+    color: white; 
+    padding: 6px 15px;
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer; 
+    font-size: 16px; 
+}
+#logout-btn:hover{
+    background-color:rgb(235, 101, 101);
+}
+#profile-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+.section-info,
+.section-history {
+width: 100%;
+margin-bottom: 20px;
+background-size: cover;
+background-position: center;
+
+padding: 30px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+margin: 20px auto ;
+}
+
+.section-info {
+background-image: url('images/background.jpeg'); 
+box-sizing: border-box;
+color: white;
+
+}
+@media screen and (min-width: 768px) {
+.section-info,
+.section-history {
+width: 48%;
+}
+}  
+input[type="text"],input[type="email"]{
+    background: transparent;
+}
