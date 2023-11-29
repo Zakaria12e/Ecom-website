@@ -17,6 +17,7 @@ else{
     <link rel="stylesheet" href="Products.css">
     <title>Panier</title>
 </head>
+
 <body>
 <nav class="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -46,7 +47,7 @@ else{
 
  <h1>hello</h1>
  <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
- 
+ <p>locale_accept_from_http</p>
 </body>
 </html>
 <?php
