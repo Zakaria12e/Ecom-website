@@ -45,10 +45,8 @@ else{
     </div>
 </nav>
 
- <h1>hello</h1>
- <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h1>
- <p>locale_accept_from_http</p>
- <p>hello dr </p>
+
+
 </body>
 </html>
 <?php

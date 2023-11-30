@@ -88,6 +88,27 @@ else{
                 <p>Lorem, ipsum.</p>
                 <p>Lorem, ipsum.</p>
                 <p>Lorem, ipsum.</p>
+
+        <form action="Products.php" method="post">
+            <input type="hidden" name="product_name" value="Intel i7 13900k CPU">
+            <button type="submit" name="add_to_cart">Add to Cart</button>
+        </form>
+        <?php
+
+  include("config.php"); // Include your database connection
+
+if (isset($_POST['add_to_cart'])) {
+    // Assuming you are using mysqli for database operations
+    $productName = $_POST["product_name"];
+    $clientid = $_SESSION['id'];
+
+    // Assuming $conn is your mysqli connection
+    $sql = "INSERT INTO panier (product_name, id) VALUES ('$productName', $clientid)";
+    $result = mysqli_query($con, $sql);
+    header("Location: Products.php");
+   
+}
+?>
                  
                     <button class="btnhide" onclick="hideDetails1()">Close</button>
             </div>
@@ -107,6 +128,26 @@ else{
                   <!-- details  -->
                   <h2>Product Details</h2>
                   <p>Intel i9 12900k</p>
+                  <form action="Products.php" method="post">
+            <input type="hidden" name="product_name2" value="Intel i9 12900k CPU">
+            <button type="submit" name="add_to_cart2">Add to Cart</button>
+        </form>
+        <?php
+
+  include("config.php"); // Include your database connection
+
+if (isset($_POST['add_to_cart2'])) {
+    // Assuming you are using mysqli for database operations
+    $productName = $_POST["product_name2"];
+    $clientid = $_SESSION['id'];
+
+    // Assuming $conn is your mysqli connection
+    $sql = "INSERT INTO panier (product_name, id) VALUES ('$productName', $clientid)";
+    $result = mysqli_query($con, $sql);
+    header("Location: Products.php");
+  
+}
+?>
 
                   <button class="btnhide" onclick="hideDetails2()">Close</button>
               </div>
