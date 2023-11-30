@@ -14,7 +14,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="Products.css">
+    <link rel="stylesheet" href="style.css">
     <title>Panier</title>
 </head>
 
@@ -44,11 +44,13 @@ else{
         </ul>
     </div>
 </nav>
-
-
+<section class="panier">
+  <h1 id="panier-titre">PANIER</h1>
+</section>
 
 </body>
 </html>
+
 <?php
 }
 ?>
