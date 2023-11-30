@@ -44,9 +44,33 @@ else{
         </ul>
     </div>
 </nav>
+<?php
+require_once 'config.php';
+
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["addToCart"])) {
+
+    $productName = $_POST["productName"];
+
+    $userId = isset($_SESSION['id']) ? $_SESSION['id'] : 0;
+
+    $insertQuery = "INSERT INTO panier (Id, product_name) VALUES ('$userId', '$productName')";
+
+    if (mysqli_query($con, $insertQuery)) {
+        header("Location: Products.php");
+    } else {
+        echo "Error: " . $insertQuery . "<br>" . mysqli_error($con);
+    }
+}
+
+?>
+
 <section class="panier">
   <h1 id="panier-titre">PANIER</h1>
+
+  
+
 </section>
+
 
 </body>
 </html>

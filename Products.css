@@ -85,8 +85,6 @@ a.vd:hover{
    background-image: url('images/jd.jpg');
    background-repeat: no-repeat;
    background-size: cover;
-
-
 }
 .btnhide{
 
@@ -150,12 +148,7 @@ footer {
 #gitlink{
   color: #000000;
 }
-input[type="number"]{
-   width: 40px;
-    border: none;
-    text-align: center;
-  background-image: url('images/jd.jpg');  
-}
+
 
 html{
   scroll-behavior: smooth;
@@ -163,4 +156,13 @@ html{
 #profile :hover,#panier-icon :hover{
   color: #344be1;
   }
-
+  .add-to-cart{
+    background-color:#253edc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    color: ghostwhite;
+  }
+  .add-to-cart:hover{
+    background-color: #0a44a2;
+  }

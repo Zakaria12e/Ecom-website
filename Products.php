@@ -80,14 +80,17 @@ else{
             </div>
         
             <div class="product-details" id="productDetails1">
-                <!-- details -->
-                   <h2>Product Details</h2>
-                   <p>Intel i7 13900k CPU</p>
+    <!-- details -->
+    <h2>Product Details</h2>
+    <p>Intel i7 13900k CPU</p>
 
-                 
-                 <button class="btnhide" onclick="hideDetails1()">Close</button>
-            </div>
-           
+    <form method="POST" action="Panier.php">
+        <input type="hidden" name="productName" value="Intel i7 13900k CPU">
+        <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+    </form>
+    <button class="btnhide" onclick="hideDetails1()">Close</button>
+</div>
+
                 <div class="product-card">
                     <img class="pimg" src="images/cpu2.jpg" alt="Intel i9 12900k">
                     <div class="product-info">
@@ -103,6 +106,10 @@ else{
                   <!-- details  -->
                   <h2>Product Details</h2>
                   <p>Intel i9 12900k</p>
+     <form method="POST" action="Panier.php">
+        <input type="hidden" name="productName" value="Intel i9 12900k CPU">
+        <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+    </form>
 
                   <button class="btnhide" onclick="hideDetails2()">Close</button>
               </div>
@@ -123,7 +130,10 @@ else{
                   <!-- details  -->
                   <h2>Product Details</h2>
                   <p>AMD rayzen 7 9000x</p>
-                 
+      <form method="POST" action="Panier.php">
+        <input type="hidden" name="productName" value="AMD rayzen 7 9000x">
+        <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+      </form>
                 
                   <button class="btnhide" onclick="hideDetails3()">Close</button>
               </div>
@@ -144,7 +154,10 @@ else{
                   <!-- details  -->
                   <h2>Product Details</h2>
                   <p>AMD rayzen 9 9000x</p>
-                
+      <form method="POST" action="Panier.php">
+        <input type="hidden" name="productName" value="AMD rayzen 9 9000x">
+        <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+      </form>
                   <button class="btnhide" onclick="hideDetails4()">Close</button>
               </div>
 
@@ -164,7 +177,10 @@ else{
                   <!-- details  -->
                   <h2>Product Details</h2>
                   <p>AMD rayzen 5 5600G</p>
-                
+      <form method="POST" action="Panier.php">
+        <input type="hidden" name="productName" value="AMD rayzen 5 5600G">
+        <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+      </form>
                   <button class="btnhide" onclick="hideDetails5()">Close</button>
               </div>
                 
@@ -187,10 +203,11 @@ else{
                 <!-- details  -->
                 <h2>Product Details</h2>
                 <p>Intel i3 12100F</p>
+      <form method="POST" action="Panier.php">
+        <input type="hidden" name="productName" value="Intel i3 12100F">
+        <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+      </form>
               
-               <form action="" method="post">
-                
-               </form>
                 <button class="btnhide" onclick="hideDetails6()">Close</button>
             </div>
 
@@ -211,7 +228,10 @@ else{
               <h2>Product Details</h2>
               <p>Intel i5 12600K</p>
             
-           
+      <form method="POST" action="Panier.php">
+        <input type="hidden" name="productName" value="Intel i5 12600K">
+        <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+      </form>
               <button class="btnhide" onclick="hideDetails7()">Close</button>
             </div>
 
@@ -240,7 +260,10 @@ else{
                 <!-- details  -->
                 <h2>Product Details</h>
                 <p>NVIDIA GeForce RTX 2080 Ti White Edition</p>
-               
+      <form method="POST" action="Panier.php">
+        <input type="hidden" name="productName" value="NVIDIA GeForce RTX 2080 Ti White Edition">
+        <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+      </form>
             
                 <button class="btnhide" onclick="hideDetails8()">Close</button>
             </div>
@@ -261,7 +284,10 @@ else{
                 <!-- details  -->
                 <h2>Product Details</h2>
                 <p>NVIDIA GeForce RTX 3090 Ti</p>
-              
+      <form method="POST" action="Panier.php">
+        <input type="hidden" name="productName" value="NVIDIA GeForce RTX 3090 Ti">
+        <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+      </form>
               
                 <button class="btnhide" onclick="hideDetails9()">Close</button>
             </div>
@@ -281,7 +307,10 @@ else{
                 <!-- details  -->
                 <h2>Product Details</h2>
                 <p>AMD RADEON RX 7900 XTX</p>
-              
+      <form method="POST" action="Panier.php">
+        <input type="hidden" name="productName" value="AMD RADEON RX 7900 XTX">
+        <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+      </form>
                
                 <button class="btnhide" onclick="hideDetails10()">Close</button>
             </div>
@@ -300,9 +329,12 @@ else{
               <div class="product-details" id="productDetails11">
                 <!-- details  -->
                 <h2>Product Details</h2>
-                <p>AMD RADEON RX 6000 XT.</p>
+                <p>AMD RADEON RX 6000 XT</p>
                 
-              
+      <form method="POST" action="Panier.php">
+        <input type="hidden" name="productName" value="AMD RADEON RX 6000 XT">
+        <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+      </form>
                 <button class="btnhide" onclick="hideDetails11()">Close</button>
             </div>
 
@@ -322,7 +354,10 @@ else{
                 <!-- details  -->
                 <h2>Product Details</h2>
                 <p>NVIDIA GeForce RTX 4090</p>
-               
+      <form method="POST" action="Panier.php">
+        <input type="hidden" name="productName" value="NVIDIA GeForce RTX 4090">
+        <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+      </form>
               
                 <button class="btnhide" onclick="hideDetails12()">Close</button>
             </div>
@@ -343,7 +378,10 @@ else{
               <!-- details  -->
               <h2>Product Details</h2>
               <p>AMD RADEON RX 6800 XT</p>
-            
+      <form method="POST" action="Panier.php">
+        <input type="hidden" name="productName" value="AMD RADEON RX 6800 XT">
+        <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+      </form>
             
               <button class="btnhide" onclick="hideDetails13()">Close</button>
           </div>
@@ -363,9 +401,12 @@ else{
           <div class="product-details" id="productDetails14">
             <!-- details  -->
             <h2>Product Details</h2>
-            <p> NVIDIA GeForce RTX 4070</p>
+            <p>NVIDIA GeForce RTX 4070</p>
          
-         
+      <form method="POST" action="Panier.php">
+        <input type="hidden" name="productName" value="NVIDIA GeForce RTX 4070">
+        <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+      </form>
             <button class="btnhide" onclick="hideDetails14()">Close</button>
         </div>
 
@@ -392,7 +433,10 @@ else{
                            <!-- details  -->
                            <h2>Product Details</h2>
                            <p>MSI B5500 GAMING PLUS</p>
-                        
+      <form method="POST" action="Panier.php">
+        <input type="hidden" name="productName" value="MSI B5500 GAMING PLUS">
+        <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+      </form>
                          
                            <button class="btnhide" onclick="hideDetails15()">Close</button>
                      </div>
@@ -414,7 +458,10 @@ else{
                                         <h2>Product Details</h2>
                                         <p>MSI B350M GAMING PLUS</p>
                                       
-                                    
+                        <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="MSI B350M GAMING PLUS">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                         <button class="btnhide" onclick="hideDetails16()">Close</button>
                                     </div>
                           
@@ -435,7 +482,10 @@ else{
                                         <h2>Product Details</h2>
                                         <p>MSI MPG X570 GAMING EDGE</p>
                                        
-                                     
+                          <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="MSI MPG X570 GAMING EDGE">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                         <button class="btnhide" onclick="hideDetails17()">Close</button>
                                     </div>
                         
@@ -455,7 +505,10 @@ else{
                                         <!-- details  -->
                                         <h2>Product Details</h2>
                                         <p>GIGABYTE B560M DS3H</p>
-                                     
+                        <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="GIGABYTE B560M DS3H">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                      
                                         <button class="btnhide" onclick="hideDetails18()">Close</button>
                                     </div>
@@ -477,7 +530,10 @@ else{
                                         <h2>Product Details</h2>
                                         <p>GIGABYTE X670 GAMING X AX</p>
                                        
-                                      
+                        <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="GIGABYTE X670 GAMING X AX">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                         <button class="btnhide" onclick="hideDetails19()">Close</button>
                                     </div>
                         
@@ -498,7 +554,10 @@ else{
                                       <h2>Product Details</h2>
                                       <p>ASUS ROG STRIX Z390-E GAMING</p>
                                     
-                                    
+                       <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="ASUS ROG STRIX Z390-E GAMING">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                       <button class="btnhide" onclick="hideDetails20()">Close</button>
                                   </div>
                         
@@ -518,7 +577,10 @@ else{
                                     <!-- details  -->
                                     <h2>Product Details</h2>
                                     <p>ASUS PRIME Z790-A WIFI</p>
-                                   
+                        <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="ASUS PRIME Z790-A WIFI">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                     <button class="btnhide" onclick="hideDetails21()">Close</button>
                                 </div>
                         
@@ -546,7 +608,10 @@ else{
                           <h2>Product Details</h2>
                           <p>CORSAIR VENGEANCE RGB DDR5 32GB</p>
                           
-                        
+                          <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="CORSAIR VENGEANCE RGB DDR5 32GB">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                           <button class="btnhide" onclick="hideDetails22()">Close</button>
                     </div>
                          
@@ -566,7 +631,10 @@ else{
                                        <!-- details  -->
                                        <h2>Product Details</h2>
                                        <p>KINGSTON FURY BEAST DDR5 16x2 GB</p>
-                                      
+                        <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="KINGSTON FURY BEAST DDR5 16x2 GB">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                        <button class="btnhide" onclick="hideDetails23()">Close</button>
                                    </div>
                          
@@ -587,7 +655,10 @@ else{
                                        <h2>Product Details</h2>
                                        <p>CORSAIR VENGEANCE RGB DDR5 32GB WHITE EDITION</p>
                                      
-                                     
+                        <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="CORSAIR VENGEANCE RGB DDR5 32GB WHITE EDITION">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                        <button class="btnhide" onclick="hideDetails24()">Close</button>
                                    </div>
                        
@@ -608,7 +679,10 @@ else{
                                        <h2>Product Details</h2>
                                        <p>T-FORCE DELTA RGB DDR5 32GB</p>
                                      
-                                     
+                        <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="T-FORCE DELTA RGB DDR5 32GB">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                        <button class="btnhide" onclick="hideDetails25()">Close</button>
                                    </div>
                        
@@ -629,7 +703,10 @@ else{
                                        <h2>Product Details</h2>
                                        <p>KINGSTON kvr56u46bs6k2 DDR5 16GB</p>
                                       
-                                    
+                        <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="KINGSTON kvr56u46bs6k2 DDR5 16GB">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                        <button class="btnhide" onclick="hideDetails26()">Close</button>
                                    </div>
                              </section>
@@ -656,7 +733,10 @@ else{
                           <h2>Product Details</h2>
                           <p>MSI SPATIUM M371 NVMe M.2 1TB</p>
                      
-                       
+                        <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="MSI SPATIUM M371 NVMe M.2 1TB">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                           <button class="btnhide" onclick="hideDetails27()">Close</button>
                     </div>
                          
@@ -676,7 +756,10 @@ else{
                                        <!-- details  -->
                                        <h2>Product Details</h2>
                                        <p>GIGABYTE SSD M.2 256GB 2290 PCIe x2 NVMe</p>
-                                     
+                        <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="GIGABYTE SSD M.2 256GB 2290 PCIe x2 NVMe">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                       
                                        <button class="btnhide" onclick="hideDetails28()">Close</button>
                                    </div>
@@ -697,7 +780,10 @@ else{
                                        <!-- details  -->
                                        <h2>Product Details</h2>
                                        <p>EMTEC x250 POWER PLUS SSD 256GB</p>
-                                     
+                        <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="EMTEC x250 POWER PLUS SSD 256GB">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                      
                                        <button class="btnhide" onclick="hideDetails29()">Close</button>
                                    </div>
@@ -718,7 +804,10 @@ else{
                                        <!-- details  -->
                                        <h2>Product Details</h2>
                                        <p>PNY CS1030 M.2 PCIe NVMe 500GB</p>
-                                      
+                        <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="PNY CS1030 M.2 PCIe NVMe 500GB">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                     
                                        <button class="btnhide" onclick="hideDetails30()">Close</button>
                                    </div>
@@ -739,7 +828,10 @@ else{
                                        <!-- details  -->
                                        <h2>Product Details</h2>
                                        <p>T-FORCE-DELTA-500GB-RGB</p>3
-                                     
+                        <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="T-FORCE-DELTA-500GB-RGB">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                        <button class="btnhide" onclick="hideDetails31()">Close</button>
                                    </div>
                              </section>
@@ -766,7 +858,10 @@ else{
                           <h2>Product Details</h2>
                           <p>COOLER MASTER V1200 PLATINUM</p>
                       
-                        
+                          <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="COOLER MASTER V1200 PLATINUM">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                           <button class="btnhide" onclick="hideDetails32()">Close</button>
                     </div>
                          
@@ -787,7 +882,10 @@ else{
                                        <h2>Product Details</h2>
                                        <p>ASUS ROG STRIX G Series Modular 80Plus GOLD</p>
                                     
-                                     
+                        <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="ASUS ROG STRIX G Series Modular 80Plus GOLD">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                        <button class="btnhide" onclick="hideDetails33()">Close</button>
                                    </div>
                          
@@ -807,7 +905,10 @@ else{
                                        <!-- details  -->
                                        <h2>Product Details</h2>
                                        <p>ASUS ROG THOR 1200W 80PLUS PLATINUM</p>
-                                        
+                        <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="ASUS ROG THOR 1200W 80PLUS PLATINUM">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                        <button class="btnhide" onclick="hideDetails34()">Close</button>
                                    </div>
                        
@@ -827,7 +928,10 @@ else{
                                        <!-- details  -->
                                        <h2>Product Details</h2>
                                        <p>GAMEMAX 1050W ATX 3.0 & PCIE 5.0</p>
-                                   
+                        <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="GAMEMAX 1050W ATX 3.0 & PCIE 5.0<">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                      
                                        <button class="btnhide" onclick="hideDetails35()">Close</button>
                                    </div>
@@ -849,7 +953,10 @@ else{
                                        <h2>Product Details</h2>
                                        <p>EVGA 750 BP 80+ BRONZE 750W</p>
                                      
-                                     
+                       <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="EVGA 750 BP 80+ BRONZE 750W">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                        <button class="btnhide" onclick="hideDetails36()">Close</button>
                                    </div>
                                    <div class="product-card">
@@ -869,7 +976,10 @@ else{
                                   <h2>Product Details</h2>
                                   <p>AEROCOOL LUX 750W PSU, 80 PLUS BRONZE</p>
                                  
-                                
+                        <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="AEROCOOL LUX 750W PSU, 80 PLUS BRONZE">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                   <button class="btnhide" onclick="hideDetails37()">Close</button>
                               </div>
                              </section>
@@ -896,7 +1006,11 @@ else{
                           <h2>Product Details</h2>
                           <p>ASUS TUF Gaming GT501 White Edition</p>
                        
-                        
+                          <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="ASUS TUF Gaming GT501 White Edition">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
+
                           <button class="btnhide" onclick="hideDetails38()">Close</button>
                     </div>
                          
@@ -917,7 +1031,10 @@ else{
                                        <h2>Product Details</h2>
                                        <p>ASUS ROG STRIX HELIOS TEMPERED GlASS</p>
                                      
-                                    
+                        <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="ASUS ROG STRIX HELIOS TEMPERED GlASS">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                        <button class="btnhide" onclick="hideDetails39()">Close</button>
                                    </div>
                          
@@ -938,7 +1055,10 @@ else{
                                        <h2>Product Details</h2>
                                        <p>ASUS ROG THOR 1200W 80PLUS PLATINUM</p>
                                      
-                                      
+                        <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="ASUS ROG THOR 1200W 80PLUS PLATINUM">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                        <button class="btnhide" onclick="hideDetails40()">Close</button>
                                    </div>
                        
@@ -958,7 +1078,10 @@ else{
                                        <!-- details  -->
                                        <h2>Product Details</h2>
                                        <p>CORSAIR ICUE 5000T RGB PC Case BlACK</p>
-                                   
+                        <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="CORSAIR ICUE 5000T RGB PC Case BlACK">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                       
                                        <button class="btnhide" onclick="hideDetails41()">Close</button>
                                    </div>
@@ -980,7 +1103,10 @@ else{
                                        <h2>Product Details</h2>
                                        <p>CORSAIR 275R AIRFLOW TEMPERED GLASS</p>
                                    
-                                     
+                        <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="CORSAIR 275R AIRFLOW TEMPERED GLASS">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                        <button class="btnhide" onclick="hideDetails42()">Close</button>
                                    </div>
                                    <div class="product-card">
@@ -1000,7 +1126,10 @@ else{
                                   <h2>Product Details</h2>
                                   <p>MARS GAMING MC-X2 ZWART</p>
                                 
-                                 
+                        <form method="POST" action="Panier.php">
+                           <input type="hidden" name="productName" value="MARS GAMING MC-X2 ZWART">
+                          <button type="submit" class="add-to-cart" name="addToCart">Add to cart</button>
+                        </form>
                                   <button class="btnhide" onclick="hideDetails43()">Close</button>
                               </div>
                              </section>
