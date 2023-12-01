@@ -24,13 +24,13 @@
                       $verify_query = mysqli_query($con,"SELECT Email FROM clients WHERE Email='$email'");
           
                       if(mysqli_num_rows($verify_query) != 0){
-                          echo "<div id='errMsg' class='erreurmsg'>
+                          echo "<div id='signuperr' class='erreurmsg'>
                                     <p>Cet e-mail est déjà utilisé, veuillez en choisir un autre !</p>
                                 </div>";
                       } else {
                           mysqli_query($con,"INSERT INTO clients(Username,Email,Password) VALUES('$username','$email','$password')") or die("Erreur");
           
-                          echo "<div id='confMsg' class='confirmationmsg'>
+                          echo "<div id='signupconf' class='confirmationmsg'>
                                     <p>Inscription réussie !</p>
                                 </div>";
                       }
@@ -65,13 +65,6 @@
             </div>
         </div>
     </div>
-    <script>
-        //sign up msgs
-  let errmsg = document.getElementById('errMsg');
-  let confmsg = document.getElementById('confMsg');
-  setTimeout(function() { errmsg.classList.add('hide-message');} , 3000);
-  setTimeout(function() { confmsg.classList.add('hide-message');} , 3000);
- 
-    </script>
+    
 </body>
 </html>

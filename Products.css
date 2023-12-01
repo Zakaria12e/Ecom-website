@@ -156,13 +156,58 @@ html{
 #profile :hover,#panier-icon :hover{
   color: #344be1;
   }
+  #form_add_to_cart{
+    text-align: center;
+  }
   .add-to-cart{
     background-color:#253edc;
+    width: 200px;
     border-radius: 5px;
     padding: 10px;
-    margin: 5px;
     color: ghostwhite;
+    border: none;
   }
   .add-to-cart:hover{
     background-color: #0a44a2;
+    cursor: pointer;
   }
+  .details{
+    width: 800px;
+    height: 690px;
+     margin-bottom: 20px;
+     background-size: cover;
+     background-position: center;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     border-radius: 10px;
+     margin: 10px auto ;
+    
+     }
+     .details_img{
+       text-align: center;
+     }
+     .details_img img{
+      width: 500px;
+      border-radius: 10px;
+     }
+     .price{
+      color: rgb(11, 194, 11);
+      font-size: 25px;
+     }
+     #pname{
+      font-family: cursive;
+     }
+     #caracteristiques{
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-weight: 200;
+     }
+     #description{
+     font-family:cursive;
+     }
+     #goback{
+      text-decoration: none;
+      background-color: rgb(51, 49, 49);
+      border-radius: 6px;
+      padding: 6px;
+      color: white;
+     }
+    
