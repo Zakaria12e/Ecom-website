@@ -387,7 +387,7 @@ else{
 <div class="product-card">
     <img class="pimg" src="images/ram4_team t-force delta rgb 32gb ddr5.jpg" alt="T-FORCE DELTA RGB DDR5 32GB">
     <div class="product-info">
-        <h3>T-FORCE DELTA RGB DDR5 32GB </h3>
+        <h3>T-FORCE DELTA RGB DDR5 32GB</h3>
         <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
         <div style="display: flex; justify-content: space-between;">
             <a class="vd" href="details.php?name=T-FORCE%20DELTA%20RGB%20DDR5%2032GB">View Details</a>
