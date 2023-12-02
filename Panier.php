@@ -81,7 +81,7 @@
  $cartResult = mysqli_query($con, $cartQuery);
 
  if ($cartResult) 
- {
+ {  
     while ($cartRow = mysqli_fetch_assoc($cartResult)) {
     echo '<section class="panier">';
         $productName = $cartRow['product_name'];
@@ -95,20 +95,40 @@
            echo '<div class="prod_panier">';
               echo '<div class="img_container_panier"><img  id="panier_img" src="' . $productDetails['image'] . '"></div>';
               echo '<p class="pp">Product Name: ' . $productDetails['product_name'] . '</p>';
-              echo '<p class="pp">Price: $' . $productDetails['price'] . '</p>';
-              echo '<p class="pp">Quantity: ' . $cartRow['quantity'] . '</p>';
-
-    echo '<form   method="POST" action="Panier.php">';
-        echo '<input type="hidden" name="productName" value="' . $productName . '">';
-        echo '<button type="submit" class="pp"  name="SUPPRIMER"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
-      </svg></button>';
-        echo '</form>';
-           echo '</div>';
+              echo '<p class="price_color">Price:  <p style="margin-right: 100px;color:green" class="price_color">' . $productDetails['price'] . '$</p></p>';
+              
+              echo '<form  method="POST" action="Panier.php">';
+              echo '<input type="hidden" name="productName" value="' . $productName . '">';
+              echo'<div id="quantity_container">';
+              echo '<p class="pp">Quantity:</p>';
+              echo '<input  style="margin-top:5px" class="pp" type="number" name="quantity" value="' . $cartRow['quantity'] . '" min="1" max="10">';
+              echo '<button style="margin-top:5px" type="submit" class="pp" name="updateQuantity">Update Quantity</button>';
+              echo'</div>';
+              echo '</form>';
+              if (isset($_POST["updateQuantity"])) {
+                $productName = $_POST["productName"];
+                $newQuantity = $_POST["quantity"];
+            
+                $updateQuantityQuery = "UPDATE panier SET quantity = '$newQuantity' WHERE Id = '$userId' AND product_name = '$productName'";
+                if (mysqli_query($con, $updateQuantityQuery)) {
+                    header('location: Panier.php');
+                } else {
+                    echo "Error updating quantity: " . mysqli_error($con);
+                }
+             }
+            
+              echo '<form   method="POST" action="Panier.php">';
+              echo '<input type="hidden" name="productName" value="' . $productName . '">';
+              echo '<button type="submit" class="pp" id="supprimerpro_btn" name="SUPPRIMER"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+              <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                </svg></button>';
+                echo '</form>';
+          echo '</div>';      
      echo '</section>';
     }
+
     if (isset($_POST["SUPPRIMER"])) {
-        
+
         $productName = $_POST["productName"];
         $deleteQuery = "DELETE FROM panier WHERE Id = '$userId' AND product_name = '$productName'";
         $Result = mysqli_query($con, $deleteQuery);
@@ -132,7 +152,7 @@
    if( $total != 0){
     echo'<hr>';
      echo '<div id="panier-total">';
-    echo '<p>Total: $' . $total . '</p>';
+    echo '<p class="price_color">Totale:  <p style="margin-right: 100px;color:green" class="price_color">' . $total . '$</p></p>';
     echo '</div>';
     echo'<hr>';
    }
@@ -141,7 +161,6 @@
    }
    
  } 
-
 
 ?>
 

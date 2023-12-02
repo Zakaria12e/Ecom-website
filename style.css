@@ -24,8 +24,7 @@
 }
 
 p {
-    color: #555;
-    margin-bottom: 20px;
+    color: #000000;
     font-family:cursive;
 }
 
@@ -143,11 +142,9 @@ color: #344be1;
 }
 
 .panier{
- width: 80%;
- height: auto;
+  width: 90%;
+  height: auto;
   margin-bottom: 20px;
-  background-size: cover;
-  background-position: center;
   padding: 30px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -171,9 +168,9 @@ div#articles{
   margin: 20px;
 }
 #panier_img{
-  width: 100px;
+  width: 200px;
   border-radius: 5px;
- height: 80px;
+ height: 100px;
 }
 #empty_panier{
  text-align: center;
@@ -184,14 +181,16 @@ div#articles{
  color: #344be1;
 }
 #panier-total{
+display: flex;
 margin-top: 5px;
-text-align: center;
 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 font-weight: 400;
 font-size: 20px;
+margin-left: 700px;
 }
 .prod_panier{
   display: flex;
+  
 }
 .img_container_panier{
   margin-right: 100px;
@@ -199,4 +198,20 @@ font-size: 20px;
 .pp{
   margin-right: 100px;
   margin-top: 20px;
+}
+#supprimerpro_btn{
+color: crimson;
+margin-right: 50px;
+margin-top: 20px;
+}
+
+.price_color{
+  margin-top: 20px;
+}
+#form-quantity{
+  display: flex;
+  margin-left: 150px;
+}
+#quantity_container{
+  display: flex;
 }
