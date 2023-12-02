@@ -4,14 +4,15 @@
     padding: 20px;
   }
   form{
-    background-color: rgb(255, 255, 249);
+    background: transparent;
     padding: 20px;
-    border: 1px solid rgb(222, 222, 222);
+    border: 1px  solid  rgb(0, 0, 0);
     border-radius: 10px;
     margin-top: 20px;
-    box-shadow: 0 4px 8px rgb(0, 0, 0,0.1);
+    box-shadow: 6px 6px 6px 8px rgba(0, 0, 0, 0.1);
     margin-top: 140px;
   }
+  
   .form-control {
     padding: 10px;
     border: 1px solid #484646;
@@ -19,13 +20,15 @@
     margin-bottom: 10px;
     width: 100%;
     box-sizing: border-box;
+    background: transparent;
+    backdrop-filter: blur(10px);
   }
   .form-group {
     margin-bottom: 20px;
 }
   .btn {
-    background-color:rgb(3, 85, 227);
-    color: white;
+    color: aliceblue;
+    background-color:#9f09af;
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
@@ -33,7 +36,7 @@
 }
 
 .btn:hover {
-    background-color: #1240a3;
+    background-color: #a01eaf;
 }
 div.confirmationmsg{
     border: 1px solid green;
@@ -57,17 +60,13 @@ div.confirmationmsg{
         display: none;
       }
 
-    body {
-        background-image: url('images/loginbackground.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
+  
       .title{
         text-align: center;
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+        color:rgb(154, 23, 235)
       }
       a{
         text-decoration: none;
-        color: rgb(43, 144, 226);
+        color: rgb(0, 104, 230);
       }

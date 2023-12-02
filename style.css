@@ -171,9 +171,9 @@ div#articles{
   margin: 20px;
 }
 #panier_img{
-width: 100px;
-border-radius: 50px;
-height: auto;
+  width: 100px;
+  border-radius: 5px;
+ height: 80px;
 }
 #empty_panier{
  text-align: center;
@@ -182,4 +182,21 @@ height: auto;
  font-family: Georgia, 'Times New Roman', Times, serif;
  margin-top: 300px;
  color: #344be1;
+}
+#panier-total{
+margin-top: 5px;
+text-align: center;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-weight: 400;
+font-size: 20px;
+}
+.prod_panier{
+  display: flex;
+}
+.img_container_panier{
+  margin-right: 100px;
+}
+.pp{
+  margin-right: 100px;
+  margin-top: 20px;
 }

@@ -83,7 +83,7 @@
  if ($cartResult) 
  {
     while ($cartRow = mysqli_fetch_assoc($cartResult)) {
-        echo '<section class="panier">';
+    echo '<section class="panier">';
         $productName = $cartRow['product_name'];
 
         $productDetailsQuery = "SELECT * FROM products WHERE product_name = '$productName'";
@@ -91,15 +91,30 @@
 
         if ($productDetailsResult) {
             $productDetails = mysqli_fetch_assoc($productDetailsResult);
+          
+           echo '<div class="prod_panier">';
+              echo '<div class="img_container_panier"><img  id="panier_img" src="' . $productDetails['image'] . '"></div>';
+              echo '<p class="pp">Product Name: ' . $productDetails['product_name'] . '</p>';
+              echo '<p class="pp">Price: $' . $productDetails['price'] . '</p>';
+              echo '<p class="pp">Quantity: ' . $cartRow['quantity'] . '</p>';
 
-            echo '<div class="prod_panier">';
-            echo '<div id=panier_img><img src="' . $productDetails['image'] . '"></div>';
-            echo '<p>Product Name: ' . $productDetails['product_name'] . '</p>';
-            echo '<p>Price: $' . $productDetails['price'] . '</p>';
-            echo '<p>Quantity: ' . $cartRow['quantity'] . '</p>';
-
-        echo '</div>';
-        echo '</section>';
+    echo '<form   method="POST" action="Panier.php">';
+        echo '<input type="hidden" name="productName" value="' . $productName . '">';
+        echo '<button type="submit" class="pp"  name="SUPPRIMER"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+      </svg></button>';
+        echo '</form>';
+           echo '</div>';
+     echo '</section>';
+    }
+    if (isset($_POST["SUPPRIMER"])) {
+        
+        $productName = $_POST["productName"];
+        $deleteQuery = "DELETE FROM panier WHERE Id = '$userId' AND product_name = '$productName'";
+        $Result = mysqli_query($con, $deleteQuery);
+        if ($Result) {
+            header('location: Panier.php');
+        } 
     }
  }
 }
@@ -114,10 +129,12 @@
  if ($totalResult) {
     $totalRow = mysqli_fetch_assoc($totalResult);
     $total = $totalRow['total'];
-   if( $total > 0){
+   if( $total != 0){
+    echo'<hr>';
      echo '<div id="panier-total">';
     echo '<p>Total: $' . $total . '</p>';
     echo '</div>';
+    echo'<hr>';
    }
    else{
     echo'<div id="empty_panier">No products yet</div>';
