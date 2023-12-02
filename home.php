@@ -13,7 +13,6 @@ else{
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> 
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="home.css">
   <title>Gravey</title>
 </head>
 <body>
@@ -47,11 +46,7 @@ else{
                             <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
                             </svg>
                         </a>
-                    </li>
-                    <div class="div-search">
-                        <input type="text" id="searchInput" placeholder="Search for products...">
-                        <button class="search-btn">Search</button>
-                    </div> 
+                    </li> 
                 </ul>
             </div>
         </nav>
@@ -65,39 +60,9 @@ else{
     </section>
 
     <main>
-        <section id="featuredProducts">
-            <h2>Featured Products</h2>
-            <div class="product">
-            <!-- Product details go here -->
-            </div>
-            <div class="product">
-            <!-- Another featured product -->
-            </div>
-            <!-- Add more products as needed -->
-        </section>
-        <section id="filters">
-            <h2>Filter by Category</h2>
-            <!-- Add radio buttons or other filter options here -->
-        </section>
+       
     </main>
     <footer>
-        <div class="footer-content">
-            <div class="footer-section about">
-                <h3>About Us</h3>
-                <p>Gravey is dedicated to providing high-quality hardware components for laptops.</p>
-            </div>
-            <div class="footer-section contact">
-                <h3>Contact Information</h3>
-                <p>Email: nourddinedriouech@Gravey.com</p>
-                <p>Phone: +123 456 7890</p>
-            </div>
-        <div class="footer-section follow">
-            <h3>Follow Us</h3>
-            <a href="https://www.facebook.com/DRIOUECH.Noureddine" target="_blank">Facebook</a>
-            <a href="#https://www.instagram.com/noureddine.driouech/" target="_blank">Instagram</a>
-            <a href="#" target="_blank">Twitter</a>
-        </div>
-        </div>
         <div class="footer-bottom">
         <p>&copy; 2023 Gravey. All rights reserved.</p>
         </div>

@@ -112,9 +112,9 @@ color: coral;
 }
 
 h3{
-   font-size: 22px;
-  font-family: monospace;
-   color: #000000;
+  font-size: 22px;
+ font-family: monospace;
+  color: #000000;
 }
 p{
    font-size: 16px;
@@ -166,11 +166,11 @@ html{
     padding: 10px;
     color: ghostwhite;
     border: none;
-    margin-left: 600px;
- margin-top: -100px;
+    margin-left: 400px;
+   
   }
   .add-to-cart:hover{
-    background-color: #0a44a2;
+    background-color: #276ad6;
     cursor: pointer;
   }
 
@@ -183,12 +183,11 @@ html{
       color: rgb(11, 194, 11);
       font-size: 25px;
      }
-     #pname{
-      font-family: cursive;
-     }
+     
      #caracteristiques{
       font-family: Verdana, Geneva, Tahoma, sans-serif;
       font-weight: 200;
+      margin-top: 50px;
      }
      #description{
      font-family:cursive;
@@ -200,4 +199,31 @@ html{
       padding: 6px;
       color: white;
      }
-    
+     #goback:hover{
+      background-color: rgb(74, 72, 72);
+     }
+
+     .details-container {
+      display: flex;
+  }
+
+  .details_img {
+    margin-right: 300px;
+    margin-top: 30px;
+    padding-left: 20px;
+  }
+  #caract_titre{
+    margin-left: 740px;
+    margin-bottom: -40px;
+    margin-top: 2opx;
+  }
+.details{
+width: 70%;
+background-position: center;
+padding: 30px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+margin: 50px auto ;
+  }
+
+     

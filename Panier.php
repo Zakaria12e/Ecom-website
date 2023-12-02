@@ -1,25 +1,25 @@
 <?php
-session_start();
-if(!isset($_SESSION['username'])){
+ session_start();
+ if(!isset($_SESSION['username'])){
    header('location:login.php');
-}
-else{
+ }
+ else{
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Panier</title>
-</head>
+ </head>
 
-<body>
-<nav class="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+ <body>
+ <nav class="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="home.php" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="images/gaming-pad-alt-1-svgrepo-com.svg" class="h-8" alt="Gravey Logo" />
@@ -38,42 +38,99 @@ else{
             <li>
             <a id="profile" href="profile.php" ><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
   <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-</svg></a>
+ </svg></a> 
             </li>
             
         </ul>
     </div>
-</nav>
-<?php
+ </nav>
+ <?php
  require_once 'config.php';
 
  if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["addToCart"])) {
- 
-     $productName = $_POST["productName"];
- 
-     $userId = isset($_SESSION['id']) ? $_SESSION['id'] : 0;
- 
-     $insertQuery = "INSERT INTO panier (Id, product_name) VALUES ('$userId', '$productName')";
- 
-     if (mysqli_query($con, $insertQuery)){
-         header("Location: details.php?name=" . urlencode($productName));
-     } else {
-         echo "Error: " . $insertQuery . "<br>" . mysqli_error($con);
-     }
+    $productName = $_POST["productName"];
+    $userId = isset($_SESSION['id']) ? $_SESSION['id'] : 0;
+
+    $checkQuery = "SELECT * FROM panier WHERE Id = '$userId' AND product_name = '$productName'";
+    $checkResult = mysqli_query($con, $checkQuery);
+
+    if ($checkResult) {
+        if (mysqli_num_rows($checkResult) > 0) {
+            $updateQuery = "UPDATE panier SET quantity = quantity + 1 WHERE Id = '$userId' AND product_name = '$productName'";
+            if (mysqli_query($con, $updateQuery)) {
+                header("Location: details.php?name=" . urlencode($productName));
+            } else {
+                echo "Error updating record: " . mysqli_error($con);
+            }
+        } else {
+            $insertQuery = "INSERT INTO panier (Id, product_name, quantity) VALUES ('$userId', '$productName', 1)";
+            if (mysqli_query($con, $insertQuery)) {
+                header("Location: details.php?name=" . urlencode($productName));
+            } else {
+                echo "Error inserting record: " . mysqli_error($con);
+            }
+        }
+    } else {
+        echo "Error checking record: " . mysqli_error($con);
+    }
  }
 
+ $userId = isset($_SESSION['id']) ? $_SESSION['id'] : 0;
+
+ $cartQuery = "SELECT * FROM panier WHERE Id = '$userId'";
+ $cartResult = mysqli_query($con, $cartQuery);
+
+ if ($cartResult) 
+ {
+    while ($cartRow = mysqli_fetch_assoc($cartResult)) {
+        echo '<section class="panier">';
+        $productName = $cartRow['product_name'];
+
+        $productDetailsQuery = "SELECT * FROM products WHERE product_name = '$productName'";
+        $productDetailsResult = mysqli_query($con, $productDetailsQuery);
+
+        if ($productDetailsResult) {
+            $productDetails = mysqli_fetch_assoc($productDetailsResult);
+
+            echo '<div class="prod_panier">';
+            echo '<div id=panier_img><img src="' . $productDetails['image'] . '"></div>';
+            echo '<p>Product Name: ' . $productDetails['product_name'] . '</p>';
+            echo '<p>Price: $' . $productDetails['price'] . '</p>';
+            echo '<p>Quantity: ' . $cartRow['quantity'] . '</p>';
+
+        echo '</div>';
+        echo '</section>';
+    }
+ }
+}
+
+
+ $totalQuery = "SELECT SUM(panier.quantity * products.price) AS total FROM panier
+ JOIN products ON panier.product_name = products.product_name
+ WHERE panier.Id = '$userId'"; 
+ $totalResult = mysqli_query($con, $totalQuery);
+
+
+ if ($totalResult) {
+    $totalRow = mysqli_fetch_assoc($totalResult);
+    $total = $totalRow['total'];
+   if( $total > 0){
+     echo '<div id="panier-total">';
+    echo '<p>Total: $' . $total . '</p>';
+    echo '</div>';
+   }
+   else{
+    echo'<div id="empty_panier">No products yet</div>';
+   }
+   
+ } 
+
+
 ?>
-<section class="panier">
-  <h1 id="panier-titre">PANIER</h1>
-
-  
-
-</section>
-
 
 </body>
 </html>
 
 <?php
 }
-?>
+?>  

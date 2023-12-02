@@ -143,8 +143,8 @@ color: #344be1;
 }
 
 .panier{
- width: 800px;
- height: 800px;
+ width: 80%;
+ height: auto;
   margin-bottom: 20px;
   background-size: cover;
   background-position: center;
@@ -165,8 +165,21 @@ div#articles{
   width: 700px;
   height: auto;
   margin-bottom: 20px;
-  padding: 30px;
+  padding: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  margin: 20px ;
+  margin: 20px;
+}
+#panier_img{
+width: 100px;
+border-radius: 50px;
+height: auto;
+}
+#empty_panier{
+ text-align: center;
+ font-size: xx-large;
+ font-weight: 700;
+ font-family: Georgia, 'Times New Roman', Times, serif;
+ margin-top: 300px;
+ color: #344be1;
 }
