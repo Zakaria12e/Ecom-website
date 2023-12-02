@@ -161,32 +161,22 @@ html{
   }
   .add-to-cart{
     background-color:#253edc;
-    width: 200px;
+    width: 150px;
     border-radius: 5px;
     padding: 10px;
     color: ghostwhite;
     border: none;
+    margin-left: 600px;
+ margin-top: -100px;
   }
   .add-to-cart:hover{
     background-color: #0a44a2;
     cursor: pointer;
   }
-  .details{
-    width: 800px;
-    height: 690px;
-     margin-bottom: 20px;
-     background-size: cover;
-     background-position: center;
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-     border-radius: 10px;
-     margin: 10px auto ;
-    
-     }
-     .details_img{
-       text-align: center;
-     }
+
      .details_img img{
-      width: 500px;
+      width: 450px;
+      height: 300px;
       border-radius: 10px;
      }
      .price{

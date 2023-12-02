@@ -15,7 +15,7 @@
     if (isset($_GET['name'])) {
 
         $productName = htmlspecialchars($_GET['name'], ENT_QUOTES, 'UTF-8');
-
+        //image
         $Query = "SELECT image FROM `products` WHERE product_name = '$productName'";
         $result = mysqli_query($con, $Query);
         if ($result) {
@@ -32,7 +32,9 @@
      }
 
 }
-     echo '<h1 id="pname">' . $productName . '</h1>';
+   
+     
+    echo '<h1 id="pname">' . $productName . '</h1>';
       //description
      $Query = "SELECT description FROM `products` WHERE product_name = '$productName'";
      $result = mysqli_query($con, $Query);
@@ -46,21 +48,22 @@
            echo "<p id='description'>$description </p>";
        }
         //caracteristique
-     $Query = "SELECT Caracteristiques FROM `products` WHERE product_name = '$productName'";
-     $result = mysqli_query($con, $Query);
-     if ($result) {
-
-       $row = mysqli_fetch_assoc($result);
-
-      
-       if ($row) {
-
-        $caracteristiques = $row['Caracteristiques'];
-        echo'<p id="caracteristiques">';
-        echo nl2br($caracteristiques);
-        echo'</p>';
-       }
-  }
+      $Query = "SELECT Caracteristiques FROM `products` WHERE product_name = '$productName'";
+      $result = mysqli_query($con, $Query);
+      if ($result) {
+ 
+        $row = mysqli_fetch_assoc($result);
+ 
+       
+        if ($row) {
+ 
+         $caracteristiques = $row['Caracteristiques'];
+         echo'<p id="caracteristiques">';
+         echo nl2br($caracteristiques);
+         echo'</p>';
+        }
+   } 
+       
        //price
        $Query = "SELECT price FROM `products` WHERE product_name = '$productName'";
         $result = mysqli_query($con, $Query);
@@ -79,15 +82,15 @@
 
           }
      }
-  }
+  }     
         echo '<form id="form_add_to_cart" method="POST" action="Panier.php">';
         echo '<input type="hidden" name="productName" value="' . $productName . '">';
         echo '<button type="submit" class="add-to-cart" name="addToCart">ADD TO CART</button>';
         echo '</form>';
     
+          echo'<a id="goback" href="Products.php">GO BACK</a>';
+    ?> 
    
-    ?>
-    <a id="goback" href="Products.php">GO BACK</a>
 </section>
    
 </body>
