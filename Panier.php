@@ -136,25 +136,31 @@
             header('location: Panier.php');
         } 
     }
+
  }
 }
-
 
  $totalQuery = "SELECT SUM(panier.quantity * products.price) AS total FROM panier
  JOIN products ON panier.product_name = products.product_name
  WHERE panier.Id = '$userId'"; 
  $totalResult = mysqli_query($con, $totalQuery);
 
-
  if ($totalResult) {
     $totalRow = mysqli_fetch_assoc($totalResult);
-    $total = $totalRow['total'];
+   $_SESSION['totale'] = $total = $totalRow['total'];
    if( $total != 0){
     echo'<hr>';
-     echo '<div id="panier-total">';
-    echo '<p class="price_color">Totale:  <p style="margin-right: 100px;color:green" class="price_color">' . $total . '$</p></p>';
+   echo '<div id="panier-total">';
+        echo '<p class="price_color">Totale:  <p style="margin-right: 100px;color:green" class="price_color">' . $total . '$</p></p>';
+       
+        //buy now btn
+        echo '<form  method="POST" action="payment.php">';
+        echo '<input type="hidden" name="client_id" value="' . $userId . '">';
+        echo '<button id="buynow_btn" type="submit" name="buynow_btn">BUY NOW</button>';
+        echo '</form>';
+  
     echo '</div>';
-    echo'<hr>';
+ 
    }
    else{
     echo'<div id="empty_panier">No products yet</div>';

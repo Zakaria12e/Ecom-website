@@ -1,184 +1,184 @@
 .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .form-group {
-    margin-bottom: 20px;
-    
+  margin-bottom: 20px;
+  
 }
 
 .btn {
-    background-color: #515252;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgb(31, 31, 31);
+  background-color: #515252;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgb(31, 31, 31);
 }
 
 .btn:hover {
-    background-color: #797979;
+  background-color: #797979;
 }
 
 p {
-    color: #000000;
-    font-family:cursive;
+  color: #000000;
+  font-family:cursive;
 }
 
 body, ul {
-  margin: 0;
-  padding: 0;
+margin: 0;
+padding: 0;
 }
 
 div.confirmationmsg{
-  border: 1px solid green;
-  color: darkgreen;
-  padding: 6px;
-  border-radius: 6px;
-  background-color:rgb(145, 228, 145);
-  text-align: center;
-  
-  
-  }
-  div.erreurmsg{
-  border: 1px solid darkred;
-  color: darkred;
-  padding: 6px;
-  border-radius: 6px;
-  background-color:rgb(228, 145, 145);
-  text-align: center;
-  }
-  div.titre{
-    text-align: center;
-    color:rgb(17, 17, 17)
-  }
-  .hide-message {
-        display: none;
-      }
-   
-      body.bodysup {
-        background-image: url('images/sukuna-vs-gojo-jujutsu-kaisen-thumb.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-      
-      form.support {
-        background-color: rgba(201, 198, 198, 0.8); 
-        padding: 20px;
-        border-radius: 10px;
-        margin-top: 20px;
-      }
-   
-      .form-control {
-        background-color: rgba(207, 206, 206, 0.5);
-        padding: 10px;
-        border: 1px solid #262525;
-        border-radius: 5px;
-        margin-bottom: 10px;
-        width: 100%;
-        box-sizing: border-box;
-      }
-      .form-control::placeholder{
-        color: rgb(0, 0, 0);
-      }
-      div.dropdown-content {
-        display: none;
-        position: absolute;
-        background-color:#fff;
-        min-width: 160px;
-        box-shadow:0 8px 16px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        width: 200px;
-     }
+border: 1px solid green;
+color: darkgreen;
+padding: 6px;
+border-radius: 6px;
+background-color:rgb(145, 228, 145);
+text-align: center;
 
-  html{
-    scroll-behavior: smooth;
-  }
 
-  #home{
-    background-image: url('images/sukuna-vs-gojo-jujutsu-kaisen-thumb.jpg'); /* Replace with your hero image */
-    background-size: cover;
-    background-position: center;
-    color: #ffffff;
-    text-align: center;
-    padding: 8rem 0;
-  }
-  #home h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
+}
+div.erreurmsg{
+border: 1px solid darkred;
+color: darkred;
+padding: 6px;
+border-radius: 6px;
+background-color:rgb(228, 145, 145);
+text-align: center;
+}
+div.titre{
+  text-align: center;
+  color:rgb(17, 17, 17)
+}
+.hide-message {
+      display: none;
+    }
+ 
+    body.bodysup {
+      background-image: url('images/sukuna-vs-gojo-jujutsu-kaisen-thumb.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    
+    form.support {
+      background-color: rgba(201, 198, 198, 0.8); 
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+ 
+    .form-control {
+      background-color: rgba(207, 206, 206, 0.5);
+      padding: 10px;
+      border: 1px solid #262525;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .form-control::placeholder{
+      color: rgb(0, 0, 0);
+    }
+    div.dropdown-content {
+      display: none;
+      position: absolute;
+      background-color:#fff;
+      min-width: 160px;
+      box-shadow:0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      width: 200px;
+   }
+
+html{
+  scroll-behavior: smooth;
+}
+
+#home{
+  background-image: url('images/sukuna-vs-gojo-jujutsu-kaisen-thumb.jpg'); /* Replace with your hero image */
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  text-align: center;
+  padding: 8rem 0;
+}
+#home h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 #home p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: #000000;
-    font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #000000;
+  font-weight: bold;
 }
-  #btn-to-products{
-    margin-top: 24px;
-    display: inline-block;
-    background-color: #0f1011;
-    box-shadow: 0 4px 8px rgb(31, 31, 31);
-    color: #fff;
-    padding: 8px 16px;
-    border-radius: 6px;
-    text-decoration: none;
-  }
-  #btn-to-products:hover {
-    background-color: #1b1b1d;
+#btn-to-products{
+  margin-top: 24px;
+  display: inline-block;
+  background-color: #0f1011;
+  box-shadow: 0 4px 8px rgb(31, 31, 31);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+#btn-to-products:hover {
+  background-color: #1b1b1d;
 }
 .logo-home {
-  width: 8rem;
-  height: auto; 
-  margin: 0 auto; 
-  display: block;
+width: 8rem;
+height: auto; 
+margin: 0 auto; 
+display: block;
 }
 #profile :hover{
 color: #344be1;
 }
 
 .panier{
-  width: 90%;
-  height: auto;
-  margin-bottom: 20px;
-  padding: 30px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  margin: 20px auto ;
-  }
+width: 90%;
+height: auto;
+margin-bottom: 20px;
+padding: 30px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+margin: 20px auto ;
+}
 
 h1#panier-titre{
-  margin-bottom: 70px;
-  font-size: 40px;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-weight: bold;
-  color: #000000;
+margin-bottom: 70px;
+font-size: 40px;
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-weight: bold;
+color: #000000;
 }
 div#articles{
-  width: 700px;
-  height: auto;
-  margin-bottom: 20px;
-  padding: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  margin: 20px;
+width: 700px;
+height: auto;
+margin-bottom: 20px;
+padding: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+margin: 20px;
 }
 #panier_img{
-  width: 200px;
-  border-radius: 5px;
- height: 100px;
+width: 200px;
+border-radius: 5px;
+height: 100px;
 }
 #empty_panier{
- text-align: center;
- font-size: xx-large;
- font-weight: 700;
- font-family: Georgia, 'Times New Roman', Times, serif;
- margin-top: 300px;
- color: #344be1;
+text-align: center;
+font-size: xx-large;
+font-weight: 700;
+font-family: Georgia, 'Times New Roman', Times, serif;
+margin-top: 300px;
+color: #344be1;
 }
 #panier-total{
 display: flex;
@@ -186,18 +186,18 @@ margin-top: 5px;
 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 font-weight: 400;
 font-size: 20px;
-margin-left: 700px;
+margin-left: 100px;
+margin-bottom: 100px;
 }
 .prod_panier{
-  display: flex;
-  
+display: flex;
 }
 .img_container_panier{
-  margin-right: 100px;
+margin-right: 100px;
 }
 .pp{
-  margin-right: 100px;
-  margin-top: 20px;
+margin-right: 100px;
+margin-top: 20px;
 }
 #supprimerpro_btn{
 color: crimson;
@@ -206,12 +206,26 @@ margin-top: 20px;
 }
 
 .price_color{
-  margin-top: 20px;
+margin-top: 30px;
 }
 #form-quantity{
-  display: flex;
-  margin-left: 150px;
+display: flex;
+margin-left: 150px;
 }
 #quantity_container{
-  display: flex;
+display: flex;
+}
+#buynow_btn{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color:#25dc28;
+    width: 120px;
+    border-radius: 5px;
+    padding: 5px;
+    color: ghostwhite;
+    border: none;
+    margin-top: 20px;
+}
+#buynow_btn:hover{
+ 
+  background-color:#0da50f;
 }
