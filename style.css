@@ -201,8 +201,9 @@ hr{
 }
 #pr_price_panier{
   margin-left: 180px;
-  margin-top: -70px;
+  margin-top: -55px;
   margin-bottom:70px;
+
 }
 #quantity_panier{
  display: flex;
