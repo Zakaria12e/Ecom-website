@@ -168,7 +168,7 @@ margin: 20px;
   border-radius: 7px;
 }
 
-.panier{
+#panier{
   
   margin-bottom: 10px;
   background-color: #ffffff;
@@ -214,9 +214,9 @@ hr{
 }
 #empty_panier{
   font-size: 40px;
-  text-align: center;
-  color: #0a82fa;
+  color: #a20afa;
   font-weight: 800;
+
 }
 #quantity_title{
  padding-right: 30px;
@@ -247,4 +247,7 @@ hr{
 }
 #shipping_price{
   padding-left: 120px;
+}
+.hidden-section {
+  display: none;
 }

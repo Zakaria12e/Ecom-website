@@ -88,7 +88,7 @@ echo'<a style="display: flex;" href="Profile.php" class="block py-2 px-3 md:p-0 
  $cartQuery = "SELECT * FROM panier WHERE Id = '$userId'";
  $cartResult = mysqli_query($con, $cartQuery);
  echo'<div class="panier_payment">';
- echo '<section class="panier">';
+ echo '<section id="panier">';
  if ($cartResult) 
  {  
     while ($cartRow = mysqli_fetch_assoc($cartResult)) {
@@ -199,7 +199,15 @@ echo '</section>';
     echo'</div>';
    }
   else{
-    echo'<div id="empty_panier">No products yet</div>';
+    echo"
+    <script>
+        var section = document.getElementById('panier');
+        section.classList.add('hidden-section');
+    </script>";
+    
+    echo'<div id="empty_panier" >No products yet</div>';
+
+
    }
   }
    
