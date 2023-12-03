@@ -18,4 +18,29 @@
      setTimeout(function() { signupconf.classList.add('hide-message');} , 3000);
  
 
-  
+  //search bar 
+  function searchProducts() {
+   var userInput = document.getElementById("searchInput").value.toLowerCase();
+   var productCards = document.querySelectorAll('.product-card');
+   var foundProduct = false;
+
+   for (var i = 0; i < productCards.length; i++) {
+       var productName = productCards[i].querySelector('h3').innerText.toLowerCase();
+
+       if (productName.includes(userInput)) {
+           productCards[i].style.display = 'block';
+           foundProduct = true;
+       } else {
+           productCards[i].style.display = 'none';
+       }
+   }
+
+   var sectionTitles = document.querySelectorAll('.title');
+   for (var i = 0; i < sectionTitles.length; i++) {
+       sectionTitles[i].style.display = foundProduct ? 'none' : 'block';
+   }
+
+   
+   var noProductMessage = document.querySelector('.no-product-message');
+   noProductMessage.style.display = foundProduct ? 'none' : 'block';
+}
