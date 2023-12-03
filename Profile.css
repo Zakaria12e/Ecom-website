@@ -60,12 +60,6 @@ border-radius: 10px;
 margin: 20px auto ;
 }
 
-.section-info {
-background-image: url('images/background.jpeg'); 
-box-sizing: border-box;
-color: white;
-
-}
 @media screen and (min-width: 768px) {
 .section-info,
 .section-history {

@@ -105,7 +105,7 @@ echo'<a style="display: flex;" href="Profile.php" class="block py-2 px-3 md:p-0 
   <section class="section-info">
             <div class="info">
               
-                <h1 style="color: white;" class="title-profile"><?php echo "Welcom {$_SESSION['username']}"; ?></h1>
+                <h1 class="title-profile"><?php echo "Welcom {$_SESSION['username']}"; ?></h1>
                 <p><b>Email:</b> <?php echo $_SESSION['email']; ?></p>
                 <p><b>Phone:</b> <?php echo $_SESSION['PhoneNumber']; ?></p> 
                 <p><b>Address:</b> <?php echo $_SESSION['Address']; ?></p>

@@ -19,12 +19,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Panier</title>
  </head>
-<style>
-    p{
-        font-family: Arial, sans-serif;
-        font-weight: 600;
-    }
-</style>
+
  <body style=" background-color: #f8f4f4;">
  <nav class="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
