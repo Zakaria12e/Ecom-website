@@ -223,4 +223,32 @@ margin: 50px auto ;
     font-weight: 600;
 }
 
-     
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+#searchInput {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px;
+  outline: none;
+}
+#search_btn{
+color: white;
+background-color: rgb(25, 25, 40);
+border-radius: 6px;
+padding: 6px;
+margin-left: 20px;
+}
+#search_btn:hover{
+   background-color: rgb(50, 50, 55);
+
+}
+.no-product-message {
+  display: none;
+  color: red;
+  font-size: 18px;
+  margin-top: 10px;
+}   

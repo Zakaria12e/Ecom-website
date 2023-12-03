@@ -63,12 +63,17 @@ echo'<a style="display: flex;" href="Profile.php" class="block py-2 px-3 md:p-0 
                 </ul>
             </div>
           </nav>
-          
+
+          <div class="search-container">
+              <input type="text" id="searchInput" placeholder="Search..." required>
+        <button id="search_btn" onclick="searchProducts()">Search</button>
+         </div>
+
           <section id="CPUS">
             <h2 class="title">CPUs INTEL & AMD</h2>
     
 <div class="product-category">
-
+<p class="no-product-message">No product found</p>
      <div class="product-card">
      <img class="pimg" src="images/cpu1.jpg" alt="Intel i7 13900k">
     <div class="product-info">
@@ -661,6 +666,33 @@ echo'<a style="display: flex;" href="Profile.php" class="block py-2 px-3 md:p-0 
             <a id="gitlink" href="https://github.com/Zakaria12e" target="_blank"><i class="fab fa-github"></i></a>
         </div>
    </footer>
+   <script>
+        function searchProducts() {
+            var userInput = document.getElementById("searchInput").value.toLowerCase();
+            var productCards = document.querySelectorAll('.product-card');
+            var foundProduct = false;
+
+            for (var i = 0; i < productCards.length; i++) {
+                var productName = productCards[i].querySelector('h3').innerText.toLowerCase();
+
+                if (productName.includes(userInput)) {
+                    productCards[i].style.display = 'block';
+                    foundProduct = true;
+                } else {
+                    productCards[i].style.display = 'none';
+                }
+            }
+
+            var sectionTitles = document.querySelectorAll('.title');
+            for (var i = 0; i < sectionTitles.length; i++) {
+                sectionTitles[i].style.display = foundProduct ? 'none' : 'block';
+            }
+
+            
+            var noProductMessage = document.querySelector('.no-product-message');
+            noProductMessage.style.display = foundProduct ? 'none' : 'block';
+        }
+    </script>
 </body>
 </html>
 <?php
