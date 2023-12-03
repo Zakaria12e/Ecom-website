@@ -19,8 +19,13 @@
     <link rel="stylesheet" href="style.css">
     <title>Panier</title>
  </head>
-
- <body>
+<style>
+    p{
+        font-family: Arial, sans-serif;
+        font-weight: 600;
+    }
+</style>
+ <body style=" background-color: #f8f4f4;">
  <nav class="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="home.php" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -82,11 +87,12 @@ echo'<a style="display: flex;" href="Profile.php" class="block py-2 px-3 md:p-0 
 
  $cartQuery = "SELECT * FROM panier WHERE Id = '$userId'";
  $cartResult = mysqli_query($con, $cartQuery);
-
+ echo'<div class="panier_payment">';
+ echo '<section class="panier">';
  if ($cartResult) 
  {  
     while ($cartRow = mysqli_fetch_assoc($cartResult)) {
-    echo '<section class="panier">';
+   
         $productName = $cartRow['product_name'];
 
         $productDetailsQuery = "SELECT * FROM products WHERE product_name = '$productName'";
@@ -95,19 +101,31 @@ echo'<a style="display: flex;" href="Profile.php" class="block py-2 px-3 md:p-0 
         if ($productDetailsResult) {
             $productDetails = mysqli_fetch_assoc($productDetailsResult);
           
-           echo '<div class="prod_panier">';
+    echo '<div>';
+    
+      echo '<form  style="margin-left:675px; margin-top:5px"  method="POST" action="Panier.php">';
+      echo '<input type="hidden" name="productName" value="' . $productName . '">';
+      echo '<button  type="submit"  id="supprimerpro_btn" name="SUPPRIMER"><svg style="color:red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+         </svg></button>';
+       echo '</form>';
+
+            echo'<div id="pname-pimg-p">';
               echo '<div class="img_container_panier"><img  id="panier_img" src="' . $productDetails['image'] . '"></div>';
-              echo '<p class="pp">Product Name: ' . $productDetails['product_name'] . '</p>';
-              echo '<p class="price_color">Price:  <p style="margin-right: 100px;color:green" class="price_color">' . $productDetails['price'] . '$</p></p>';
-              
-              echo '<form  method="POST" action="Panier.php">';
+              echo '<p>Product Name: ' . $productDetails['product_name'] . '</p>';
+          
+           echo'</div>';
+                echo '<p id=pr_price_panier>' . $productDetails['price'] . '$</p>';
+          
+              echo '<form id="quantity_panier" method="POST" action="Panier.php">';
               echo '<input type="hidden" name="productName" value="' . $productName . '">';
-              echo'<div id="quantity_container">';
-              echo '<p class="pp">Quantity:</p>';
-              echo '<input  style="margin-top:5px" class="pp" type="number" name="quantity" value="' . $cartRow['quantity'] . '" min="1" max="10">';
-              echo '<button style="margin-top:5px" type="submit" class="pp" name="updateQuantity">Update Quantity</button>';
-              echo'</div>';
+              echo '<p id="quantity_title">Quantity</p>';
+              echo '<input  type="number" name="quantity" value="' . $cartRow['quantity'] . '" min="1" max="10">';
+              echo '<button id="quantity_update_btn" type="submit"  name="updateQuantity">Update Quantity</button>';
               echo '</form>';
+          
+
+         echo"<div>";
               if (isset($_POST["updateQuantity"])) {
                 $productName = $_POST["productName"];
                 $newQuantity = $_POST["quantity"];
@@ -120,16 +138,11 @@ echo'<a style="display: flex;" href="Profile.php" class="block py-2 px-3 md:p-0 
                 }
              }
             
-              echo '<form   method="POST" action="Panier.php">';
-              echo '<input type="hidden" name="productName" value="' . $productName . '">';
-              echo '<button type="submit" class="pp" id="supprimerpro_btn" name="SUPPRIMER"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-              <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
-                </svg></button>';
-                echo '</form>';
-          echo '</div>';      
-     echo '</section>';
+            echo'<hr>';
+ echo '</div>';      
+    
     }
-
+ 
     if (isset($_POST["SUPPRIMER"])) {
 
         $productName = $_POST["productName"];
@@ -142,7 +155,7 @@ echo'<a style="display: flex;" href="Profile.php" class="block py-2 px-3 md:p-0 
 
  }
 }
-
+echo '</section>';
  $totalQuery = "SELECT SUM(panier.quantity * products.price) AS total FROM panier
  JOIN products ON panier.product_name = products.product_name
  WHERE panier.Id = '$userId'"; 
@@ -152,24 +165,45 @@ echo'<a style="display: flex;" href="Profile.php" class="block py-2 px-3 md:p-0 
     $totalRow = mysqli_fetch_assoc($totalResult);
    $_SESSION['totale'] = $total = $totalRow['total'];
    if( $total != 0){
-    echo'<hr>';
    echo '<div id="panier-total">';
-        echo '<p class="price_color">Totale:  <p style="margin-right: 100px;color:green" class="price_color">' . $total . '$</p></p>';
-       
+        echo'<h1><b>Shipping Address<h1></b><br>';
+        echo'<div id="name_phone_num">';
+         echo' <h2>'.$_SESSION['username'].'</h2>';
+        if($_SESSION['PhoneNumber'] != 0 && $_SESSION['Address'] != 0){
+        echo'<h2 id="phone_number">+212'.$_SESSION['PhoneNumber'].'</h2>';
+        echo'</div>';
+        echo'<h2>'.$_SESSION['Address'].'</h2><br>';
+        }
+      else{
+        echo'<p>no data yet</p><br>';
+        echo'<p>no data yet</p>';
+      }
+      echo'<div id="shipping">';
+           echo'<b><h1>Total shipping<h1></b>';
+           echo'<b><h1 id="shipping_price">free<h1></b>';
+      echo'</div>';
+     
+       echo'<hr>';
+    
+      echo'<div class="price">';
+        echo '<b><p>Totale</p></b>';
+         echo'<b><p style=" padding-left:150px; font-family:Arial, sans-serif;">' . $total. '$</p><br><br><br></b>';
+      echo'</div>';
         //buy now btn
-        echo '<form  method="POST" action="payment.php">';
+        echo '<form id="form_buynow" method="POST" action="Panier.php">';
         echo '<input type="hidden" name="client_id" value="' . $userId . '">';
         echo '<button id="buynow_btn" type="submit" name="buynow_btn">BUY NOW</button>';
         echo '</form>';
   
-    echo '</div>';
- 
+   
+    echo'</div>';
    }
-   else{
+  else{
     echo'<div id="empty_panier">No products yet</div>';
    }
+  }
    
- } 
+ 
 
 ?>
 
@@ -178,4 +212,4 @@ echo'<a style="display: flex;" href="Profile.php" class="block py-2 px-3 md:p-0 
 
 <?php
 }
-?>  
+?>

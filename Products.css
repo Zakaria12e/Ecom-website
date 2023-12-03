@@ -208,6 +208,7 @@ html{
   }
 
   .details_img {
+    width: 500px;
     margin-right: 300px;
     margin-top: 30px;
     padding-left: 20px;
@@ -215,7 +216,7 @@ html{
   #caract_titre{
     margin-left: 740px;
     margin-bottom: -40px;
-    margin-top: 2opx;
+    margin-top: 20px;
   }
 .details{
 width: 70%;
