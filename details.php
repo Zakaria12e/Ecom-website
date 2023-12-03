@@ -111,8 +111,11 @@ echo'</div>';
     
           echo'<a id="goback" href="Products.php">GO BACK</a>';
     ?> 
-   
+
+
+
+
 </section>
-   
+<script src="script.js"></script>
 </body>
 </html>

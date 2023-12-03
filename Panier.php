@@ -169,15 +169,24 @@ echo '</section>';
         echo'<h1><b>Shipping Address<h1></b><br>';
         echo'<div id="name_phone_num">';
          echo' <h2>'.$_SESSION['username'].'</h2>';
-        if($_SESSION['PhoneNumber'] != 0 && $_SESSION['Address'] != 0){
-        echo'<h2 id="phone_number">+212'.$_SESSION['PhoneNumber'].'</h2>';
+           $username = $_SESSION['username'];
+
+        $phoneQuery = "SELECT PhoneNumber FROM clients where Id = $userId";
+         $resultphone = mysqli_query($con, $phoneQuery);
+         
+          if ($resultphone) {
+           $rowphone = mysqli_fetch_assoc($resultphone);
+            echo'<h2 id="phone_number">+212'.$rowphone['PhoneNumber'].'</h2>';
+          }
         echo'</div>';
-        echo'<h2>'.$_SESSION['Address'].'</h2><br>';
-        }
-      else{
-        echo'<p>no data yet</p><br>';
-        echo'<p>no data yet</p>';
-      }
+        $AddressQuery = "SELECT Address FROM clients where Id = $userId";
+        $resultAddress = mysqli_query($con, $AddressQuery);
+        if ($resultAddress) {
+            $rowAddress = mysqli_fetch_assoc($resultAddress);
+             echo'<h2>'.$rowAddress['Address'].'</h2><br>';
+           }
+      
+        
       echo'<div id="shipping">';
            echo'<b><h1>Total shipping<h1></b>';
            echo'<b><h1 id="shipping_price">free<h1></b>';
@@ -195,7 +204,6 @@ echo '</section>';
         echo '<button id="buynow_btn" type="submit" name="buynow_btn">BUY NOW</button>';
         echo '</form>';
   
-   
     echo'</div>';
    }
   else{
@@ -204,15 +212,13 @@ echo '</section>';
         var section = document.getElementById('panier');
         section.classList.add('hidden-section');
     </script>";
-    
+
     echo'<div id="empty_panier" >No products yet</div>';
 
 
    }
   }
    
- 
-
 ?>
 
 </body>

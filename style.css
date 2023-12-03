@@ -23,11 +23,6 @@
   background-color: #797979;
 }
 
-p {
-  color: #000000;
-  font-family:cursive;
-}
-
 body, ul {
 margin: 0;
 padding: 0;
@@ -250,4 +245,8 @@ hr{
 }
 .hidden-section {
   display: none;
+}
+p{
+  font-family: Arial, sans-serif;
+  font-weight: 600;
 }

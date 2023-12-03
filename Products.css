@@ -3,9 +3,6 @@ section {
 
 }
 
-h2 {
-    color: #333;
-}
 
 .product-category {
     display: flex;
@@ -116,10 +113,7 @@ h3{
  font-family: monospace;
   color: #000000;
 }
-p{
-   font-size: 16px;
-   font-family:inherit;
-}
+
 h2.title{
    font-family:monospace ;
    font-size: 40px;
@@ -189,9 +183,7 @@ html{
       font-weight: 200;
       margin-top: 50px;
      }
-     #description{
-     font-family:cursive;
-     }
+  
      #goback{
       text-decoration: none;
       background-color: rgb(51, 49, 49);
@@ -226,5 +218,9 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 border-radius: 10px;
 margin: 50px auto ;
   }
+  p{
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+}
 
      
