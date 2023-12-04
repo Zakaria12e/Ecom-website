@@ -95,90 +95,25 @@ echo'<a style="display: flex;" href="Profile.php" class="block py-2 px-3 md:p-0 
             <h2 class="title">CPUs INTEL & AMD</h2>
     
 <div class="product-category">
-<p class="no-product-message">No product found</p>
-     <div class="product-card">
-     <img class="pimg" src="images/cpu1.jpg" alt="Intel i7 13900k">
-    <div class="product-info">
-        <h3>Intel i7 13900k</h3>
-        <p>Upgrade your computing power with our cutting-edge CPUs.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=Intel%20i7%2013900k">View Details</a>
-            <span>Price: <span style="color: green;">$450</span></span>
-        </div>
-    </div>
- </div>
+<?php
+require_once 'config.php';
+$ProductQuery = "SELECT product_name, price, image, description FROM products WHERE category = 'CPU'";
+$result = mysqli_query($con,$ProductQuery);
 
- <div class="product-card">
-    <img class="pimg" src="images/cpu2.jpg" alt="Intel i9 12900k">
-    <div class="product-info">
-        <h3>Intel i9 12900k</h3>
-        <p>Upgrade your computing power with our cutting-edge CPUs.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=Intel%20i9%2012900k">View Details</a>
-            <span>Price: <span style="color: green;">$600</span></span>
-        </div>
-    </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/cpu3.jpg" alt="AMD rayzen 7 9000x">
-    <div class="product-info">
-        <h3>AMD rayzen 7 9000x</h3>
-        <p>Upgrade your computing power with our cutting-edge CPUs.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=AMD%20rayzen%207%209000x">View Details</a>
-            <span>Price: <span style="color: green;">500$</span></span>
-        </div>
-    </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/cpu4.jpg" alt="AMD rayzen 9 9000x">
-    <div class="product-info">
-        <h3>AMD rayzen 9 9000x</h3>
-        <p>Upgrade your computing power with our cutting-edge CPUs.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=AMD%20rayzen%209%209000x">View Details</a>
-            <span>Price: <span style="color: green;">570$</span></span>
-        </div>
-    </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/cpu5.jpg" alt="AMD rayzen 5 5600G">
-    <div class="product-info">
-        <h3>AMD rayzen 5 5600G</h3>
-        <p>Upgrade your computing power with our cutting-edge CPUs.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=AMD%20rayzen%205%205600G">View Details</a>
-            <span>Price: <span style="color: green;">270$</span></span>
-        </div>
-    </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/cpu6.jpg" alt="Intel i3 12100F">
-    <div class="product-info">
-        <h3>Intel i3 12100F</h3>
-        <p>Upgrade your computing power with our cutting-edge CPUs.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=Intel%20i3%2012100F">View Details</a>
-            <span>Price: <span style="color: green;">190$</span></span>
-        </div>
-    </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/CPU7.jpg" alt="Intel i5 12600K">
-    <div class="product-info">
-        <h3>Intel i5 12600K</h3>
-        <p>Upgrade your computing power with our cutting-edge CPUs.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=Intel%20i5%2012600K">View Details</a>
-            <span>Price: <span style="color: green;">190$</span></span>
-        </div>
-    </div>
-</div>
+if ($result) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<div class="product-card">';
+        echo '<img class="pimg" src="' . $row["image"] . '" alt="' . $row["product_name"] . '">';
+        echo '<div class="product-info">';
+        echo '<h3>' . $row["product_name"] . '</h3>';
+        echo '<p>Upgrade your computing power with our cutting-edge CPUs</p>';
+        echo '<div style="display: flex; justify-content: space-between;">';
+        echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">View Details</a>';
+        echo '<span>Price: <span style="color: green;">$' . $row["price"] . '</span></span>';
+        echo '</div></div></div>';
+    }
+}
+?>
 
 </div>
                 
@@ -189,92 +124,26 @@ echo'<a style="display: flex;" href="Profile.php" class="block py-2 px-3 md:p-0 
           <h2 class="title">GPUs NVIDIA & AMD</h2>
   
           <div class="product-category">
-          <div class="product-category">
-    <div class="product-card">
-        <img class="pimg" src="images/RTX2080.jpg" alt="RTX 2080Ti">
-        <div class="product-info">
-            <h3>NVIDIA GeForce RTX 2080 Ti White Edition</h3>
-            <p>Upgrade your computing power with our cutting-edge CPUs.</p>
-            <div style="display: flex; justify-content: space-between;">
-                <a class="vd" href="details.php?name=NVIDIA%20GeForce%20RTX%202080%20Ti%20White%20Edition">View Details</a>
-                <span>Price: <span style="color: green;">290$</span></span>
-            </div>
-        </div>
-    </div>
+          
+          <?php
+require_once 'config.php';
+$ProductQuery = "SELECT product_name, price, image, description FROM products WHERE category = 'GPU'";
+$result = mysqli_query($con,$ProductQuery);
 
-    <div class="product-card">
-        <img class="pimg" src="images/RTX3090TI.jpg" alt="RTX 3090Ti">
-        <div class="product-info">
-            <h3>NVIDIA GeForce RTX 3090 Ti</h3>
-            <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-            <div style="display: flex; justify-content: space-between;">
-                <a class="vd" href="details.php?name=NVIDIA%20GeForce%20RTX%203090%20Ti">View Details</a>
-                <span>Price: <span style="color: green;">500$</span></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="product-card">
-        <img class="pimg" src="images/gpu3.jpg" alt="RX 7900 XTX">
-        <div class="product-info">
-            <h3>AMD RADEON RX 7900 XTX</h3>
-            <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-            <div style="display: flex; justify-content: space-between;">
-                <a class="vd" href="details.php?name=AMD%20RADEON%20RX%207900%20XTX">View Details</a>
-                <span>Price: <span style="color: green;">500$</span></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="product-card">
-        <img class="pimg" src="images/GPURX6000XT.jpg" alt="RX 6000 XT">
-        <div class="product-info">
-            <h3>AMD RADEON RX 6000 XT</h3>
-            <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-            <div style="display: flex; justify-content: space-between;">
-                <a class="vd" href="details.php?name=AMD%20RADEON%20RX%206000%20XT">View Details</a>
-                <span>Price: <span style="color: green;">440$</span></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="product-card">
-        <img class="pimg" src="images/GPU34090.jpg" alt="RTX 4090">
-        <div class="product-info">
-            <h3>NVIDIA GeForce RTX 4090</h3>
-            <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-            <div style="display: flex; justify-content: space-between;">
-                <a class="vd" href="details.php?name=NVIDIA%20GeForce%20RTX%204090">View Details</a>
-                <span>Price: <span style="color: green;">600$</span></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="product-card">
-        <img class="pimg" src="images/RX6800XT.jpg" alt="RX 6800 XT">
-        <div class="product-info">
-            <h3>AMD RADEON RX 6800 XT</h3>
-            <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-            <div style="display: flex; justify-content: space-between;">
-                <a class="vd" href="details.php?name=AMD%20RADEON%20RX%206800%20XT">View Details</a>
-                <span>Price: <span style="color: green;">490$</span></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="product-card">
-        <img class="pimg" src="images/GPU4070.jpg" alt="RTX 4070">
-        <div class="product-info">
-            <h3>NVIDIA GeForce RTX 4070</h3>
-            <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-            <div style="display: flex; justify-content: space-between;">
-                <a class="vd" href="details.php?name=NVIDIA%20GeForce%20RTX%204070">View Details</a>
-                <span>Price: <span style="color: green;">600$</span></span>
-            </div>
-        </div>
-    </div>
-</div>
-
+if ($result) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<div class="product-card">';
+        echo '<img class="pimg" src="' . $row["image"] . '" alt="' . $row["product_name"] . '">';
+        echo '<div class="product-info">';
+        echo '<h3>' . $row["product_name"] . '</h3>';
+        echo '<p>Upgrade your graphics performance with our state-of-the-art GPUs</p>';
+        echo '<div style="display: flex; justify-content: space-between;">';
+        echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">View Details</a>';
+        echo '<span>Price: <span style="color: green;">$' . $row["price"] . '</span></span>';
+        echo '</div></div></div>';
+    }
+}
+?>
          
           </div>
       </section>
@@ -283,160 +152,54 @@ echo'<a style="display: flex;" href="Profile.php" class="block py-2 px-3 md:p-0 
              <h2 class="title">MotherBoards</h2>
                           
           <div class="product-category">
-          <div class="product-card">
-    <img class="pimg" src="images/msi_motherboard1.jpeg" alt="MSI B5500 GAMING PLUS">
-    <div class="product-info">
-        <h3>MSI B5500 GAMING PLUS</h3>
-        <p>Upgrade your computing power with our cutting-edge CPUs.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=MSI%20B5500%20GAMING%20PLUS">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
+         
+          <?php
+require_once 'config.php';
+$ProductQuery = "SELECT product_name, price, image, description FROM products WHERE category = 'MOTHER_BOARD'";
+$result = mysqli_query($con,$ProductQuery);
 
-<div class="product-card">
-    <img class="pimg" src="images/msi_motherboard2.jpeg" alt="MSI B350M GAMING PLUS">
-    <div class="product-info">
-        <h3>MSI B350M GAMING PLUS</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=MSI%20B350M%20GAMING%20PLUS">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/msi_motherboard3.jpeg" alt="MSI MPG X570 GAMING EDGE">
-    <div class="product-info">
-        <h3>MSI MPG X570 GAMING EDGE</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=MSI%20MPG%20X570%20GAMING%20EDGE">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/gigabyte_motherboard4.jpg" alt="GIGABYTE B560M DS3H">
-    <div class="product-info">
-        <h3>GIGABYTE B560M DS3H</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=GIGABYTE%20B560M%20DS3H">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/gigabyte_motherboard5.jpg" alt="GIGABYTE X670 GAMING X AX">
-    <div class="product-info">
-        <h3>GIGABYTE X670 GAMING X AX</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=GIGABYTE%20X670%20GAMING%20X%20AX">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/asus_motherboard6.jpg" alt="ASUS ROG STRIX Z390-E GAMING">
-    <div class="product-info">
-        <h3>ASUS ROG STRIX Z390-E GAMING</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=ASUS%20ROG%20STRIX%20Z390-E%20GAMING">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/asus_motherboard7.jpg" alt="ASUS PRIME Z790-A WIFI">
-    <div class="product-info">
-        <h3>ASUS PRIME Z790-A WIFI</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=ASUS%20PRIME%20Z790-A%20WIFI">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
-
-                                 
+if ($result) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<div class="product-card">';
+        echo '<img class="pimg" src="' . $row["image"] . '" alt="' . $row["product_name"] . '">';
+        echo '<div class="product-info">';
+        echo '<h3>' . $row["product_name"] . '</h3>';
+        echo '<p>experience superior connectivity and performance with our cutting-edge motherboards</p>';
+        echo '<div style="display: flex; justify-content: space-between;">';
+        echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">View Details</a>';
+        echo '<span>Price: <span style="color: green;">$' . $row["price"] . '</span></span>';
+        echo '</div></div></div>';
+    }
+}
+?>           
                         
-</div>
-</section>
+         </div>
+         </section>
 
                                   <!-- RAM section  -->
            <section id="RAM">
             <h2 class="title">RAM</h2>
                          
          <div class="product-category">
-         <div class="product-card">
-    <img class="pimg" src="images/ram1_corsair-vengeance-rgb-ddr5-32go.jpg" alt="CORSAIR VENGEANCE RGB DDR5 32GB">
-    <div class="product-info">
-        <h3>CORSAIR VENGEANCE RGB DDR5 32GB</h3>
-        <p>Upgrade your computing power with our cutting-edge CPUs.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=CORSAIR%20VENGEANCE%20RGB%20DDR5%2032GB">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
+         <?php
+require_once 'config.php';
+$ProductQuery = "SELECT product_name, price, image, description FROM products WHERE category = 'RAM'";
+$result = mysqli_query($con,$ProductQuery);
 
-<div class="product-card">
-    <img class="pimg" src="images/ram2_kingston-fury-beast-32gb-2x16gb-ddr5-6000-mhz.jpg" alt="KINGSTON FURY BEAST DDR5 16x2 GB">
-    <div class="product-info">
-        <h3>KINGSTON FURY BEAST DDR5 16x2 GB</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=KINGSTON%20FURY%20BEAST%20DDR5%2016x2%20GB">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/ram3_corsair-vengeance-rgb-ddr5-6000-32gb.jpg" alt="CORSAIR VENGEANCE RGB DDR5 32GB WHITE EDITION">
-    <div class="product-info">
-        <h3>CORSAIR VENGEANCE RGB DDR5 32GB WHITE EDITION</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=CORSAIR%20VENGEANCE%20RGB%20DDR5%2032GB%20WHITE%20EDITION">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/ram4_team t-force delta rgb 32gb ddr5.jpg" alt="T-FORCE DELTA RGB DDR5 32GB">
-    <div class="product-info">
-        <h3>T-FORCE DELTA RGB DDR5 32GB</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=T-FORCE%20DELTA%20RGB%20DDR5%2032GB">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/ram5_kingston-ddr5-ram-kvr56u46bs6k2-16-5600-mhz.jpg" alt="KINGSTON kvr56u46bs6k2 DDR5 16GB">
-    <div class="product-info">
-        <h3>KINGSTON kvr56u46bs6k2 DDR5 16GB</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=KINGSTON%20kvr56u46bs6k2%20DDR5%2016GB">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
-
+if ($result) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<div class="product-card">';
+        echo '<img class="pimg" src="' . $row["image"] . '" alt="' . $row["product_name"] . '">';
+        echo '<div class="product-info">';
+        echo '<h3>' . $row["product_name"] . '</h3>';
+        echo '<p>enhance multitasking capabilities with high-speed RAM</p>';
+        echo '<div style="display: flex; justify-content: space-between;">';
+        echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">View Details</a>';
+        echo '<span>Price: <span style="color: green;">$' . $row["price"] . '</span></span>';
+        echo '</div></div></div>';
+    }
+}
+?>
          </div>
                                     
 </section>
@@ -447,65 +210,25 @@ echo'<a style="display: flex;" href="Profile.php" class="block py-2 px-3 md:p-0 
                          
          <div class="product-category">
               
-         <div class="product-card">
-    <img class="pimg" src="images/rom1_MSI SPATIUM M371 NVMe M.2 1TB.jpg" alt="MSI SPATIUM M371 NVMe M.2 1TB">
-    <div class="product-info">
-        <h3>MSI SPATIUM M371 NVMe M.2 1TB</h3>
-        <p>Upgrade your computing power with our cutting-edge CPUs.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=MSI%20SPATIUM%20M371%20NVMe%20M.2%201TB">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
+         <?php
+require_once 'config.php';
+$ProductQuery = "SELECT product_name, price, image, description FROM products WHERE category = 'ROM'";
+$result = mysqli_query($con,$ProductQuery);
 
-<div class="product-card">
-    <img class="pimg" src="images/rom2_Gigabyte SSD M.2 256GO 2290 PCIe x2 NVMe.jpg" alt="Gigabyte SSD M.2 256GO 2290 PCIe x2 NVMe">
-    <div class="product-info">
-        <h3>GIGABYTE SSD M.2 256GO 2290 PCIe x2 NVMe</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=GIGABYTE%20SSD%20M.2%20256GO%202290%20PCIe%20x2%20NVMe">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/rom3_emtec-x250-power-plus-ssd-256-gb.jpg" alt="EMTEC x250 POWER PLUS SSD 256GB">
-    <div class="product-info">
-        <h3>EMTEC x250 POWER PLUS SSD 256GB</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=EMTEC%20x250%20POWER%20PLUS%20SSD%20256GB">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/rom4_PNY CS1030 M.2 PCIe NVMe 500GB.jpg" alt="PNY CS1030 M.2 PCIe NVMe 500GB">
-    <div class="product-info">
-        <h3>PNY CS1030 M.2 PCIe NVMe 500GB</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=PNY%20CS1030%20M.2%20PCIe%20NVMe%20500GB">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/rom5T-FORCE-DELTA-500GB-RGB.jpg" alt="T-FORCE-DELTA-500GB-RGB">
-    <div class="product-info">
-        <h3>T-FORCE-DELTA-500GB-RGB</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=T-FORCE-DELTA-500GB-RGB">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
+if ($result) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<div class="product-card">';
+        echo '<img class="pimg" src="' . $row["image"] . '" alt="' . $row["product_name"] . '">';
+        echo '<div class="product-info">';
+        echo '<h3>' . $row["product_name"] . '</h3>';
+        echo '<p>store and access data seamlessly with lightning-fast ROM</p>';
+        echo '<div style="display: flex; justify-content: space-between;">';
+        echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">View Details</a>';
+        echo '<span>Price: <span style="color: green;">$' . $row["price"] . '</span></span>';
+        echo '</div></div></div>';
+    }
+}
+?>
 
          </div>
                                     
@@ -516,79 +239,26 @@ echo'<a style="display: flex;" href="Profile.php" class="block py-2 px-3 md:p-0 
             <h2 class="title">POWER SUPPLYs</h2>
                          
          <div class="product-category">
-              
-         <div class="product-card">
-    <img class="pimg" src="images/pow1_Cooler Master V1200 Platinum.jpg" alt="Cooler Master V1200 Platinum">
-    <div class="product-info">
-        <h3>COOLER MASTER V1200 PLATINUM</h3>
-        <p>Upgrade your computing power with our cutting-edge CPUs.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=COOLER%20MASTER%20V1200%20PLATINUM">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
+         <?php
+require_once 'config.php';
+$ProductQuery = "SELECT product_name, price, image, description FROM products WHERE category = 'POWER_SUPPLY'";
+$result = mysqli_query($con,$ProductQuery);
 
-<div class="product-card">
-    <img class="pimg" src="images/pow2_ASUS ROG STRIX G Series Semi-Fanless Modular 80Plus Gold.jpg" alt="ASUS ROG STRIX G Series Semi-Fanless Modular 80Plus Gold">
-    <div class="product-info">
-        <h3>ASUS ROG STRIX G Series Modular 80Plus GOLD</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=ASUS%20ROG%20STRIX%20G%20Series%20Modular%2080Plus%20GOLD">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/pow3_ASUS ROG Thor 1200W 80PLUS Platinum.webp" alt="ASUS ROG Thor 1200W 80PLUS Platinum">
-    <div class="product-info">
-        <h3>ASUS ROG THOR 1200W 80PLUS PLATINUM</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=ASUS%20ROG%20THOR%201200W%2080PLUS%20PLATINUM">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/pow4_GAMEMAX 1050W ATX 3.0 & PCIE 5.0.jpg" alt="GAMEMAX 1050W ATX 3.0 & PCIE 5.0">
-    <div class="product-info">
-        <h3>GAMEMAX 1050W ATX 3.0 PCIE 5.0</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=GAMEMAX%201050W%20ATX%203.0%20PCIE%205.0">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/pow5_EVGA 750 BP, 80+ BRONZE 750W, 100-BP-0750-K1.jpg" alt="EVGA 750 BP, 80+ BRONZE 750W, 100-BP-0750-K1">
-    <div class="product-info">
-        <h3>EVGA 750 BP 80+ BRONZE 750W</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=EVGA%20750%20BP%2080%20BRONZE%20750W">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/pow6_AEROCOOL LUX 750W PSU, 80 PLUS BRONZE.jpg" alt="AEROCOOL LUX 750W PSU, 80 PLUS BRONZE">
-    <div class="product-info">
-        <h3>AEROCOOL LUX 750W PSU, 80 PLUS BRONZE</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=AEROCOOL%20LUX%20750W%20PSU,%2080%20PLUS%20BRONZE">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
-
+if ($result) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<div class="product-card">';
+        echo '<img class="pimg" src="' . $row["image"] . '" alt="' . $row["product_name"] . '">';
+        echo '<div class="product-info">';
+        echo '<h3>' . $row["product_name"] . '</h3>';
+        echo '<p>ensure stable power delivery with our advanced power supply units</p>';
+        echo '<div style="display: flex; justify-content: space-between;">';
+        echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">View Details</a>';
+        echo '<span>Price: <span style="color: green;">$' . $row["price"] . '</span></span>';
+        echo '</div></div></div>';
+    }
+}
+?>
+          
         </div>
                                
 </section>
@@ -599,80 +269,26 @@ echo'<a style="display: flex;" href="Profile.php" class="block py-2 px-3 md:p-0 
                     
        <div class="product-category">
              
-       <div class="product-card">
-    <img class="pimg" src="images/case1_ASUS TUF Gaming GT501 White Edition.jpg" alt="ASUS TUF Gaming GT501 White Edition">
-    <div class="product-info">
-        <h3>ASUS TUF Gaming GT501 White Edition</h3>
-        <p>Upgrade your computing power with our cutting-edge CPUs.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=ASUS%20TUF%20Gaming%20GT501%20White%20Edition">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
+       <?php
+require_once 'config.php';
+$ProductQuery = "SELECT product_name, price, image, description FROM products WHERE category = 'CASE'";
+$result = mysqli_query($con,$ProductQuery);
 
-<div class="product-card">
-    <img class="pimg" src="images/case2_ASUS ROG Strix Helios Tempered Glass.jpg" alt="ASUS ROG Strix Helios Tempered Glass">
-    <div class="product-info">
-        <h3>ASUS ROG STRIX HELIOS TEMPERED GLASS</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=ASUS%20ROG%20STRIX%20HELIOS%20TEMPERED%20GLASS">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
+if ($result) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<div class="product-card">';
+        echo '<img class="pimg" src="' . $row["image"] . '" alt="' . $row["product_name"] . '">';
+        echo '<div class="product-info">';
+        echo '<h3>' . $row["product_name"] . '</h3>';
+        echo '<p>protect and showcase your components with a sleek and durable case</p>';
+        echo '<div style="display: flex; justify-content: space-between;">';
+        echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">View Details</a>';
+        echo '<span>Price: <span style="color: green;">$' . $row["price"] . '</span></span>';
+        echo '</div></div></div>';
+    }
+}
+?>
     </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/case3_Cooler Master MASTERBOX MB511 RGB.jpg" alt="Cooler Master MASTERBOX MB511 RGB">
-    <div class="product-info">
-        <h3>COOLER MASTER MASTERBOX MB511 RGB</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=COOLER%20MASTER%20MASTERBOX%20MB511%20RGB">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/case4_CORSAIR iCUE 5000T RGB PC Case Black.jpg" alt="CORSAIR iCUE 5000T RGB PC Case Black">
-    <div class="product-info">
-        <h3>CORSAIR ICUE 5000T RGB PC Case BlACK</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=CORSAIR%20ICUE%205000T%20RGB%20PC%20Case%20BlACK">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/case5_CORSAIR 275R Airflow Tempered Glass.png" alt="CORSAIR 275R Airflow Tempered Glass">
-    <div class="product-info">
-        <h3>CORSAIR 275R AIRFLOW TEMPERED GLASS</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=CORSAIR%20275R%20AIRFLOW%20TEMPERED%20GLASS">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
-
-<div class="product-card">
-    <img class="pimg" src="images/case6_Mars Gaming MC-X2 Zwart.jpg" alt="Mars Gaming MC-X2 Zwart">
-    <div class="product-info">
-        <h3>MARS GAMING MC-X2 ZWART</h3>
-        <p>Immerse yourself in the world of lifelike graphics and seamless gaming.</p>
-        <div style="display: flex; justify-content: space-between;">
-            <a class="vd" href="details.php?name=MARS%20GAMING%20MC-X2%20ZWART">View Details</a>
-            <span>Price: <span style="color: green;">600$</span></span>
-        </div>
-    </div>
-</div>
-                          
-          
-       </div>
                               
 </section>
    
