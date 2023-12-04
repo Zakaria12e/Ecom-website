@@ -73,11 +73,15 @@ if(isset($_SESSION['id'])){
     $user_id = $_SESSION['id'];
     $totaleQuery = "SELECT SUM(quantity) FROM panier WHERE Id = $user_id;";
     $result = mysqli_query($con,$totaleQuery);
-    if ($result) {
-        $row = mysqli_fetch_assoc($result);
-        $totalQuantity = $row['SUM(quantity)'];
-        echo $totalQuantity;
-    }
+    $row = mysqli_fetch_assoc($result);
+        if (!empty($row['SUM(quantity)'])) {
+             $totalQuantity = $row['SUM(quantity)'];
+              echo $totalQuantity; 
+        }
+        else{
+        echo"0";
+    } 
+       
  }
 ?>
 </div>

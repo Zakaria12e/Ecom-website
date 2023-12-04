@@ -37,9 +37,16 @@ if(isset($_SESSION['id'])){
     $result = mysqli_query($con,$totaleQuery);
     if ($result) {
         $row = mysqli_fetch_assoc($result);
-        $totalQuantity = $row['SUM(quantity)'];
-        echo $totalQuantity;
+        if (!empty($row['SUM(quantity)'])) {
+             $totalQuantity = $row['SUM(quantity)'];
+              echo $totalQuantity; 
+        }
+        else{
+        echo"0";
+    } 
+       
     }
+  
  }
 ?>
 </div>
@@ -133,10 +140,6 @@ echo'</div>';
     
           echo'<a id="goback" href="Products.php">GO BACK</a>';
     ?> 
-
-
-
-
 </section>
 <script src="script.js"></script>
 </body>
