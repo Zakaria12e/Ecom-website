@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(!isset($_SESSION['username'])){
+   header('location:login.php');
+}
+else{
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,13 +24,27 @@
                     <span style="color: black;" class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Gravey</span>
                 </a>
                 <ul class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
-                    <li>
-                        <a id="panier-icon" href="Panier.php">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
-                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-                            </svg>
-                        </a>
-                    </li> 
+                <li style="display: flex;">
+                    <a id="panier-icon" href="Panier.php"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+</svg></a>
+<div style=" color:ghostwhite ;background-color: blue; border-radius:50%; padding:0px 8px;">
+<?php
+require_once 'config.php';
+if(isset($_SESSION['id'])){
+    $user_id = $_SESSION['id'];
+    $totaleQuery = "SELECT SUM(quantity) FROM panier WHERE Id = $user_id;";
+    $result = mysqli_query($con,$totaleQuery);
+    if ($result) {
+        $row = mysqli_fetch_assoc($result);
+        $totalQuantity = $row['SUM(quantity)'];
+        echo $totalQuantity;
+    }
+ }
+?>
+</div>
+
+</li>
                 </ul>
             </div>
         </nav>
@@ -119,3 +141,7 @@ echo'</div>';
 <script src="script.js"></script>
 </body>
 </html>
+
+<?php
+}
+?>
