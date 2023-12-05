@@ -45,4 +45,17 @@
    noProductMessage.style.display = foundProduct ? 'none' : 'block';
 }
 
+//admin page
+function loadContent(contentId) {
+      
+    var contentSections = document.querySelectorAll('#main > section');
+    contentSections.forEach(function (section) {
+        section.style.display = 'none';
+    });
 
+
+    var selectedSection = document.querySelector(contentId);
+    if (selectedSection) {
+        selectedSection.style.display = 'block';
+    }
+}
