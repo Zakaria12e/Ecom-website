@@ -94,7 +94,7 @@ html{
 }
 
 #home{
-  background-image: url('images/sukuna-vs-gojo-jujutsu-kaisen-thumb.jpg'); /* Replace with your hero image */
+  background-image: url('images/sukuna-vs-gojo-jujutsu-kaisen-thumb.jpg');
   background-size: cover;
   background-position: center;
   color: #ffffff;
@@ -251,3 +251,4 @@ p{
   font-family: Arial, sans-serif;
   font-weight: 600;
 }
+

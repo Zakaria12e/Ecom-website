@@ -44,3 +44,5 @@
    var noProductMessage = document.querySelector('.no-product-message');
    noProductMessage.style.display = foundProduct ? 'none' : 'block';
 }
+
+

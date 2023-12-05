@@ -40,6 +40,7 @@ else{
                         <a href="#ROM"  >ROM</a>
                         <a href="#PS"   >Power Supplies</a>
                         <a href="#CASES">Cases</a>
+                        <a href="#MONITORS">Monitors</a>
                       </div>
                       
                      </div>
@@ -95,6 +96,7 @@ if(isset($_SESSION['id'])){
     </section>
 
     <main>
+  </div>
     <div class="search-container">
               <input type="text" id="searchInput" placeholder="Search..." required>
         <button id="search_btn" onclick="searchProducts()">Search</button>
@@ -298,7 +300,35 @@ if ($result) {
 ?>
     </div>
                               
-</section>
+</section> 
+                                      <!-- MONITORS section  -->
+     <h2 class="title">MONITORS</h2>
+     <section id="MONITORS">
+     <div class="product-category">
+          
+          <?php
+require_once 'config.php';
+$ProductQuery = "SELECT product_name, price, image FROM products WHERE category = 'Monitors'";
+$result = mysqli_query($con,$ProductQuery);
+
+if ($result) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<div class="product-card">';
+        echo '<img class="pimg" src="' . $row["image"] . '" alt="' . $row["product_name"] . '">';
+        echo '<div class="product-info">';
+        echo '<h3>' . $row["product_name"] . '</h3>';
+        echo '<p>Upgrade your graphics performance with our state-of-the-art GPUs</p>';
+        echo '<div style="display: flex; justify-content: space-between;">';
+        echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">View Details</a>';
+        echo '<span>Price: <span style="color: green;">$' . $row["price"] . '</span></span>';
+        echo '</div></div></div>';
+    }
+}
+?>
+         
+          </div>
+    </section>
+
     </main>
     <footer>
     <a  href="home.php" class="flex items-center space-x-3 rtl:space-x-reverse">
