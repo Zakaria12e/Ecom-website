@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #373839;
+    overflow-x: hidden;
+    padding-top: 60px;
+}
+
+.sidebar a.links {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #818181;
+}
+
+.side-header {
+    padding: 15px;
+   
+}
+
+#main {
+    
+    padding: 16px;
+  text-align: center;
+}
+
+.total{
+    margin-left: 300px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 6px;
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#logout{
+    margin-top: 360px;
+}
+#tickets_container{
+    margin-top: 20px;
+}
+.tickets{
+    padding: 10px;
+    font-size: 20px;
+}
