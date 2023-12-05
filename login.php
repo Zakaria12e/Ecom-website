@@ -32,8 +32,9 @@ if(isset($_POST['submit'])){
 
         if (password_verify($password, $hashpass)) 
         {
-            if($row['user_type'] === 'admin'){
+            if($row['user_type'] == 'admin'){
 
+            $_SESSION['username'] = $row['Username'];
                 header("Location: admin.php");
             }
             else{

@@ -138,7 +138,7 @@ echo'</div>';
         echo '<button type="submit" class="add-to-cart" name="addToCart">ADD TO CART</button>';
         echo '</form>';
     
-          echo'<a id="goback" href="Products.php">GO BACK</a>';
+          echo'<a id="goback" href="home.php">GO BACK</a>';
     ?> 
 </section>
 <script src="script.js"></script>
