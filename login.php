@@ -32,11 +32,19 @@ if(isset($_POST['submit'])){
 
         if (password_verify($password, $hashpass)) 
         {
+            if($row['user_type'] === 'admin'){
+
+                header("Location: admin.php");
+            }
+            else{
+
             $_SESSION['valid'] = $row['Email'];
             $_SESSION['username'] = $row['Username'];
             $_SESSION['id'] = $row['Id'];
 
                 header("Location: home.php");
+            }
+          
           
         } 
         else 
