@@ -24,7 +24,6 @@ if(isset($_POST['submit'])){
     else{
          $query = "INSERT INTO tickets (name, email, message) VALUES ('$name', '$email', '$message')";
 
-       // Execution de la requete
         $result = mysqli_query($con, $query);
 
         if ($result) {

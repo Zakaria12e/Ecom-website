@@ -2,6 +2,9 @@ body {
     font-family: Arial, sans-serif;
     
 }
+html{
+    scroll-behavior: smooth;
+  }
 
 .sidebar {
     height: 100%;
@@ -56,5 +59,94 @@ body {
 }
 .tickets{
     padding: 10px;
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: 700;
 }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+#product-interface {
+    max-width: 400px;
+    margin-left: 400px;
+    margin-top: 100px;
+    display: flex;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #a7a7a7;
+    border-radius: 6px;
+}
+
+button {
+    background-color: #1230db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #566dee;
+}
+.confirmationmsg{
+    border: 1px solid green;
+    color: darkgreen;
+    padding: 6px;
+    border-radius: 6px;
+    background-color:rgb(145, 228, 145);
+    text-align: center;
+    
+    
+    }
+    .title{
+        margin-left: 280px;
+    }
+  #dashboard{
+    display: flex; 
+    
+     margin:100px 110px;
+  }
+  .hide-message {
+    display: none;
+ }
+ #delete_container{
+    height: 100px;
+    margin-left: 100px;
+    margin-top: 120px;
+    border: 1px solid #f3f3f3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+ }
+ #products{
+    display: flex;
+ }
+
+ .addProduct_Form{
+    border: 1px solid #f3f3f3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ }
+ 
