@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 *{
     margin: 0;padding: 0;
     text-decoration: none;
     box-sizing: border-box;
     outline: none;
     text-transform: capitalize;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins';
 
 }
 html{
@@ -14,7 +15,8 @@ html{
 .container{
     max-width: 1200px;
     padding: 2rem;
-    margin: 0 auto;
+    margin: 100px auto;
+   
 }
 .admin-product-form-container form{
 
@@ -42,7 +44,7 @@ html{
 .btn{
     display: block;
     width: 100%;
-    background-color: #1230db;
+    background-color: #12db8b;
     color: white;
     margin-top: 1rem;
     font-size: 1.7rem;
@@ -52,7 +54,7 @@ html{
     cursor: pointer;
 }
 .btn:hover {
-    background-color: #566dee;
+    background-color: #0c5c4f;
 }.confirmationmsg{
     border: 1px solid green;
     color: darkgreen;
@@ -60,6 +62,8 @@ html{
     border-radius: 6px;
     background-color:rgb(145, 228, 145);
     text-align: center;
+    margin-top: 20px;
+    max-width: 300px;
     
     }
     div.erreurmsg{
@@ -69,4 +73,105 @@ html{
         border-radius: 6px;
         background-color:rgb(228, 145, 145);
         text-align: center;
-        }
+}
+
+.product-display{
+    margin: 2rem 0;
+   
+}
+.product-display .product_table{
+
+width: 100%;
+text-align: center;
+border: 1px solid rgb(215, 214, 217);
+border-radius: 13px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.product-display thead{
+   
+    background-color: #eceaea;
+    border-radius: 6px;
+}
+
+.product-display td{
+    padding: 1rem;
+    font-size: 2rem;
+    border-bottom: 1px solid #dbdada;
+}
+
+.product-display th{
+    padding: 1rem;
+    font-size: 2rem;
+   
+}
+
+.product-display .btn:last-child{
+
+    background-color: rgb(208, 44, 44);
+}
+.product-display .btn:last-child:hover{
+
+    background-color: rgb(131, 13, 13);
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    background: rgba(211, 211, 211, 0.1);
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+.navbar a{
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 35px;
+    font-weight: 600;
+
+}
+.navbar a:hover{
+   color: #1241db;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding: 9rem;
+  }
+
+@media (max-width:990px)  {
+    html{
+        font-size: 55%;
+    }
+
+}
+
+@media (max-width:768px)  {
+
+    .product-display{
+        overflow-y: scroll;
+    }
+    
+    .product-display .product_table{
+        width: 80rem;
+    }
+
+}
+
+@media (max-width:450px)  {
+    html{
+        font-size: 50%;
+    }
+
+}
+

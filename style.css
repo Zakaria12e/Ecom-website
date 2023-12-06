@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 .container {
   max-width: 600px;
   margin: 0 auto;
@@ -115,6 +116,7 @@ html{
 }
 #btn-to-products{
   margin-top: 24px;
+  margin-bottom: 100px;
   display: inline-block;
   background-color: #0f1011;
   box-shadow: 0 4px 8px rgb(31, 31, 31);
@@ -126,11 +128,10 @@ html{
 #btn-to-products:hover {
   background-color: #1b1b1d;
 }
-.logo-home {
-width: 8rem;
-height: auto; 
-margin: 0 auto; 
-display: block;
+
+#logo{
+  font-family: 'Poppins';
+  font-weight: 600;
 }
 #profile :hover{
 color: #344be1;
