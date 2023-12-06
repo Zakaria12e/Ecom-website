@@ -126,23 +126,13 @@ if ( isset($_POST['add_product'])) {
     $caracteristiques = $_POST['caracteristiques'];
     $category = $_POST['category'];
 
-    $Insertquery = "INSERT INTO products (product_name, quantity, price, image, description, caracteristiques, category) VALUES ('$product_name', $quantity, $price, '$image', '$description', '$caracteristiques', '$category')";
-    $result = mysqli_query($con, $Insertquery);
-     if ($result) {
-
-        $confirmationMessage = "Le produit a été inserer avec succès";
-       
-        }
+   
         
 }
-?>     <?php if (!empty($confirmationMessage)) : ?>
-           <div id="addproduct" class="confirmationmsg"><?php echo $confirmationMessage; ?></div>
-        <?php endif; ?>
-        <div id="product-interface">
-
+?>     
         
 
-     
+
         
         <form class="addProduct_Form" action="admin.php"  method="post">
             <h2>ADD PRODUCT</h2>

@@ -19,7 +19,12 @@
   
       //add product msg
      
-
+      let addProductconf = document.getElementById('addproduct');
+      setTimeout(function() { addProductconf.classList.add('hide-message');} , 2000);
+       //delete product msg
+     
+       let deleteProductconf = document.getElementById('deleteproduct');
+       setTimeout(function() { addProductconf.classList.add('hide-message');} , 2000);
 
   //search bar 
   function searchProducts() {
