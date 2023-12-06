@@ -112,7 +112,7 @@ $result = mysqli_query($con,$ProductQuery);
 if ($result) {
     while ($row = mysqli_fetch_assoc($result)) {
         echo '<div class="product-card">';
-        echo '<img class="pimg" src="' . $row["image"] . '" alt="' . $row["product_name"] . '">';
+        echo '<img class="pimg" src="images/' . $row["image"] . '" alt="' . $row["product_name"] . '">';
         echo '<div class="product-info">';
         echo '<h3>' . $row["product_name"] . '</h3>';
         echo '<p>Upgrade your computing power with our cutting-edge CPUs</p>';
@@ -142,7 +142,7 @@ $result = mysqli_query($con,$ProductQuery);
 if ($result) {
     while ($row = mysqli_fetch_assoc($result)) {
         echo '<div class="product-card">';
-        echo '<img class="pimg" src="' . $row["image"] . '" alt="' . $row["product_name"] . '">';
+        echo '<img class="pimg" src="images/' . $row["image"] . '" alt="' . $row["product_name"] . '">';
         echo '<div class="product-info">';
         echo '<h3>' . $row["product_name"] . '</h3>';
         echo '<p>Upgrade your graphics performance with our state-of-the-art GPUs</p>';
@@ -170,7 +170,7 @@ $result = mysqli_query($con,$ProductQuery);
 if ($result) {
     while ($row = mysqli_fetch_assoc($result)) {
         echo '<div class="product-card">';
-        echo '<img class="pimg" src="' . $row["image"] . '" alt="' . $row["product_name"] . '">';
+        echo '<img class="pimg" src="images/' . $row["image"] . '" alt="' . $row["product_name"] . '">';
         echo '<div class="product-info">';
         echo '<h3>' . $row["product_name"] . '</h3>';
         echo '<p>experience superior connectivity and performance with our cutting-edge motherboards</p>';
@@ -198,7 +198,7 @@ $result = mysqli_query($con,$ProductQuery);
 if ($result) {
     while ($row = mysqli_fetch_assoc($result)) {
         echo '<div class="product-card">';
-        echo '<img class="pimg" src="' . $row["image"] . '" alt="' . $row["product_name"] . '">';
+        echo '<img class="pimg" src="images/' . $row["image"] . '" alt="' . $row["product_name"] . '">';
         echo '<div class="product-info">';
         echo '<h3>' . $row["product_name"] . '</h3>';
         echo '<p>enhance multitasking capabilities with high-speed RAM</p>';
@@ -227,7 +227,7 @@ $result = mysqli_query($con,$ProductQuery);
 if ($result) {
     while ($row = mysqli_fetch_assoc($result)) {
         echo '<div class="product-card">';
-        echo '<img class="pimg" src="' . $row["image"] . '" alt="' . $row["product_name"] . '">';
+        echo '<img class="pimg" src="images/' . $row["image"] . '" alt="' . $row["product_name"] . '">';
         echo '<div class="product-info">';
         echo '<h3>' . $row["product_name"] . '</h3>';
         echo '<p>store and access data seamlessly with lightning-fast ROM</p>';
@@ -256,7 +256,7 @@ $result = mysqli_query($con,$ProductQuery);
 if ($result) {
     while ($row = mysqli_fetch_assoc($result)) {
         echo '<div class="product-card">';
-        echo '<img class="pimg" src="' . $row["image"] . '" alt="' . $row["product_name"] . '">';
+        echo '<img class="pimg" src="images/' . $row["image"] . '" alt="' . $row["product_name"] . '">';
         echo '<div class="product-info">';
         echo '<h3>' . $row["product_name"] . '</h3>';
         echo '<p>ensure stable power delivery with our advanced power supply units</p>';
@@ -286,7 +286,7 @@ $result = mysqli_query($con,$ProductQuery);
 if ($result) {
     while ($row = mysqli_fetch_assoc($result)) {
         echo '<div class="product-card">';
-        echo '<img class="pimg" src="' . $row["image"] . '" alt="' . $row["product_name"] . '">';
+        echo '<img class="pimg" src="images/' . $row["image"] . '" alt="' . $row["product_name"] . '">';
         echo '<div class="product-info">';
         echo '<h3>' . $row["product_name"] . '</h3>';
         echo '<p>protect and showcase your components with a sleek and durable case</p>';
@@ -313,7 +313,7 @@ $result = mysqli_query($con,$ProductQuery);
 if ($result) {
     while ($row = mysqli_fetch_assoc($result)) {
         echo '<div class="product-card">';
-        echo '<img class="pimg" src="' . $row["image"] . '" alt="' . $row["product_name"] . '">';
+        echo '<img class="pimg" src="images/' . $row["image"] . '" alt="' . $row["product_name"] . '">';
         echo '<div class="product-info">';
         echo '<h3>' . $row["product_name"] . '</h3>';
         echo '<p>Upgrade your graphics performance with our state-of-the-art GPUs</p>';

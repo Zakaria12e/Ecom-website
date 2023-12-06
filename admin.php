@@ -23,10 +23,10 @@ else{
     </div>
     <hr style="border:1px solid; background-color:#8a7b6d; border-color:#3B3131;">
 
-    <a class="links" href="#products"> Products</a>
-    <a class="links" href="#clients"> Clients</a>
-    <a class="links" href="#commandes"> Commandes</a>
-    <a class="links" href="#Tickets"> Tickets</a>
+    <a class="links" href="#products"> PRODUCTS</a>
+    <a class="links" href="#clients"> CLIENTS</a>
+    <a class="links" href="#o"> ORDERS</a>
+    <a class="links" href="#Tickets"> TICKETS</a>
     <a id="logout" class="links" href="logout.php">logout</a>
 
 </div>
@@ -109,7 +109,7 @@ else{
 
 <hr>
 
-     <h2 class="title">products</h2>
+     <h2 class="title">PRODUCTS</h2>
     <section id="products">
       
     <?php
@@ -145,6 +145,7 @@ if ( isset($_POST['add_product'])) {
      
         
         <form class="addProduct_Form" action="admin.php"  method="post">
+            <h2>ADD PRODUCT</h2>
             <label for="product_name">Product Name:</label>
             <input type="text" name="product_name" required>
             
@@ -193,6 +194,7 @@ if ( isset($_POST['add_product'])) {
         <?php endif; ?>
 
        <form method="post" action= "admin.php">
+             <h2>DELETE PRODUCT</h2>
             <input type="text" name="product_name" placeholder="Product name" required>
             <button type="submit" name="deletebtn">Delete</button>
         </form>
@@ -201,17 +203,17 @@ if ( isset($_POST['add_product'])) {
     </section>
  <hr>
     <section id="clients">
-        <h2 class="title">Clients</h2>
+        <h2 class="title">CLIENTS</h2>
     </section>
 
 <hr>
     <section id="commandes">
-        <h2 class="title">Commandes</h2>
+        <h2 class="title">ORDERS</h2>
         
     </section>
 <hr>
     <section id="Tickets">
-        <h2 class="title">Tickets</h2>
+        <h2 class="title">TICKETS</h2>
         
     </section>
 

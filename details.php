@@ -75,7 +75,7 @@ if(isset($_SESSION['id'])){
 
               $img = $row['image'];
                echo"<div class='details_img'>";
-               echo"<img src='{$img}'>";
+               echo"<img src='images/{$img}'>";
                echo"</div>";
           }
      }

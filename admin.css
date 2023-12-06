@@ -130,9 +130,9 @@ button:hover {
     display: none;
  }
  #delete_container{
-    height: 100px;
+    height: 140px;
     margin-left: 100px;
-    margin-top: 120px;
+    margin-top: 10px;
     border: 1px solid #f3f3f3;
     padding: 20px;
     border-radius: 10px;

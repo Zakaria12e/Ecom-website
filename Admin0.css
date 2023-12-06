@@ -1,0 +1,72 @@
+*{
+    margin: 0;padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    outline: none;
+    text-transform: capitalize;
+    font-family: Arial, sans-serif;
+
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+.container{
+    max-width: 1200px;
+    padding: 2rem;
+    margin: 0 auto;
+}
+.admin-product-form-container form{
+
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.admin-product-form-container form .box{
+
+    width: 100%;
+    border-radius: 5px;
+    padding: 1.2rem  1.5rem;
+    font-size: 1.7rem;
+    margin: 1rem 0;
+    border: 1px solid #a7a7a7;
+    text-transform: none;
+}
+.admin-product-form-container form h3{
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+.btn{
+    display: block;
+    width: 100%;
+    background-color: #1230db;
+    color: white;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    padding: 1rem 3rem ;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #566dee;
+}.confirmationmsg{
+    border: 1px solid green;
+    color: darkgreen;
+    padding: 6px;
+    border-radius: 6px;
+    background-color:rgb(145, 228, 145);
+    text-align: center;
+    
+    }
+    div.erreurmsg{
+        border: 1px solid darkred;
+        color: darkred;
+        padding: 6px;
+        border-radius: 6px;
+        background-color:rgb(228, 145, 145);
+        text-align: center;
+        }
