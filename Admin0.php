@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Admin0.css">
-    <link rel="stylesheet" href="navbar.css">
     <title>Admin</title>
 </head>
 <body>
@@ -15,7 +14,8 @@
   <nav class="navbar">
     <a href="#Product_list">Product List</a>
     <a href="#">Clients</a>
-    <a href="#">Orders</a> 
+    <a href="#">Orders</a>
+     <a href="tickets.php">Tickets</a>
     <a href="logout.php">Log out</a>
   </nav>
 </header>
@@ -76,9 +76,6 @@
         <?php endif; ?>
 
 
-       
-        <div id="product-interface">
-
 <div class="container">
 
 <div class="admin-product-form-container">
@@ -127,9 +124,9 @@
       while ($row = mysqli_fetch_assoc($result)) {
       ?>
          <tr>
-               <td ><img style="width: 100px;" src="images/<?php echo $row['image'];?>"></td>
+               <td ><img style="width: 100px;  border-radius: 6px;" src="images/<?php echo $row['image'];?>"></td>
                <td><?php echo $row['product_name'];?></td>
-               <td><?php echo $row['price'];?></td>
+               <td style="color:#7adb12cb;"><?php echo $row['price'];?>$</td>
                <td>
                <a href="Admin_update_product.php?edit=<?php echo $row['product_name']; ?>" class="btn">Modifier</a>
                <a href="Admin0.php?delete=<?php echo $row['product_name']; ?>" class="btn">Supprimer</a>
@@ -142,6 +139,8 @@
 </div>
 
 
+
 </div>
+
 </body>
 </html>

@@ -11,37 +11,145 @@ else{
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="Admin0.css">
+    <title>Tickets</title>
 </head>
 <body>
-<style>
-    span{
-        padding-left: 40px;
-    }
-</style>
-    <?php echo'<h1>Hello '.$_SESSION['username'].'</h1>'; ?>
-    
-   
-    <?php
-    require_once 'config.php';
-    echo'Tickets';
-    echo'<br>';
 
-    $Query = " SELECT * FROM tickets" ;
-    $result = mysqli_query($con,$Query);
+
+<header class="header">
+  <a href="Admin0.php" class="logo">Gravey</a>
+  <nav class="navbar">
+    <a href="Admin0.php">Home</a>
+    <a href="#">Clients</a>
+    <a href="#">Orders</a>
+    <a href="logout.php">Log out</a>
+  </nav>
+</header>
+
+<?php
+ require_once 'config.php';
+    //tickets
+  $selectQuery = "SELECT * FROM tickets";
+  $result = mysqli_query($con,$selectQuery);
+  ?>
+
+<div class="container">
+
+
+<div style="margin-top: -100px;" class="product-display" id="tickets">
+
+     <table  class="product_table">
+
+       <thead>
+        <tr>
+               <th>Ticket Id</th>
+               <th>Client Name</th>
+               <th>Client Email</th>
+               <th>Message</th>
+               <th>Ticket status</th>
+               <th colspan="2">action</th>
+       </tr>
     
-    if ($result) {
-        while ($row = mysqli_fetch_assoc($result)) {
-   
-        echo'<span>'.  $row['id'].'</span>';
-        echo'<span>'.  $row['name'].'</span>';
-        echo'<span>'.  $row['email'].'$</span>';
-        echo'<span>'.  $row['message'].'$</span><br><br>';
-    }
+      </thead>
+
+      <?php
+      while ($row = mysqli_fetch_assoc($result)) {
+      ?>
+         <tr>
+               <td ><?php echo $row['id'];?></td>
+               <td><?php echo $row['name'];?></td>
+               <td><?php echo $row['email'];?></td>
+               <td><?php echo $row['message'];?></td>
+
+               <td>
+                <?php
+
+                $status = $row['status'];
+
+               switch ($status) {
+                case 'termine':
+                  echo'<p style="color:green;" >Termine</p>';
+                  break;
+                  case 'en cours':
+                    echo'<p style="color:orange;" >En cours</p>';
+                    break;
+                
+                default:
+                echo'<p style="color:red;" >En attente</p>';
+                  break;
+               }
+          
+                 ?>
+              </td>
+               
+               
+                <?php 
+                  echo '<td>
+                                <form action="tickets.php" method="post">
+                                <input type="hidden" name="ticket_id" value="' . $row['id'] . '">
+                                    <select name="new_status">
+                                        <option value="En attente" ' . ($row['status'] == 'En attente' ? 'selected' : '') . '>En attente</option>
+                                        <option value="en cours" ' . ($row['status'] == 'en cours' ? 'selected' : '') . '>en cours</option>
+                                        <option value="termine" ' . ($row['status'] == 'termine' ? 'selected' : '') . '>termine</option>
+                                    </select>
+                                    <textarea name="solution"  placeholder="Saisissez la solution du problème">' . htmlspecialchars($row['solution']) . '</textarea>
+                                    <button class="btn" type="submit" name="Update_ticket">Update</button>
+                                    <button class="btn" type="submit" name="Delete_ticket">Delete</button>
+                                    
+                                </form>
+                                 
+                            </td>';
+                ?>
+               
+       </tr>
+
+     <?php } ?>
+     </table> 
+     
+</div>
+
+<?php
+//delete ticket
+
+if (isset($_POST['Delete_ticket'])) {
+       
+       $id = $_POST['ticket_id'];
+       $DeleteQuery = "DELETE FROM tickets WHERE id ='$id'";
+
+      mysqli_query($con,$DeleteQuery);
+      if ( mysqli_query($con,$DeleteQuery)) {
+        header('location: tickets.php');
+      }
+
 }
+     $newSolution = "";
+      if (isset($_POST['Update_ticket'])) {
 
-        
-    ?>
+    $ticketId = $_POST['ticket_id'];
+    $newStatus = $_POST['new_status'];
+    $newSolution = $_POST['solution'];
+
+    $Query = "UPDATE tickets SET status = '$newStatus', solution = '$newSolution' WHERE id = $ticketId";
+
+    mysqli_query($con, $Query);
+    if(mysqli_query($con, $Query))
+    {
+      header('location: tickets.php');
+    }
+ }
+?>
+
+
+</div>
+
+</div>
+
+<script>
+      let UpdateTicketmsg = document.getElementById('updateTicket');
+      setTimeout(function() {  UpdateTicketmsg.classList.add('hide-message');} , 2000);
+</script>    
+
 </body>
 </html>
 <?php

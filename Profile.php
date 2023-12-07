@@ -74,7 +74,6 @@ if (!isset($_SESSION['username'])) {
     <nav class="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="home.php" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="images/gaming-pad-alt-1-svgrepo-com.svg" class="h-8" alt="Gravey Logo" />
             <span style="color: black;" class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Gravey</span>
         </a>
         <ul class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
@@ -129,7 +128,7 @@ echo'<a style="display: flex;" href="Profile.php" class="block py-2 px-3 md:p-0 
   <section class="section-info">
             <div class="info">
               
-                <h1 class="title-profile"><?php echo "Welcom {$_SESSION['username']}"; ?></h1>
+                <h1 class="title-profile"><?php echo "Welcome {$_SESSION['username']}"; ?></h1>
                 <p><b>Email:</b> <?php echo $_SESSION['email']; ?></p>
                 <p><b>Phone:</b> <?php echo $_SESSION['PhoneNumber']; ?></p> 
                 <p><b>Address:</b> <?php echo $_SESSION['Address']; ?></p>

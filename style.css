@@ -101,11 +101,14 @@ html{
   color: #ffffff;
   text-align: center;
   padding: 8rem 0;
+  height: 100vh;
 }
 #home h1 {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  margin-top: 120px;
+
 }
 
 #home p {

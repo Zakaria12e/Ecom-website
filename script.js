@@ -26,6 +26,8 @@
        let deleteProductconf = document.getElementById('deleteproduct');
        setTimeout(function() { addProductconf.classList.add('hide-message');} , 2000);
 
+       
+
   //search bar 
   function searchProducts() {
    var userInput = document.getElementById("searchInput").value.toLowerCase();

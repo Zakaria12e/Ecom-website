@@ -24,7 +24,6 @@
  <nav class="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="home.php" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="images/gaming-pad-alt-1-svgrepo-com.svg" class="h-8" alt="Gravey Logo" />
             <span style="color: black;" class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Gravey</span>
         </a>
         <ul class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
@@ -103,7 +102,7 @@ echo'<a style="display: flex;" href="Profile.php" class="block py-2 px-3 md:p-0 
        echo '</form>';
 
             echo'<div id="pname-pimg-p">';
-              echo '<div class="img_container_panier"><img  id="panier_img" src="' . $productDetails['image'] . '"></div>';
+              echo '<div class="img_container_panier"><img  id="panier_img" src="images/' . $productDetails['image'] . '"></div>';
               echo '<p>Product Name: ' . $productDetails['product_name'] . '</p>';
           
            echo'</div>';

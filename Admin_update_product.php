@@ -66,7 +66,7 @@ else{
 
 <div class="container">
 <?php if (!empty($confirmationMessage)) : ?>
-           <div id="addproduct" class="confirmationmsg"><?php echo $confirmationMessage; ?></div>
+           <div style=" margin-left: 220px ;margin-bottom:15px; margin-top: -100px; font-size:20px;" id="updateproduct" class="confirmationmsg"><?php echo $confirmationMessage; ?></div>
         <?php endif; ?>
 <div class="admin-product-form-container">
   
@@ -107,6 +107,10 @@ else{
      
 </div>
 </div>
+<script>
+      let UpdateProductmsg = document.getElementById('updateproduct');
+      setTimeout(function() { UpdateProductmsg.classList.add('hide-message');} , 2000);
+</script>
 </body>
 </html>
 <?php } ?>

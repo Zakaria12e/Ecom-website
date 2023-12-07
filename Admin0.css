@@ -6,7 +6,6 @@
     outline: none;
     text-transform: capitalize;
     font-family: 'Poppins';
-
 }
 html{
     font-size: 62.5%;
@@ -44,7 +43,7 @@ html{
 .btn{
     display: block;
     width: 100%;
-    background-color: #12db8b;
+    background-color: #126cdb;
     color: white;
     margin-top: 1rem;
     font-size: 1.7rem;
@@ -54,17 +53,17 @@ html{
     cursor: pointer;
 }
 .btn:hover {
-    background-color: #0c5c4f;
-}.confirmationmsg{
+    background-color: #096984;
+}
+
+.confirmationmsg{
     border: 1px solid green;
     color: darkgreen;
-    padding: 6px;
+    padding: 15px;
     border-radius: 6px;
     background-color:rgb(145, 228, 145);
     text-align: center;
-    margin-top: 20px;
-    max-width: 300px;
-    
+    max-width: 700px;
     }
     div.erreurmsg{
         border: 1px solid darkred;
@@ -75,6 +74,9 @@ html{
         text-align: center;
 }
 
+.hide-message{
+    display: none;
+}
 .product-display{
     margin: 2rem 0;
    
@@ -86,10 +88,11 @@ text-align: center;
 border: 1px solid rgb(215, 214, 217);
 border-radius: 13px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+margin-top: 200px;
 }
 .product-display thead{
    
-    background-color: #eceaea;
+    background-color: #f5f5f5;
     border-radius: 6px;
 }
 
