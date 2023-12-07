@@ -219,8 +219,12 @@ border-radius: 10px;
 margin: 50px auto ;
   }
   p{
-    font-family: Arial, sans-serif;
     font-weight: 600;
+    font-family: 'Poppins';
+}
+#logo{
+  font-family: 'Poppins';
+  font-weight: 600;
 }
 
 .search-container {

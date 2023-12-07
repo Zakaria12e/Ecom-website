@@ -29,6 +29,10 @@
 input[type="submit"]:hover{
  background-color: #aa2aaf;
 }
+#logo{
+  font-family: 'Poppins';
+  font-weight: 600;
+}
 
 #logout-btn{
     background-color: rgb(231, 67, 67);

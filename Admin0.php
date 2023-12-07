@@ -1,4 +1,11 @@
+<?php
+session_start();
+if(!isset($_SESSION['username'])){
+   header('location:login.php');
+}
+else{
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,13 +19,91 @@
 <header class="header">
   <a href="Admin0.php" class="logo">Gravey</a>
   <nav class="navbar">
-    <a href="#Product_list">Product List</a>
+  <div class="dropdown">
+      <a href="#">Product</a>
+      <div class="dropdown-content">
+      
+             <a href="#Add product" >Add Product</a>
+             <a href="#Product_list" >Product List</a>
+     </div>
+  </div>
+
     <a href="#">Clients</a>
     <a href="#">Orders</a>
      <a href="tickets.php">Tickets</a>
-    <a href="logout.php">Log out</a>
+    <a href="logout.php"><img style="width: 21px; height: 23px; padding-top:4px;" src="images/logout_icon_151219.png"></a>
   </nav>
 </header>
+
+<section  id="dashboard">
+   <?php
+   
+   include('config.php');
+  // number of clients
+   $query = "SELECT COUNT(*) AS total_clients FROM clients WHERE user_type = 'normal user'";
+   $result = mysqli_query($con,$query);
+   if ($result) {
+      $row = mysqli_fetch_assoc($result);
+      echo'<div class="total">';
+      echo'<h3>Clients</h3>';
+      echo '<h3>'. $row['total_clients'].'</h3>';
+      echo'</div>';
+   }
+     // number of products
+   $productsquery = "SELECT COUNT(*) AS total_products FROM products";
+   $productsresult = mysqli_query($con,$productsquery);
+   if ($productsresult) {
+      $row = mysqli_fetch_assoc($productsresult);
+      echo'<div class="total">';
+      echo'<h3>Products</h3>';
+      echo '<h3>'. $row['total_products'].'</h3>';
+      echo'</div>';
+   }
+     // number of tickts
+     $ticketsquery = "SELECT COUNT(*) AS total_tickets FROM tickets";
+     $ticketsresult = mysqli_query($con, $ticketsquery);
+       // number of tickts en attente
+     $en_attente_query = "SELECT COUNT(*) AS tickets_en_attente FROM tickets WHERE status = 'en attente'";
+     $tickets_en_attente = mysqli_query($con, $en_attente_query);
+     // number of tickts en cours
+     $en_cours_query = "SELECT COUNT(*) AS tickets_en_cours FROM tickets WHERE status = 'en cours'";
+     $tickets_en_cours = mysqli_query($con, $en_cours_query);
+     //number of tickets termine
+     $termine_query = "SELECT COUNT(*) AS tickets_termine FROM tickets WHERE status = 'termine'";
+     $tickets_termine = mysqli_query($con, $termine_query); 
+
+   if ($ticketsresult) {
+      $row = mysqli_fetch_assoc($ticketsresult);
+
+      echo'<div class="total">';
+      echo'<h3>Tickets</h3>';
+      
+
+        echo'<span id="tickets_container">';
+        if ( $tickets_en_attente) {
+            $row = mysqli_fetch_assoc($tickets_en_attente);
+            echo '<span class="tickets" style="color:red;">'. $row['tickets_en_attente'].'</span>';
+        }
+        
+        if ($tickets_en_cours) {
+            $row = mysqli_fetch_assoc($tickets_en_cours);
+            echo '<span class="tickets" style="color:orange;">'. $row['tickets_en_cours'].'</span>';
+        }
+    
+        if ($tickets_termine) {
+            $row = mysqli_fetch_assoc($tickets_termine);
+            echo '<span class="tickets"  style="color:green;">'. $row['tickets_termine'].'</span>';
+        }
+       
+         
+        echo'</span>';
+
+      echo'</div>';
+   }
+
+
+   ?>
+  </section>
 
 <?php
     require_once 'config.php';
@@ -80,7 +165,7 @@
 
 <div class="admin-product-form-container">
 
-<form action="" method="POST" enctype="multipart/form-data">
+<form id="Add product" action="" method="POST" enctype="multipart/form-data">
       <h3>ADD PRODUCT</h3>
 
             <input type="text" name="product_name" class="box" required placeholder="Product Name">
@@ -108,7 +193,7 @@
 
 <div class="product-display" id="Product_list">
 
-     <table class="product_table">
+     <table id="Product list"  class="product_table">
 
        <thead>
         <tr>
@@ -144,3 +229,7 @@
 
 </body>
 </html>
+
+<?php
+}
+?>

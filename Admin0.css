@@ -77,11 +77,11 @@ html{
 .hide-message{
     display: none;
 }
-.product-display{
+.product-display , .ticket-display{
     margin: 2rem 0;
    
 }
-.product-display .product_table{
+.product-display .product_table , .ticket-display .ticket_table{
 
 width: 100%;
 text-align: center;
@@ -90,31 +90,30 @@ border-radius: 13px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 margin-top: 200px;
 }
-.product-display thead{
+.product-display thead , .ticket-display thead{
    
     background-color: #f5f5f5;
     border-radius: 6px;
 }
 
-.product-display td{
+.product-display td , .ticket-display td{
     padding: 1rem;
     font-size: 2rem;
     border-bottom: 1px solid #dbdada;
 }
 
-.product-display th{
+.product-display th , .ticket-display th{
     padding: 1rem;
     font-size: 2rem;
-   
 }
 
-.product-display .btn:last-child{
+.product-display .btn:last-child , .ticket-display .btn:last-child{
 
-    background-color: rgb(208, 44, 44);
+    background-color: rgb(239, 12, 12);
 }
-.product-display .btn:last-child:hover{
+.product-display .btn:last-child:hover , .ticket-display .btn:last-child:hover{
 
-    background-color: rgb(131, 13, 13);
+    background-color: rgb(181, 21, 21);
 }
 
 .header{
@@ -151,6 +150,68 @@ html{
     scroll-behavior: smooth;
     scroll-padding: 9rem;
   }
+  #title{
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: -100px;
+  }
+  #dashboard{
+
+    display: flex;
+    font-size: 50px;
+    text-align: center;
+    justify-content: center;
+    margin: 200px 0;
+   
+  }
+  .dropdown {
+    display: inline-block;
+ }
+ 
+ div.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:#fff;
+    min-width: 160px;
+    box-shadow:0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 200px;
+ }
+ 
+ .dropdown:hover .dropdown-content {
+    display: block;
+    border-radius: 6px;
+ }
+ .dropdown-content a {
+    color: #000000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 6px;
+    margin-left: -3px;
+ }
+ 
+ .dropdown-content a:hover {
+    background-color: #e2e7e9;
+ }
+ 
+ a.vd{
+      color:#1866e3 ;
+      cursor: pointer;
+ }
+ a.vd:hover{
+     color:#adc6ed ;
+ }
+
+
+  .total{
+    padding: 100px;
+  }
+  .tickets{
+    padding: 30px;
+    font-size: 50px;
+    font-weight: 1000;
+  }
 
 @media (max-width:990px)  {
     html{
@@ -161,11 +222,11 @@ html{
 
 @media (max-width:768px)  {
 
-    .product-display{
+    .product-display , .ticket-display{
         overflow-y: scroll;
     }
     
-    .product-display .product_table{
+    .product-display .product_table , .ticket-display .ticket_table{
         width: 80rem;
     }
 

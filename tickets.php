@@ -37,9 +37,9 @@ else{
 <div class="container">
 
 
-<div style="margin-top: -100px;" class="product-display" id="tickets">
+<div style="margin-top: -100px;" class="ticket-display" id="tickets">
 
-     <table  class="product_table">
+     <table  class="ticket_table">
 
        <thead>
         <tr>
