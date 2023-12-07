@@ -115,7 +115,9 @@ echo'<a style="display: flex; color:black;" href="Profile.php" class="block py-2
     
                     <form class="support" action="support.php" method="post" id="contactForm" name="contactForm" novalidate="novalidate">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Your Name">
+ 
+                           <?php  $name =  $_SESSION['username'] ?>
+                            <input type="text" class="form-control" name="name" id="name" value="<?php echo $name; ?>">
                         </div>
                         <div class="form-group">
                             <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">

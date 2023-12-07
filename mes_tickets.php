@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>mes tickets</title>
 </head>
 <body>
     <h1>mes tickets</h1>
+
+
+<?php
+
+$query = "SELECT * FROM tickets WHERE ";
+
+
+?>
 </body>
 </html>
