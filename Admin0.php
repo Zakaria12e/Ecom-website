@@ -28,8 +28,7 @@ else{
      </div>
   </div>
 
-    <a href="#">Clients</a>
-    <a href="#">Orders</a>
+    <a href="clients.php">Clients</a>
     <a href="tickets.php">Tickets</a>
     <a href="logout.php"><img style="width: 21px; height: 23px; padding-top:4px;" src="images/logout_icon_151219.png"></a>
   </nav>
@@ -211,7 +210,7 @@ else{
          <tr>
                <td ><img style="width: 100px;  border-radius: 6px;" src="images/<?php echo $row['image'];?>"></td>
                <td><?php echo $row['product_name'];?></td>
-               <td style="color:#7adb12cb;"><?php echo $row['price'];?>$</td>
+               <td><?php echo $row['price'];?>$</td>
                <td>
                <a href="Admin_update_product.php?edit=<?php echo $row['product_name']; ?>" class="btn">Modifier</a>
                <a href="Admin0.php?delete=<?php echo $row['product_name']; ?>" class="btn">Supprimer</a>

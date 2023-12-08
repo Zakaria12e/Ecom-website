@@ -107,11 +107,15 @@ echo"0";
                     <form class="support" action="support.php" method="post" id="contactForm" name="contactForm" novalidate="novalidate">
                         <div class="form-group">
  
-                           <?php  $name =  $_SESSION['username'] ?>
+                           <?php 
+                                 $name =  $_SESSION['username'];
+                                 
+                                  $email =  $_SESSION['email'];     
+                           ?>
                             <input type="text" class="form-control" name="name" id="name" value="<?php echo $name; ?>">
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" value="<?php echo $email; ?>">
                         </div>
                         <div class="form-group">
                             <textarea class="form-control" name="message" id="message" cols="30" rows="7" placeholder="Your Message"></textarea>

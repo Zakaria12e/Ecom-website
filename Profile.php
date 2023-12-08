@@ -88,7 +88,6 @@ if (!isset($_SESSION['username'])) {
 </svg></a>
 <span style=" color:white ;background-color: black; border-radius:50%; padding:0 6px; font-size:14px; font-weight: 600;">
 <?php
-require_once 'config.php';
 if(isset($_SESSION['id'])){
 $user_id = $_SESSION['id'];
 $totaleQuery = "SELECT SUM(quantity) FROM panier WHERE Id = $user_id;";
@@ -141,15 +140,17 @@ echo"0";
                        <input type="text" name="Address" id="address" class="form-control" autocomplete="off"  placeholder="Address" value="<?php  echo $_SESSION['Address']; ?>">
                    </span>
                    </div>
-                  
-                   <div class="form-group">
+                  <div>
+                     <div class="form-group">
                        <button id="btnModifier" type="submit" name="submit">Modifier</button>
-                   </div>
-               </form>
+                     </div >
+                  </form>
 
-    <div>
-        <p id="logout_para">Appuyez ici pour vous déconnecter</p><a id="logout-btn" href="logout.php">Log out</a>
-    </div>
+                    <span>
+                         <span id="logout_para">Appuyez ici pour vous déconnecter</span><a id="logout-btn" href="logout.php">Log out</a>
+                    </span>
+                  </div>
+                  
    
     </section>
 

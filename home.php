@@ -91,7 +91,6 @@ if(isset($_SESSION['id'])){
     
 <div class="product-category">
 <?php
-require_once 'config.php';
 $ProductQuery = "SELECT product_name, price, image FROM products WHERE category = 'CPU'";
 $result = mysqli_query($con,$ProductQuery);
 
@@ -121,7 +120,7 @@ if ($result) {
           <div class="product-category">
           
           <?php
-require_once 'config.php';
+
 $ProductQuery = "SELECT product_name, price, image FROM products WHERE category = 'GPU'";
 $result = mysqli_query($con,$ProductQuery);
 
@@ -149,7 +148,7 @@ if ($result) {
           <div class="product-category">
          
           <?php
-require_once 'config.php';
+
 $ProductQuery = "SELECT product_name, price, image  FROM products WHERE category = 'MOTHER_BOARD'";
 $result = mysqli_query($con,$ProductQuery);
 
@@ -177,7 +176,7 @@ if ($result) {
                          
          <div class="product-category">
          <?php
-require_once 'config.php';
+
 $ProductQuery = "SELECT product_name, price, image  FROM products WHERE category = 'RAM'";
 $result = mysqli_query($con,$ProductQuery);
 
@@ -206,7 +205,7 @@ if ($result) {
          <div class="product-category">
               
          <?php
-require_once 'config.php';
+
 $ProductQuery = "SELECT product_name, price, image  FROM products WHERE category = 'ROM'";
 $result = mysqli_query($con,$ProductQuery);
 
@@ -235,7 +234,7 @@ if ($result) {
                          
          <div class="product-category">
          <?php
-require_once 'config.php';
+
 $ProductQuery = "SELECT product_name, price, image  FROM products WHERE category = 'POWER_SUPPLY'";
 $result = mysqli_query($con,$ProductQuery);
 
@@ -265,7 +264,7 @@ if ($result) {
        <div class="product-category">
              
        <?php
-require_once 'config.php';
+
 $ProductQuery = "SELECT product_name, price, image  FROM products WHERE category = 'CASE'";
 $result = mysqli_query($con,$ProductQuery);
 
@@ -292,7 +291,7 @@ if ($result) {
      <div class="product-category">
           
           <?php
-require_once 'config.php';
+
 $ProductQuery = "SELECT product_name, price, image FROM products WHERE category = 'Monitors'";
 $result = mysqli_query($con,$ProductQuery);
 

@@ -129,7 +129,7 @@ echo'</div>';
 
               $price = $row['price'];
               echo "<div id='price_container' style='display: inline-block;'>
-              <p style='display: inline;font-family: Verdana, Geneva, Tahoma, sans-serif;font-weight: 200;font-size: 20px;'>Price: </p>
+              <p style='display: inline;font-size: 20px;'>Price: </p>
               <p class='price' style='display: inline; margin: 0;'>$price</p>
               <p style='display: inline;' class='price'>$</p>
               </div>";
@@ -139,11 +139,44 @@ echo'</div>';
   }     
         echo '<form id="form_add_to_cart" method="POST" action="Panier.php">';
         echo '<input type="hidden" name="productName" value="' . $productName . '">';
-        echo '<button type="submit" class="add-to-cart" name="addToCart">ADD TO CART</button>';
+        echo '<button type="submit" class="add-to-cart" id="add-to-cart-btn" name="addToCart">ADD TO CART</button>';
         echo '</form>';
     
           echo'<a id="goback" href="home.php">GO BACK</a>';
     ?> 
+    <?php
+
+$TotalQuantityQuery = "SELECT SUM(quantity) as totalQuantity FROM panier WHERE product_name = '$productName'";
+$result = mysqli_query($con, $TotalQuantityQuery);
+
+if ($result) {
+    $row = mysqli_fetch_assoc($result);
+    $totalQuantityEnPanier = !empty($row['totalQuantity']) ? $row['totalQuantity'] : 0;
+
+
+    $QuantityLimitQuery = "SELECT quantity FROM products WHERE product_name = '$productName'";
+    $result = mysqli_query($con, $QuantityLimitQuery);
+
+    if ($result) {
+        $row = mysqli_fetch_assoc($result);
+        $quantityLimit = !empty($row['quantity']) ? $row['quantity'] : 0;
+
+       
+        if ($totalQuantityEnPanier >= $quantityLimit) {
+            
+            echo '<script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        var addButton = document.getElementById("add-to-cart-btn");
+                        addButton.disabled = true;
+                        addButton.style.backgroundColor = "rgb(231, 67, 67)";
+                        addButton.innerHTML = "Out of Stock";
+                    });
+                  </script>';
+        }
+    }
+}
+?>
+
 </section>
 <script src="script.js"></script>
 </body>

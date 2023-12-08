@@ -2,7 +2,6 @@
   #mod-info,#logout_para{
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 30px;
     padding-top: 30px;
   }
   .change{
@@ -25,6 +24,7 @@
     border-radius: 5px;
     cursor: pointer; 
     font-size: 16px; 
+    margin-left: 100px;
 }
 #logout-btn:hover{
     background-color:rgb(235, 101, 101);
