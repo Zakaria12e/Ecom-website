@@ -29,6 +29,7 @@
 <nav class="navbar">
 
      <a href="home.php">Home</a>
+     <a href="#Payment">Payment</a>
      <a href="support.php">Support</a>
      <a href="Profile.php"> <?php echo $_SESSION['username'];?></a>
 
@@ -159,7 +160,7 @@
     $totalRow = mysqli_fetch_assoc($totalResult);
    $_SESSION['totale'] = $total = $totalRow['total'];
    if( $total != 0){
-   echo '<div>';
+   echo '<div id="Payment">';
          
         echo'<div style="text-align: center; margin-top:40px;"><h1><b>Shipping Address</h1></b><br></div>';
 

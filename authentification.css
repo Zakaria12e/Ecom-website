@@ -1,42 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+*{
+    
+    text-decoration: none;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Poppins';
+}
 .container{
-    max-width: 400px;
+    max-width: 500px;
     margin: 0 auto;
     padding: 20px;
   }
   form{
     background: transparent;
     padding: 20px;
-    border: 1px  solid  rgb(0, 0, 0);
+    border: 1px  solid  rgb(221, 221, 221);
     border-radius: 10px;
     margin-top: 20px;
     box-shadow: 6px 6px 6px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 140px;
+    margin-top: 100px;
   }
   
   .form-control {
-    padding: 10px;
-    border: 1px solid #484646;
-    border-radius: 5px;
+    padding: 20px;
+    border: none;
+    border-bottom: 1px solid black ;
     margin-bottom: 10px;
-    width: 100%;
-    box-sizing: border-box;
-    background: transparent;
-    backdrop-filter: blur(10px);
   }
   .form-group {
     margin-bottom: 20px;
 }
   .btn {
     color: aliceblue;
-    background-color:#9f09af;
+    background-color:#000000;
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .btn:hover {
-    background-color: #a01eaf;
+    background-color: #383738;
 }
 div.confirmationmsg{
     border: 1px solid green;
@@ -63,8 +68,8 @@ div.confirmationmsg{
   
       .title{
         text-align: center;
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        color:rgb(154, 23, 235)
+        
+  
       }
       a{
         text-decoration: none;

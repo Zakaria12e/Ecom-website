@@ -316,15 +316,9 @@ if ($result) {
 
     </main>
     <footer>
-    <a  href="home.php" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <span style="color: rgb(70, 67, 67); margin-left: 50px;" class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Gravey</span>
-    </a>
-    <p style="font-family: 'Trebuchet MS'; margin-left: 50px; color: black;">&copy; 2023 All rights reserved</p>
-        <div class="social-links">
-            <a id="fblink" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a id="maillink" href="mailto:contact@example.com" target="_blank"><i class="fas fa-envelope"></i></a>
-            <a id="gitlink" href="https://github.com/Zakaria12e" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
+    <a href="home.php">Gravey</a>
+    <p style=" margin-left: 50px; color: black;">&copy; 2023 All rights reserved</p>
+
    </footer>
     <script src="script.js"></script>
 </body>

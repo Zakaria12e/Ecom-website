@@ -47,6 +47,7 @@ else{
                <th>Client Name</th>
                <th>Client Email</th>
                <th>Message</th>
+               <th>Created At</th>
                <th>Ticket status</th>
                <th colspan="2">action</th>
        </tr>
@@ -61,6 +62,7 @@ else{
                <td><?php echo $row['name'];?></td>
                <td><?php echo $row['email'];?></td>
                <td><?php echo $row['message'];?></td>
+               <td><?php echo $row['created_at'];?></td>
 
                <td>
                 <?php

@@ -14,9 +14,12 @@
      //sign up msgs
      let signuperr = document.getElementById('signuperr');
      let signupconf = document.getElementById('signupconf');
-     setTimeout(function() { signuperr.classList.add('hide-message');} , 3000);
-     setTimeout(function() { signupconf.classList.add('hide-message');} , 3000);
+     setTimeout(function() { signuperr.classList.add('hide-message');} , 2500);
+     setTimeout(function() { signupconf.classList.add('hide-message');} , 2500);
   
+     let confPassworderr = document.getElementById('passwordconferr');
+     setTimeout(function() { confPassworderr.classList.add('hide-message');} , 2500);
+
       //add product msg
      
       let addProductconf = document.getElementById('addproduct');

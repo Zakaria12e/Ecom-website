@@ -11,6 +11,17 @@
 
 <body >
 
+<style>
+    form{
+        width: 400px;
+    }
+    #input_container{
+        text-align: center;
+    }
+    .form-control{
+        width: 100%;
+    }
+</style>
     <div class="container">
         <div>
             <div>
@@ -66,19 +77,20 @@ if(isset($_POST['submit'])){
               
                 <form  action="" method="post">
                      <h1 class="title">CONNEXION</h1>
-                    <div class="form-group">
-                        <label for="email" >Email</label>
-                        <input type="text" name="email" id="email" class="form-control" autocomplete="off" required>
+                     <div id="input_container" >
+                         <div class="form-group">
+                        <input type="text" name="email" id="email" class="form-control" autocomplete="off" required placeholder="Email">
                     </div>
 
                     <div class="form-group">
-                        <label for="password" >Mot de passe</label>
-                        <input type="password" name="password" id="password" class="form-control" autocomplete="off" required>
+                        <input type="password" name="password" id="password" class="form-control" autocomplete="off" required placeholder="Mot de passe">
                     </div>
                     <div class="form-group">
+                     </div>
+                   </div>
                     <button class="btn" type="submit" name="submit">connexion</button>
 
-                    </div>
+                    
                     <div class="form-group">
                     Pas encore de compte ? <a href="signup.php">Inscrivez-vous</a>
                     </div>

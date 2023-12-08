@@ -49,6 +49,7 @@ $result = mysqli_query($con,$query);
         <th>Client Name</th>
         <th>Client Email</th>
         <th>Message</th>
+        <th>Created At</th>
         <th>Ticket status</th>
         <th>Reponse</th>
 </tr>
@@ -63,6 +64,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         <td><?php echo $row['name'];?></td>
         <td><?php echo $row['email'];?></td>
         <td><?php echo $row['message'];?></td>
+        <td><?php echo $row['created_at'];?></td>
 
         <td>
          <?php

@@ -217,11 +217,14 @@ html{
     background-color: white;
    cursor: pointer;
   }
+  #quantity_update_btn{
+    color: #0f1f52;
+  }
   #quantity_update_btn:hover{
-    color: #1241db;
+    color:#1866e3 ;
   }
   #delete_from_panier{
-    color: brown;
+    color: rgb(238, 15, 15);
    padding-left: 40px;
   }
   #quantity{
