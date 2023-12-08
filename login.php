@@ -61,7 +61,7 @@ if(isset($_POST['submit'])){
         } 
         else 
           {
-            echo "<div id='errMessage1' class='erreurmsg'>>
+            echo "<div id='errMessage1' class='erreurmsg'>
                     <p>Identifiant ou mot de passe incorrect</p>
                   </div>";
           }
@@ -88,9 +88,9 @@ if(isset($_POST['submit'])){
                     <div class="form-group">
                      </div>
                    </div>
+
                     <button class="btn" type="submit" name="submit">connexion</button>
 
-                    
                     <div class="form-group">
                     Pas encore de compte ? <a href="signup.php">Inscrivez-vous</a>
                     </div>

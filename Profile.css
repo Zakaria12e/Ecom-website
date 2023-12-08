@@ -1,14 +1,6 @@
 
-.title-profile{
-    margin-bottom: 70px;
-    font-size: 40px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: bold;
-    color: #000000;
-  }
   #mod-info,#logout_para{
     font-size: 20px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
     margin-bottom: 30px;
     padding-top: 30px;
@@ -18,17 +10,8 @@
    border-radius: 5px;
   
   }
-  input[type="submit"] {
-    background-color: #c66fc9;
-    color: white; 
-    padding: 6px 15px;
-    border-radius: 5px;
-    cursor: pointer; 
-    font-size: 16px; 
-}
-input[type="submit"]:hover{
- background-color: #aa2aaf;
-}
+ 
+
 #logo{
   font-family: 'Poppins';
   font-weight: 600;
@@ -50,7 +33,9 @@ input[type="submit"]:hover{
 display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
+margin-top: 100px;
 }
+
 
 .section-info,
 .section-history {
@@ -70,6 +55,27 @@ margin: 20px auto ;
 width: 48%;
 }
 }  
-input[type="text"],input[type="email"]{
-    background: transparent;
+
+  
+.form-control {
+  padding: 20px;
+  border: none;
+  border-bottom: 1px solid black ;
+  margin-bottom: 10px;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+
+#btnModifier{
+
+  border: none;
+  background-color: rgb(0, 0, 0);
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+}
+#btnModifier:hover{
+  background-color: rgb(69, 69, 69);
 }

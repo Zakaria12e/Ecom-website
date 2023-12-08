@@ -79,7 +79,6 @@
                     </span>
                     </div>
                    
-
                     <div class="form-group">
                         <button class="btn" type="submit" name="submit">S'inscrire</button>
                     </div>
@@ -90,6 +89,16 @@
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+   <script>
+     //sign up msgs
+     let signuperr = document.getElementById('signuperr');
+     let signupconf = document.getElementById('signupconf');
+     setTimeout(function() { signuperr.classList.add('hide-message');} , 2500);
+     setTimeout(function() { signupconf.classList.add('hide-message');} , 2500);
+  
+     let confPassworderr = document.getElementById('passwordconferr');
+     setTimeout(function() { confPassworderr.classList.add('hide-message');} , 2500);
+
+   </script>
 </body>
 </html>

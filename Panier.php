@@ -178,7 +178,7 @@
            $rowphone = mysqli_fetch_assoc($resultphone);
            echo'<div style="display:flex">';
             echo'<h2 style="padding-right:50px;"><b>Phone Number </h2>';
-            echo'<h2 id="phone_number">+212'.$rowphone['PhoneNumber'].'</h2>';
+            echo'<h2 id="phone_number">'.$rowphone['PhoneNumber'].'</h2>';
            echo'</div>';
            
           }
