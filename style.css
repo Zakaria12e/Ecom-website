@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
+
 .container {
   max-width: 600px;
   margin: 0 auto;
@@ -54,18 +55,19 @@ div.titre{
 .hide-message {
       display: none;
     }
+ 
     
     form.support {
-      background-color: rgba(201, 198, 198, 0.8); 
+
       padding: 20px;
       border-radius: 10px;
       margin-top: 20px;
     }
  
     .form-control {
-      background-color: rgba(207, 206, 206, 0.5);
+
       padding: 10px;
-      border: 1px solid #262525;
+      border: 1px solid #b3b2b2;
       border-radius: 5px;
       margin-bottom: 10px;
       width: 100%;
@@ -77,7 +79,6 @@ div.titre{
     div.dropdown-content {
       display: none;
       position: absolute;
-      background-color:#fff;
       min-width: 160px;
       box-shadow:0 8px 16px rgba(0, 0, 0, 0.2);
       z-index: 1;
@@ -88,15 +89,7 @@ html{
   scroll-behavior: smooth;
 }
 
-#home{
-  background-image: url('images/sukuna-vs-gojo-jujutsu-kaisen-thumb.jpg');
-  background-size: cover;
-  background-position: center;
-  color: #ffffff;
-  text-align: center;
-  padding: 8rem 0;
-  height: 100vh;
-}
+
 #home h1 {
   font-size: 3rem;
   font-weight: bold;
@@ -135,113 +128,7 @@ color: #344be1;
 }
 
 
-h1#panier-titre{
-margin-bottom: 70px;
-font-size: 40px;
-font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-font-weight: bold;
-color: #000000;
-}
-div#articles{
-width: 700px;
-height: auto;
-margin-bottom: 20px;
-padding: 10px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-border-radius: 10px;
-margin: 20px;
-}
-#pname-pimg-p{
-  display: flex;
-}
 
-#panier_img{
-  width: 150px;
-  height: 100px;
-  border-radius: 7px;
-}
-
-#panier{
-  
-  margin-bottom: 10px;
-  background-color: #ffffff;
-  margin-top: 40px;
-  margin-left: 200px;
-  border-radius: 8px;
-  width: 740px;
-  height: auto;
-  padding: 0px 40px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-#panier-total{
-  width: 300px;
-  height: 390px;
-  padding: 10px;
-  background-color: #ffffff;
-  margin-top: 40px;
-  border-radius: 8px;
-  margin-left: 30px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.panier_payment{
-  display: flex;
-  padding: 30px;
-}
-hr{
-  padding: 10px;
-  margin-top: 10px;
-}
-.price{
-  display: flex;
-}
-.img_container_panier{
-  padding-right:30px ;
-}
-#pr_price_panier{
-  margin-left: 180px;
-  margin-top: -55px;
-  margin-bottom:70px;
-
-}
-#quantity_panier{
- display: flex;
-}
-#empty_panier{
-  font-size: 40px;
-  color: #a20afa;
-  font-weight: 800;
-
-}
-#quantity_title{
- padding-right: 30px;
-}
-#quantity_update_btn,h2{
-  font-weight: 600;
-}
-#buynow_btn{
-  color: #ffffff;
-  background-color: #344be1;
-  padding: 10px;
-  width: 200px;
-  height: auto;
- border-radius: 10px;
-
-}
-#form_buynow{
-   text-align: center;
-}
-#name_phone_num{
-  display: flex;
-}
-#phone_number{
-  padding-left: 20px;
-}
-#shipping{
-  display: flex;
-}
-#shipping_price{
-  padding-left: 120px;
-}
 .hidden-section {
   display: none;
 }

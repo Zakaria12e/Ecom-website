@@ -120,7 +120,7 @@ if (isset($_POST['Delete_ticket'])) {
       mysqli_query($con,$DeleteQuery);
       if ( mysqli_query($con,$DeleteQuery)) {
         header('location: tickets.php');
-      }
+      };
 
 }
      $newSolution = "";

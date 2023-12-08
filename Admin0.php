@@ -30,7 +30,7 @@ else{
 
     <a href="#">Clients</a>
     <a href="#">Orders</a>
-     <a href="tickets.php">Tickets</a>
+    <a href="tickets.php">Tickets</a>
     <a href="logout.php"><img style="width: 21px; height: 23px; padding-top:4px;" src="images/logout_icon_151219.png"></a>
   </nav>
 </header>
@@ -154,10 +154,10 @@ else{
      }
 
 ?>      <?php if (!empty($confirmationMessage)) : ?>
-           <div id="addproduct" class="confirmationmsg"><?php echo $confirmationMessage; ?></div>
+           <div style=" margin-left: 430px ;margin-bottom:-20px; margin-top: -100px; font-size:20px;"  id="Addproduct" class="confirmationmsg"><?php echo $confirmationMessage; ?></div>
         <?php endif; ?>
         <?php if (!empty($errmsg)) : ?>
-           <div id="addproduct" class="erreurmsg"><?php echo $errmsg; ?></div>
+           <div style=" margin-left: 430px ;margin-bottom:-20px; margin-top: -100px; font-size:20px;"  id="Addproduct" class="erreurmsg"><?php echo $errmsg; ?></div>
         <?php endif; ?>
 
 
@@ -226,7 +226,10 @@ else{
 
 
 </div>
-
+<script>
+      let AddProductmsg = document.getElementById('Addproduct');
+      setTimeout(function() { AddProductmsg.classList.add('hide-message');} , 2000);
+</script>
 </body>
 </html>
 

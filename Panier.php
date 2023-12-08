@@ -10,40 +10,32 @@
 
 
  <!DOCTYPE html>
- <html lang="en">
+ <html lang="fr">
  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="nav.css">
+     <link rel="stylesheet" href="Admin0.css">
     <title>Panier</title>
  </head>
 
- <body style=" background-color: #f8f4f4;">
- <nav class="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="home.php" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <span style="color: black;" id="logo" class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Gravey</span>
-        </a>
-        <ul class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
-            <li>
-            <a href="home.php" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</a>
-            </li>
-            <li>
-                <a href="support.php" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Support</a>
-            </li>
-            <li>
-            <?php
-echo'<a style="display: flex;" href="Profile.php" class="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-</svg>'.$_SESSION['username'].'</a>';
-?>
-            </li>
-        </ul>
-    </div>
- </nav>
- <?php
+ <body>
+
+
+ <header class="header">
+
+         
+<a class="logo" href="home.php">Gravey</a>
+<nav class="navbar">
+
+     <a href="home.php">Home</a>
+     <a href="support.php">Support</a>
+     <a href="Profile.php"> <?php echo $_SESSION['username'];?></a>
+
+</nav>
+</header>
+
+<?php
  require_once 'config.php';
 
  if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["addToCart"])) {
@@ -76,90 +68,106 @@ echo'<a style="display: flex;" href="Profile.php" class="block py-2 px-3 md:p-0 
 
  $userId = isset($_SESSION['id']) ? $_SESSION['id'] : 0;
 
- $cartQuery = "SELECT * FROM panier WHERE Id = '$userId'";
- $cartResult = mysqli_query($con, $cartQuery);
- echo'<div class="panier_payment">';
- echo '<section id="panier">';
- if ($cartResult) 
- {  
-    while ($cartRow = mysqli_fetch_assoc($cartResult)) {
-   
-        $productName = $cartRow['product_name'];
+ $Query = "SELECT * FROM panier WHERE Id = '$userId'";
+ $Result = mysqli_query($con, $Query);
 
+ ?>
+
+<div class="container">
+
+
+<div style="margin-top: -200px;" class="ticket-display" id="tickets">
+
+     <table id="table" class="ticket_table">
+
+       <thead>
+        <tr>
+               <th>Product Image</th>
+               <th>Product Name</th>
+               <th>Price</th>
+               <th colspan="2">Quantity</th>
+       </tr>
+    
+      </thead>
+
+      <?php
+      while ($row = mysqli_fetch_assoc($Result)) {
+        $productName = $row['product_name'];
         $productDetailsQuery = "SELECT * FROM products WHERE product_name = '$productName'";
         $productDetailsResult = mysqli_query($con, $productDetailsQuery);
 
         if ($productDetailsResult) {
             $productDetails = mysqli_fetch_assoc($productDetailsResult);
-          
-    echo '<div>';
-    
-      echo '<form  style="margin-left:675px; margin-top:5px"  method="POST" action="Panier.php">';
-      echo '<input type="hidden" name="productName" value="' . $productName . '">';
-      echo '<button  type="submit"  id="supprimerpro_btn" name="SUPPRIMER"><svg style="color:red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
-         </svg></button>';
-       echo '</form>';
+      ?>
+         <tr>
+               <td > <img style="width: 160px;  border-radius: 6px;" src="images/<?php  echo  $productDetails['image'];?>"></td>
+               <td><?php echo $row['product_name'];?></td>
+               <td><?php echo $productDetails['price'];?></td>
+               <td>
 
-            echo'<div id="pname-pimg-p">';
-              echo '<div class="img_container_panier"><img  id="panier_img" src="images/' . $productDetails['image'] . '"></div>';
-              echo '<p>Product Name: ' . $productDetails['product_name'] . '</p>';
-          
-           echo'</div>';
-                echo '<p id=pr_price_panier>' . $productDetails['price'] . '$</p>';
-          
-              echo '<form id="quantity_panier" method="POST" action="Panier.php">';
-              echo '<input type="hidden" name="productName" value="' . $productName . '">';
-              echo '<p id="quantity_title">Quantity</p>';
-              echo '<input  type="number" name="quantity" value="' . $cartRow['quantity'] . '" min="1" max="10">';
-              echo '<button id="quantity_update_btn" type="submit"  name="updateQuantity">Update Quantity</button>';
-              echo '</form>';
-          
+                    <form id="quantity_panier" method="POST" action="panier.php">
+                      <input type="hidden" name="productName" value="<?php echo $row['product_name'];?>">
+                      <input id="quantity"  type="number" name="quantity" value="<?php echo $row['quantity'];?>" min="1" max="10">
+                      <button id="quantity_update_btn" type="submit"  name="updateQuantity">Update Quantity</button>
+                      <button id="delete_from_panier" type="submit" name="SUPPRIMER" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+  <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
+</svg></button>
+                   </form>
+               </td>
 
-         echo"<div>";
-              if (isset($_POST["updateQuantity"])) {
-                $productName = $_POST["productName"];
-                $newQuantity = $_POST["quantity"];
-            
-                $updateQuantityQuery = "UPDATE panier SET quantity = '$newQuantity' WHERE Id = '$userId' AND product_name = '$productName'";
-                if (mysqli_query($con, $updateQuantityQuery)) {
-                    header('location: Panier.php');
-                } else {
-                    echo "Error updating quantity: " . mysqli_error($con);
+               <td></td>
+                <?php
+
+                 if (isset($_POST["updateQuantity"])) {
+                      $productName = $_POST["productName"];
+                      $newQuantity = $_POST["quantity"];
+
+                      $updateQuantityQuery = "UPDATE panier SET quantity = '$newQuantity' WHERE Id = '$userId' AND product_name = '$productName'";
+                    if (mysqli_query($con, $updateQuantityQuery)) {
+                          header('location: Panier.php');
+                            } else {
+                         echo "Error updating quantity: " . mysqli_error($con);
+                             }
                 }
-             }
-            
-            echo'<hr>';
- echo '</div>';      
-    
-    }
- 
-    if (isset($_POST["SUPPRIMER"])) {
 
-        $productName = $_POST["productName"];
-        $deleteQuery = "DELETE FROM panier WHERE Id = '$userId' AND product_name = '$productName'";
-        $Result = mysqli_query($con, $deleteQuery);
-        if ($Result) {
-            header('location: Panier.php');
-        } 
-    }
+                if (isset($_POST["SUPPRIMER"])) {
 
- }
-}
-echo '</section>';
- $totalQuery = "SELECT SUM(panier.quantity * products.price) AS total FROM panier
+                    $productName = $_POST["productName"];
+                    $deleteQuery = "DELETE FROM panier WHERE Id = '$userId' AND product_name = '$productName'";
+                    $Result = mysqli_query($con, $deleteQuery);
+                    if ($Result) {
+                        header('location: Panier.php');
+                    } 
+                }
+
+            }
+              
+                 ?>
+                
+       </tr>
+      
+     <?php } ?>
+     </table> 
+     
+</div>
+<?php  
+       $totalQuery = "SELECT SUM(panier.quantity * products.price) AS total FROM panier
  JOIN products ON panier.product_name = products.product_name
  WHERE panier.Id = '$userId'"; 
  $totalResult = mysqli_query($con, $totalQuery);
-
  if ($totalResult) {
     $totalRow = mysqli_fetch_assoc($totalResult);
    $_SESSION['totale'] = $total = $totalRow['total'];
    if( $total != 0){
-   echo '<div id="panier-total">';
-        echo'<h1><b>Shipping Address<h1></b><br>';
-        echo'<div id="name_phone_num">';
+   echo '<div>';
+         
+        echo'<div style="text-align: center; margin-top:40px;"><h1><b>Shipping Address</h1></b><br></div>';
+
+        echo'<div style="display:flex">';
+         echo'<h2 style="padding-right:70px;"><b>Client Name </h2>';
          echo' <h2>'.$_SESSION['username'].'</h2>';
+        echo'</div>';
+       
            $username = $_SESSION['username'];
 
         $phoneQuery = "SELECT PhoneNumber FROM clients where Id = $userId";
@@ -167,32 +175,41 @@ echo '</section>';
          
           if ($resultphone) {
            $rowphone = mysqli_fetch_assoc($resultphone);
+           echo'<div style="display:flex">';
+            echo'<h2 style="padding-right:50px;"><b>Phone Number </h2>';
             echo'<h2 id="phone_number">+212'.$rowphone['PhoneNumber'].'</h2>';
+           echo'</div>';
+           
           }
         echo'</div>';
         $AddressQuery = "SELECT Address FROM clients where Id = $userId";
         $resultAddress = mysqli_query($con, $AddressQuery);
         if ($resultAddress) {
             $rowAddress = mysqli_fetch_assoc($resultAddress);
-             echo'<h2>'.$rowAddress['Address'].'</h2><br>';
+        
+              echo'<h2><b>Client Address</h2>';
+              echo'<h2>'.$rowAddress['Address'].'</h2><br>';
+             
+            
            }
       
         
-      echo'<div id="shipping">';
-           echo'<b><h1>Total shipping<h1></b>';
-           echo'<b><h1 id="shipping_price">free<h1></b>';
+      echo'<div style=" display:flex; justify-content: space-between; align-items: center;">';
+           echo'<b><h1>Total shipping</h1></b>';
+           echo'<b><h1>free</h1></b>';
       echo'</div>';
      
        echo'<hr>';
     
-      echo'<div class="price">';
-        echo '<b><p>Totale</p></b>';
-         echo'<b><p style=" padding-left:150px; font-family:Arial, sans-serif;">' . $total. '$</p><br><br><br></b>';
+      echo'<div style=" display:flex; justify-content: space-between; align-items: center;">';
+        echo '<b><h1 style="margin-top:-40px;">Totale</h1></b>';
+         echo'<b><h1>' . $total. '$</h1><br><br><br></b>';
       echo'</div>';
         //buy now btn
-        echo '<form id="form_buynow" method="POST" action="Panier.php">';
+        echo '<form id="form_buy_now"  method="POST" action="Panier.php">';
         echo '<input type="hidden" name="client_id" value="' . $userId . '">';
-        echo '<button id="buynow_btn" type="submit" name="buynow_btn">BUY NOW</button>';
+          
+        echo '<button id="buy_now_btn"  type="submit" name="buynow_btn">BUY NOW</button>';
         echo '</form>';
   
     echo'</div>';
@@ -200,17 +217,16 @@ echo '</section>';
   else{
     echo"
     <script>
-        var section = document.getElementById('panier');
+        var section = document.getElementById('table');
         section.classList.add('hidden-section');
     </script>";
 
-    echo'<div id="empty_panier" >No products yet</div>';
+    echo'<div id="empty_panier" ><h1>No products yet</h1></div>';
 
 
    }
   }
-   
-?>
+      ?>
 
 </body>
 </html>

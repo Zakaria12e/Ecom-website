@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 *{
-    margin: 0;padding: 0;
+    
     text-decoration: none;
     box-sizing: border-box;
     outline: none;
-    text-transform: capitalize;
     font-family: 'Poppins';
 }
 html{
@@ -213,6 +212,24 @@ html{
     font-weight: 1000;
   }
 
+  #delete_from_panier,#quantity_update_btn{
+    border: none;
+    background-color: white;
+   cursor: pointer;
+  }
+  #quantity_update_btn:hover{
+    color: #1241db;
+  }
+  #delete_from_panier{
+    color: brown;
+   padding-left: 40px;
+  }
+  #quantity{
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
 @media (max-width:990px)  {
     html{
         font-size: 55%;
@@ -238,4 +255,29 @@ html{
     }
 
 }
+.hidden-section {
+    display: none;
+  }
+  #empty_panier{
+text-align: center;
+margin: 300px 0;
 
+  }
+  #form_buy_now{
+text-align: center;
+  }
+#buy_now_btn{
+    width: 300px;
+    border: none;
+    background-color: #1241db;
+    border-radius: 6px;
+    padding: 10px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#buy_now_btn:hover{
+    background-color: #0e4296;
+    color: gainsboro;
+}
