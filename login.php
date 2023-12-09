@@ -101,9 +101,9 @@ if(isset($_POST['submit'])){
     <script>
          //login msgs
   let errlogin1 = document.getElementById('errMessage1');
-  setTimeout(function() { errlogin1.classList.add('hide-message');} , 3000);
+  setTimeout(function() { errlogin1.classList.add('hide-message');} , 2500);
   let errlogin2 = document.getElementById('errMessage2');
-  setTimeout(function() { errlogin2.classList.add('hide-message');} , 3000);
+  setTimeout(function() { errlogin2.classList.add('hide-message');} , 2500);
     </script>
 </body>
 </html>

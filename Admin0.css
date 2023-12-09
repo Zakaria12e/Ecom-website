@@ -42,7 +42,7 @@ html{
 .btn{
     display: block;
     width: 100%;
-    background-color: #126cdb;
+    background-color: #000000;
     color: white;
     margin-top: 1rem;
     font-size: 1.7rem;
@@ -52,7 +52,7 @@ html{
     cursor: pointer;
 }
 .btn:hover {
-    background-color: #096984;
+    background-color: #2f2f2f;
 }
 
 .confirmationmsg{
@@ -218,10 +218,10 @@ html{
    cursor: pointer;
   }
   #quantity_update_btn{
-    color: #0f1f52;
+    color: #000000;
   }
   #quantity_update_btn:hover{
-    color:#1866e3 ;
+    color:#212121 ;
   }
   #delete_from_panier{
     color: rgb(238, 15, 15);
@@ -272,7 +272,7 @@ text-align: center;
 #buy_now_btn{
     width: 300px;
     border: none;
-    background-color: #1241db;
+    background-color: #000000;
     border-radius: 6px;
     padding: 10px;
     color: white;
@@ -281,6 +281,6 @@ text-align: center;
 }
 
 #buy_now_btn:hover{
-    background-color: #0e4296;
+    background-color: #2a2a2a;
     color: gainsboro;
 }

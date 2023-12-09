@@ -59,7 +59,7 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="text" name="email" id="email" class="form-control"  autocomplete="off" required placeholder="E-mail">
+                        <input type="email" name="email" id="email" class="form-control"  autocomplete="off" required placeholder="E-mail">
                     </div>
                     </div>
                     <div style="display: flex;  justify-content: space-between;">
