@@ -10,18 +10,7 @@
 </head>
 
 <body >
-<?php
-if(isset($Messages)){
-   foreach($Messages as $Message){
-      echo '
-      <div class="message">
-         <span>'.$Message.'</span>
-         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-      </div>
-      ';
-   }
-}
-?>
+
 
 <style>
     form{
@@ -34,9 +23,7 @@ if(isset($Messages)){
         width: 100%;
     }
 </style>
-    <div class="container">
-        <div>
-            <div>
+   
 
 <?php
 session_start();
@@ -73,10 +60,25 @@ if(isset($_POST['submit'])){
         } 
         else { $Messages[] ='Identifiant ou mot de passe incorrect !';}
      }
-     else{ $Messages[] = 'Identifiant ou mot de passe incorrect';}
+     else{ $Messages[] = 'Identifiant ou mot de passe incorrect !';}
 }
+
+
+if(isset($Messages)){
+   foreach($Messages as $Message){
+      echo '
+      <div class="message">
+         <span>'.$Message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+
 ?>
-              
+             <div class="container">
+                 <div>
+                  <div>  
                 <form  action="" method="post">
                      <h1 class="title">CONNEXION</h1>
                      <div id="input_container" >
@@ -100,12 +102,6 @@ if(isset($_POST['submit'])){
             </div>
         </div>
     </div>
-    <script>
-         //login msgs
-  let errlogin1 = document.getElementById('errMessage1');
-  setTimeout(function() { errlogin1.classList.add('hide-message');} , 2500);
-  let errlogin2 = document.getElementById('errMessage2');
-  setTimeout(function() { errlogin2.classList.add('hide-message');} , 2500);
-    </script>
+
 </body>
 </html>

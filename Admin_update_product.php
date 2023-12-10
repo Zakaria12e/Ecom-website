@@ -19,8 +19,6 @@ else{
 <?php
     require_once 'config.php';
     $PRname = $_GET['edit'];
-    $confirmationMessage = "";
-    $errmsg = "";
     $product_name = "";
     $quantity = "";
     $image = "";
@@ -50,13 +48,13 @@ else{
         $result = mysqli_query($con, $Insertquery);
      if ($result) {
         move_uploaded_file($image_tmp_name,$image_Folder);
-        $confirmationMessage = "Le produit a été mise ajourer avec succès";
+        $Messages[] = "Le produit a été mise ajourer avec succès";
        
         }
     }
       else{
 
-     $errmsg = "Veuillez remplire tous les champs";
+        $Messages[] = "Veuillez remplire tous les champs";
 
       }
        
@@ -84,6 +82,19 @@ else{
              if ($rowinfo) {
                 
        ?>
+       <?php
+       
+if(isset($Messages)){
+   foreach($Messages as $Message){
+      echo '
+      <div class="message">
+         <span>'.$Message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+?>
 
             <input type="text" name="product_name" class="box" required  value="<?php echo $rowinfo['product_name']; ?>">
             
@@ -107,10 +118,7 @@ else{
      
 </div>
 </div>
-<script>
-      let UpdateProductmsg = document.getElementById('updateproduct');
-      setTimeout(function() { UpdateProductmsg.classList.add('hide-message');} , 2000);
-</script>
+
 </body>
 </html>
 <?php } ?>

@@ -10,7 +10,6 @@
       
       </div>
 
-
       <div class="box">
          <h3>contact info</h3>
          <a href="tel:+212643131183"><i class="fas fa-phone"></i>+212-643131183</a>

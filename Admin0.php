@@ -106,8 +106,6 @@ else{
 
 <?php
     require_once 'config.php';
-    $confirmationMessage = "";
-    $errmsg = "";
   
     //add product
  if ( isset($_POST['add_product'])) {
@@ -126,7 +124,7 @@ else{
      
     if (empty($product_name) || empty($quantity) || empty($price) || empty($image) || empty($description) || empty($caracteristiques) || empty($category)) {
 
-        $errmsg = "Veuillez remplire tous les champs";
+      $Messages[]  = "Veuillez remplire tous les champs";
     }
       else{
 
@@ -135,7 +133,7 @@ else{
         $result = mysqli_query($con, $Insertquery);
      if ($result) {
         move_uploaded_file($image_tmp_name,$image_Folder);
-        $confirmationMessage = "Le produit a été inserer avec succès";
+        $Messages[] = "Le produit a été inserer avec succès";
        
         }
 
@@ -148,17 +146,28 @@ else{
       $name = $_GET['delete'];
       $DeleteQuery = "DELETE FROM products WHERE product_name ='$name'";
       mysqli_query($con,$DeleteQuery);
+      if (mysqli_query($con,$DeleteQuery)) {
+
+        $Messages[] = "Le produit a été supprimer avec succès";
+      }
       header('location:Admin0.php');
 
      }
 
-?>      <?php if (!empty($confirmationMessage)) : ?>
-           <div style=" margin-left: 430px ;margin-bottom:-20px; margin-top: -100px; font-size:20px;"  id="Addproduct" class="confirmationmsg"><?php echo $confirmationMessage; ?></div>
-        <?php endif; ?>
-        <?php if (!empty($errmsg)) : ?>
-           <div style=" margin-left: 430px ;margin-bottom:-20px; margin-top: -100px; font-size:20px;"  id="Addproduct" class="erreurmsg"><?php echo $errmsg; ?></div>
-        <?php endif; ?>
+?>    
 
+<?php
+if(isset($Messages)){
+   foreach($Messages as $Message){
+      echo '
+      <div class="message">
+         <span>'.$Message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+?>
 
 <div class="container">
 
@@ -225,10 +234,7 @@ else{
 
 
 </div>
-<script>
-      let AddProductmsg = document.getElementById('Addproduct');
-      setTimeout(function() { AddProductmsg.classList.add('hide-message');} , 2000);
-</script>
+
 </body>
 </html>
 

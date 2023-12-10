@@ -39,6 +39,7 @@ else{
     $name = $_GET['delete'];
     $DeleteQuery = "DELETE FROM clients WHERE Username ='$name'";
     mysqli_query($con,$DeleteQuery);
+    $Messages[] =  'Produit supprime avec succes';
     header('location:clients.php');
 
    }
@@ -88,7 +89,7 @@ else{
               
                <td>
                  <a href="clients.php?order=<?php echo $row['Username']; ?>" class="btn">Order</a>
-               <a href="clients.php?delete=<?php echo $row['Username']; ?>" class="btn">Supprimer</a>
+                 <a href="clients.php?delete=<?php echo $row['Username']; ?>" class="btn">Supprimer</a>
               
               </td>
                

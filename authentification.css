@@ -43,46 +43,38 @@
 .btn:hover {
     background-color: #383738;
 }
-.message{
-  position: sticky;
-  top:0;
-  margin:0 auto;
-  margin-bottom: -110px;
+.message {
+text-align: center;
   margin-top: 10px;
-  max-width: 60%;
+  margin-bottom: -70px; 
+  max-width: 100%; 
   background-color: rgba(255, 255, 255, 0.987);
-  padding:2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 10000;
-  gap:1.5rem;
   border-radius: 20px;
-
 }
 
-.message span{
+.message span {
   font-size: 2rem;
   color: black;
 }
 
-.message i{
+.message i {
   cursor: pointer;
-  color: red;
+  color: rgb(156, 28, 28);
   font-size: 2.5rem;
+  transition: transform 0.4s ease; 
 }
 
-.message i:hover{
-  transform: rotate(180deg);
+.message i:hover {
+  transform: rotate(90deg);
 }
+
   
-      .title{
-        text-align: center;
+.title{
+  text-align: center;
         
-  
-      }
-      a{
-        text-decoration: none;
-        color: rgb(0, 104, 230);
-      }
+ }
+  a{
+   text-decoration: none;
+    color: rgb(0, 104, 230);
+ }
   

@@ -10,19 +10,14 @@
 </head>
 <body >
 
-
-    <div class="container">
-        <div >
-            <div>
-                <?php 
+  <?php 
                   session_start();
                   include("config.php");
                   if(isset($_POST['submit'])){
-                      $_SESSION['username'] =  $username = $_POST['username'];
+                     
                       $_SESSION['email'] =  $email = $_POST['email'];
                       $password = password_hash($_POST['password'],PASSWORD_DEFAULT) ;
-                      $_SESSION['PhoneNumber'] = $PhoneNumber = $_POST['Numberhone'];
-                      $_SESSION['Address']= $Address = $_POST['Address'];
+                     
                       $confPassword = password_hash($_POST['confpassword'],PASSWORD_DEFAULT) ;
           
                       // Vérification de l'adresse e-mail unique
@@ -30,12 +25,17 @@
           
                       if(mysqli_num_rows($verify_query) != 0){
                          
-                        $Messages[] =  'Cet e-mail est déjà utilisé, veuillez en choisir un autre !';
-                               
+                        $Messages[] =  'Cet e-mail est déjà utilisé veuillez en choisir un autre !';
+  
                       } 
                       else {
                         if($_POST['password'] === $_POST['confpassword'])
                         {
+
+                            $_SESSION['username'] =  $username = $_POST['username'];
+                             $_SESSION['PhoneNumber'] = $PhoneNumber = $_POST['Numberhone'];
+                             $_SESSION['Address']= $Address = $_POST['Address'];
+
                              mysqli_query($con,"INSERT INTO clients(Username,Email,Password,Address,PhoneNumber) VALUES('$username','$email','$password','$Address','$PhoneNumber')") or die("Erreur");
 
                           $Messages[] = 'Inscription réussie !';
@@ -49,6 +49,22 @@
                       }
                   } 
                 ?>
+                <?php
+            if(isset($Messages)){
+                    foreach($Messages as $Message){
+                echo '
+                   <div class="message">
+                   <span>'.$Message.'</span>
+                     <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+                   </div>
+                       ';
+                  }
+                }
+                ?>
+    <div class="container">
+        <div >
+            <div>
+              
              
                 <form action="" method="post">
                     
