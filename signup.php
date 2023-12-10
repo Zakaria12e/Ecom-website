@@ -9,6 +9,8 @@
     <title>Register</title>
 </head>
 <body >
+
+
     <div class="container">
         <div >
             <div>
@@ -16,34 +18,32 @@
                   session_start();
                   include("config.php");
                   if(isset($_POST['submit'])){
-                      $username = $_POST['username'];
-                      $email = $_POST['email'];
+                      $_SESSION['username'] =  $username = $_POST['username'];
+                      $_SESSION['email'] =  $email = $_POST['email'];
                       $password = password_hash($_POST['password'],PASSWORD_DEFAULT) ;
-                      $PhoneNumber = $_POST['Numberhone'];
-                      $Address = $_POST['Address'];
+                      $_SESSION['PhoneNumber'] = $PhoneNumber = $_POST['Numberhone'];
+                      $_SESSION['Address']= $Address = $_POST['Address'];
                       $confPassword = password_hash($_POST['confpassword'],PASSWORD_DEFAULT) ;
           
                       // Vérification de l'adresse e-mail unique
                       $verify_query = mysqli_query($con,"SELECT Email FROM clients WHERE Email='$email'");
           
                       if(mysqli_num_rows($verify_query) != 0){
-                          echo "<div id='signuperr' class='erreurmsg'>
-                                    <p>Cet e-mail est déjà utilisé, veuillez en choisir un autre !</p>
-                                </div>";
+                         
+                        $Messages[] =  'Cet e-mail est déjà utilisé, veuillez en choisir un autre !';
+                               
                       } 
                       else {
                         if($_POST['password'] === $_POST['confpassword'])
                         {
                              mysqli_query($con,"INSERT INTO clients(Username,Email,Password,Address,PhoneNumber) VALUES('$username','$email','$password','$Address','$PhoneNumber')") or die("Erreur");
-          
-                          echo "<div id='signupconf' class='confirmationmsg'>
-                                    <p>Inscription réussie !</p>
-                                </div>";
+
+                          $Messages[] = 'Inscription réussie !';
                         }
                         else{
-                            echo "<div id='passwordconferr' class='erreurmsg'>
-                            <p>Probleme de confirmation de mot de passe</p>
-                        </div>";
+                          
+                            $Messages[] = 'Probleme de confirmation de mot de passe !';
+                       
                         }
                          
                       }

@@ -1,12 +1,9 @@
  
  //support et authentification msgs 
-  let errmsg = document.getElementById('errMessage');
   let confmsg = document.getElementById('confMessage');
   setTimeout(function() { errmsg.classList.add('hide-message');} , 2000);
-  setTimeout(function() { confmsg.classList.add('hide-message');} , 2000);
 
 
-    
       //add product msg
      
       let addProductconf = document.getElementById('addproduct');

@@ -43,26 +43,38 @@
 .btn:hover {
     background-color: #383738;
 }
-div.confirmationmsg{
-    border: 1px solid green;
-    color: darkgreen;
-    padding: 6px;
-    border-radius: 6px;
-    background-color:rgb(145, 228, 145);
-    text-align: center;
-    }
-    div.erreurmsg{
-    border: 1px solid darkred;
-    color: darkred;
-    padding: 6px;
-    border-radius: 6px;
-    background-color:rgb(228, 145, 145);
-    text-align: center;
-    }
-    .hide-message {
-        display: none;
-      }
+.message{
+  position: sticky;
+  top:0;
+  margin:0 auto;
+  margin-bottom: -110px;
+  margin-top: 10px;
+  max-width: 60%;
+  background-color: rgba(255, 255, 255, 0.987);
+  padding:2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10000;
+  gap:1.5rem;
+  border-radius: 20px;
 
+}
+
+.message span{
+  font-size: 2rem;
+  color: black;
+}
+
+.message i{
+  cursor: pointer;
+  color: red;
+  font-size: 2.5rem;
+}
+
+.message i:hover{
+  transform: rotate(180deg);
+}
   
       .title{
         text-align: center;

@@ -10,6 +10,18 @@
 </head>
 
 <body >
+<?php
+if(isset($Messages)){
+   foreach($Messages as $Message){
+      echo '
+      <div class="message">
+         <span>'.$Message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+?>
 
 <style>
     form{
@@ -50,28 +62,18 @@ if(isset($_POST['submit'])){
             }
             else{
 
-            $_SESSION['valid'] = $row['Email'];
+            $_SESSION['email'] = $row['Email'];
             $_SESSION['username'] = $row['Username'];
             $_SESSION['id'] = $row['Id'];
+            $_SESSION['PhoneNumber'] = $row['PhoneNumber'];
+            $_SESSION['Address']= $row['Address'];
 
                 header("Location: home.php");
             }
-          
-          
         } 
-        else 
-          {
-            echo "<div id='errMessage1' class='erreurmsg'>
-                    <p>Identifiant ou mot de passe incorrect</p>
-                  </div>";
-          }
+        else { $Messages[] ='Identifiant ou mot de passe incorrect !';}
      }
-     else
-      {
-        echo "<div id='errMessage2' class='erreurmsg'>
-                <p>Identifiant ou mot de passe incorrect</p>
-              </div>";
-     }
+     else{ $Messages[] = 'Identifiant ou mot de passe incorrect';}
 }
 ?>
               

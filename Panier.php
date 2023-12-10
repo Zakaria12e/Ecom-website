@@ -7,8 +7,6 @@
 
 ?>
 
-
-
  <!DOCTYPE html>
  <html lang="fr">
  <head>
@@ -21,10 +19,8 @@
 
  <body>
 
-
  <header class="header">
 
-         
 <a class="logo" href="home.php">Gravey</a>
 <nav class="navbar">
 
@@ -200,7 +196,6 @@
             
            }
       
-        
       echo'<div style=" display:flex; justify-content: space-between; align-items: center;">';
            echo'<b><h1>Total shipping</h1></b>';
            echo'<b><h1>free</h1></b>';

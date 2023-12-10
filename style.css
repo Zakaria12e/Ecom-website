@@ -30,24 +30,6 @@ margin: 0;
 padding: 0;
 }
 
-div.confirmationmsg{
-border: 1px solid green;
-color: darkgreen;
-padding: 6px;
-border-radius: 6px;
-background-color:rgb(145, 228, 145);
-text-align: center;
-
-
-}
-div.erreurmsg{
-border: 1px solid darkred;
-color: darkred;
-padding: 6px;
-border-radius: 6px;
-background-color:rgb(228, 145, 145);
-text-align: center;
-}
 div.titre{
   text-align: center;
   color:rgb(17, 17, 17)
@@ -136,3 +118,48 @@ p{
   font-weight: 600;
 }
 
+.footer{
+  background-color: rgb(255, 255, 255);
+}
+
+.footer .box-container{
+  max-width: 1200px;
+  margin:0 auto;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.footer .box-container .box h3{
+  text-transform: uppercase;
+  color:black;
+
+  padding-bottom: 2rem;
+}
+
+.footer .box-container .box p,
+.footer .box-container .box a{
+  display: block;
+
+  padding:1rem 0;
+  color: #000000;
+  text-decoration: none;
+}
+
+.footer .box-container .box p i,
+.footer .box-container .box a i{
+  color:rgb(0, 0, 0);
+  padding-right: .5rem;
+}
+
+.footer .box-container .box a:hover{
+  color:rgb(19, 159, 205);
+
+}
+
+.footer .credit{
+  text-align: center;
+
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+}

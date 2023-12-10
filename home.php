@@ -11,6 +11,7 @@ else{
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="Products.css">
   <link rel="stylesheet" href="nav.css">
@@ -312,11 +313,8 @@ if ($result) {
     </section>
 
     </main>
-    <footer>
-    <a href="home.php">Gravey</a>
-    <p style=" margin-left: 50px; color: black;">&copy; 2023 All rights reserved</p>
-
-   </footer>
+    <hr style=" margin: 100px 140px">
+    <div><?php include 'footer.php'; ?></div>
     <script src="script.js"></script>
 </body>
 </html>

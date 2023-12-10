@@ -27,7 +27,7 @@ if(isset($_POST['submit'])){
         $result = mysqli_query($con, $query);
 
         if ($result) {
-        $confirmationMessage = "La ticket a été envoyer avec succès";
+        $Messages[] = "La ticket a été envoyer avec succès";
         } 
         else {
         echo "Erreur lors de l'insertion des données : " . mysqli_error($con);
@@ -41,6 +41,7 @@ if(isset($_POST['submit'])){
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
      <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="Products.css">
     <link rel="stylesheet" href="nav.css">
@@ -50,6 +51,19 @@ if(isset($_POST['submit'])){
 </head>
 <body class="bodysup">
   
+
+<?php
+if(isset($Messages)){
+   foreach($Messages as $Message){
+      echo '
+      <div class="message">
+         <span>'.$Message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+?>
 <header class="header">
 
          
@@ -94,12 +108,7 @@ echo"0";
 </header>
 
     <div class="container">
-                         <?php if (!empty($confirmationMessage)) : ?>
-                                 <div id="confMessage" class="confirmationmsg"><?php echo $confirmationMessage; ?></div>
-                         <?php endif; ?>
-                         <?php if (!empty($erreurMessage)) : ?>  
-                                 <div id="errMessage" class="erreurmsg"><?php echo $erreurMessage; ?></div>
-                         <?php endif; ?>
+                        
                     <div class="titre"><h2 style=" font-size:50px; margin-top:70px;">Contact Support</h2>
                     <p>Fill out the form below to get in touch with our support team</p>
                 </div>  
