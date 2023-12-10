@@ -18,18 +18,7 @@ else{
 </head>
 <body>
 
-<?php
-if(isset($message)){
-   foreach($message as $message){
-      echo '
-      <div class="message">
-         <span>'.$message.'</span>
-         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-      </div>
-      ';
-   }
-}
-?>
+
 <header class="header">
 
          
@@ -156,8 +145,6 @@ echo'</div>';
           echo'<a id="goback" href="home.php">GO BACK</a>';
     ?> 
     <?php
-
-    if(isset($_POST['addToCart'])){   $message[] = 'Le produit ajoute avec succes ';   }
 
 $TotalQuantityQuery = "SELECT SUM(quantity) as totalQuantity FROM panier WHERE product_name = '$productName'";
 $result = mysqli_query($con, $TotalQuantityQuery);

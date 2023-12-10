@@ -72,12 +72,18 @@ if(isset($_SESSION['id'])){
                  
     </nav>
     </header>
+
     
-    <section id="home">
+<section class="home">
+
+<div class="content">
+
         <h1 class="title-home">Welcome to Gravey Your Hardware Store</h1>
         <p>Explore a wide range of CPUs, GPUs, RAMs, SSDs, and more.</p>
         <a href="#CPUS" id="btn-to-products">Shop Now</a>
-    </section>
+</div>
+
+</section>
 
     <main>
   </div>

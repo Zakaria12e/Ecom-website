@@ -71,21 +71,31 @@ html{
   scroll-behavior: smooth;
 }
 
-
-#home h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  margin-top: 120px;
-
+.home{
+  min-height: 70vh;
+   background-position: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
-#home p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+
+.home .content{
+  text-align: center;
+  width: 60rem;
+}
+
+.home .content h1{
+  font-size: 40px;
   color: #000000;
-  font-weight: bold;
 }
+
+.home .content p{
+  font-size:1.4rem;
+  padding:1rem 0;
+  line-height: 1.5;
+}
+
 #btn-to-products{
   margin-top: 24px;
   margin-bottom: 100px;
@@ -108,6 +118,8 @@ html{
 #profile :hover{
 color: #344be1;
 }
+
+
 
 
 

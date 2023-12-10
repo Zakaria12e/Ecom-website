@@ -32,9 +32,9 @@
                         if($_POST['password'] === $_POST['confpassword'])
                         {
 
-                            $_SESSION['username'] =  $username = $_POST['username'];
-                             $_SESSION['PhoneNumber'] = $PhoneNumber = $_POST['Numberhone'];
-                             $_SESSION['Address']= $Address = $_POST['Address'];
+                            $username = $_POST['username'];
+                            $PhoneNumber = $_POST['Numberhone'];
+                            $Address = $_POST['Address'];
 
                              mysqli_query($con,"INSERT INTO clients(Username,Email,Password,Address,PhoneNumber) VALUES('$username','$email','$password','$Address','$PhoneNumber')") or die("Erreur");
 

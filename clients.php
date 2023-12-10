@@ -21,6 +21,7 @@ else{
   <a href="Admin0.php" class="logo">Gravey</a>
   <nav class="navbar">
     <a href="Admin0.php">Home</a>
+    <a href="#AddAdmin">Add Admin</a>
     <a href="tickets.php">Tickets</a>
     <a href="logout.php"><img style="width: 21px; height: 23px; padding-top:4px;" src="images/logout_icon_151219.png"></a>
 
@@ -32,17 +33,6 @@ else{
     //tickets
   $selectQuery = "SELECT * FROM clients";
   $result = mysqli_query($con,$selectQuery);
-
-
-  if (isset($_GET['delete'])) {
-       
-    $name = $_GET['delete'];
-    $DeleteQuery = "DELETE FROM clients WHERE Username ='$name'";
-    mysqli_query($con,$DeleteQuery);
-    $Messages[] =  'Produit supprime avec succes';
-    header('location:clients.php');
-
-   }
   ?>
 
 <div class="container">
@@ -88,8 +78,8 @@ else{
 
               
                <td>
+                 <a href="clients.php?update=<?php echo $row['Username']; ?>" class="btn">Modifier</a>
                  <a href="clients.php?order=<?php echo $row['Username']; ?>" class="btn">Order</a>
-                 <a href="clients.php?delete=<?php echo $row['Username']; ?>" class="btn">Supprimer</a>
               
               </td>
                
@@ -101,10 +91,39 @@ else{
      </table> 
      
 </div>
+ 
+<?php 
+if (isset($_POST['add_admin'])) {
 
+
+
+  
+}
+
+
+
+?>
+
+<section style="margin-top: 300px;" id="AddAdmin">
+<div class="admin-product-form-container">
+
+<form id="Add product" action="" method="POST">
+      <h3>ADD ADMINS</h3>
+
+            <input type="text" name="Admin_name" class="box" required placeholder="Name">
+            
+            <input type="email" name="Admin_email" class="box" required placeholder="Email">
+            
+            <input type="password" name="Admin_password" class="box" required placeholder="Password">
+
+            <input type="hidden" name="user_type" value="admin">
+
+            <input type="submit" class="btn"  name="add_admin" value="Add Admin">
+</form>
+
+</section>
 </div>
 
-</div>  
 
 </body>
 </html>
