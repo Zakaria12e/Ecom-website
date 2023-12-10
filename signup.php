@@ -38,7 +38,7 @@
 
                              mysqli_query($con,"INSERT INTO clients(Username,Email,Password,Address,PhoneNumber) VALUES('$username','$email','$password','$Address','$PhoneNumber')") or die("Erreur");
 
-                          $Messages[] = 'Inscription réussie !';
+                            $Messages[] = 'Inscription réussie !';
                         }
                         else{
                           

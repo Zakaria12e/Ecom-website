@@ -78,9 +78,20 @@ else{
 
               
                <td>
-                 <a href="clients.php?update=<?php echo $row['Username']; ?>" class="btn">Modifier</a>
-                 <a href="clients.php?order=<?php echo $row['Username']; ?>" class="btn">Order</a>
-              
+
+                <?php  if ($row['user_type'] != 'admin'){   ?>
+                 <a href="users.php?order=<?php echo $row['Username']; ?>" class="btn">Order</a>
+                 <a href="users.php?delete=<?php echo $row['Username']; ?>" class="btn">Supprimer</a>
+                <?php  } 
+               else{  if($row['Username'] != $_SESSION['username']){?>
+               
+               <a href="users.php?delete=<?php echo $row['Username']; ?>" class="btn">Supprimer</a>
+               
+                   <?php   
+
+                    } else{ echo'<h3>YOU</h3>'; } }?>
+                
+
               </td>
                
                
@@ -95,12 +106,60 @@ else{
 <?php 
 if (isset($_POST['add_admin'])) {
 
+    $AdminName = $_POST['Admin_name'];
+    $AdminEmail = $_POST['Admin_email'];
+    $AdminPassword = password_hash($_POST['Admin_password'],PASSWORD_DEFAULT)  ;
+    $Type = $_POST['user_type'];
 
+     // Vérification de l'adresse e-mail unique
+    $verify_query = mysqli_query($con,"SELECT Email FROM clients WHERE Email='$AdminEmail'");
+          
+    if(mysqli_num_rows($verify_query) != 0){
+       
+      $Messages[] =  'Cet e-mail est déjà utilisé veuillez en choisir un autre !';
 
+    } 
+    else{
+       $AddAdminQuery =  "INSERT INTO clients (Username,Email,Password,user_type) VALUES ('$AdminName','$AdminEmail','$AdminPassword','$Type')";
+       $result =  mysqli_query($con,$AddAdminQuery);
+
+     if ($result) {
+       
+      $Messages[] = 'Creation réussie ';
+      header('location:users.php');
+     }
+     else{
+      $Messages[] = 'Erreur creation refusé !!';
+     }
+    }
+   
   
 }
 
+//delete product
+if (isset($_GET['delete'])) {
+       
+  $username = $_GET['delete'];
+  $DeleteQuery = "DELETE FROM clients WHERE Username ='$username'";
+  mysqli_query($con,$DeleteQuery);
+  if (mysqli_query($con,$DeleteQuery)) {
 
+    $Messages[] = "Acc a été supprimer avec succès";
+  }
+  header('location:users.php');
+
+ }
+
+if(isset($Messages)){
+  foreach($Messages as $Message){
+echo '
+ <div class="message">
+ <span>'.$Message.'</span>
+   <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+ </div>
+     ';
+}
+}
 
 ?>
 

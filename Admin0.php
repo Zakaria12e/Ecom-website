@@ -28,7 +28,7 @@ else{
      </div>
   </div>
 
-    <a href="clients.php">Clients</a>
+    <a href="users.php">Users</a>
     <a href="tickets.php">Tickets</a>
     <a href="logout.php"><img style="width: 21px; height: 23px; padding-top:4px;" src="images/logout_icon_151219.png"></a>
   </nav>
