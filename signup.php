@@ -75,8 +75,9 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="email" name="email" id="email" class="form-control"  autocomplete="off" required placeholder="E-mail">
-                    </div>
+                          <input type="email" name="email" id="email" class="form-control" autocomplete="off" required placeholder="E-mail">
+                          <small style="padding-right: -30px;" id="emailCondition"></small>
+                     </div>
                     </div>
                     <div style="display: flex;  justify-content: space-between;">
                     <div class="form-group">
@@ -105,16 +106,23 @@
             </div>
         </div>
     </div>
-   <script>
-     //sign up msgs
-     let signuperr = document.getElementById('signuperr');
-     let signupconf = document.getElementById('signupconf');
-     setTimeout(function() { signuperr.classList.add('hide-message');} , 2500);
-     setTimeout(function() { signupconf.classList.add('hide-message');} , 2500);
-  
-     let confPassworderr = document.getElementById('passwordconferr');
-     setTimeout(function() { confPassworderr.classList.add('hide-message');} , 2500);
 
-   </script>
+    <script>
+    var emailInput = document.getElementById('email');
+    var emailCondition = document.getElementById('emailCondition');
+
+
+    emailInput.addEventListener('input', function () {
+        var enteredEmail = emailInput.value;
+
+        if (/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(enteredEmail)) {
+            emailCondition.textContent = 'valid';
+            emailCondition.style.color = 'green';
+        } else {
+            emailCondition.textContent = 'exemple@gmail.com';
+            emailCondition.style.color = 'red';
+        }
+    });
+</script>
 </body>
 </html>

@@ -212,10 +212,13 @@ html{
     font-weight: 1000;
   }
 
-  #delete_from_panier,#quantity_update_btn{
+  #delete_from_panier{
     border: none;
     background-color: white;
-   cursor: pointer;
+    cursor: pointer; 
+    color: rgb(238, 15, 15);
+   margin-left: 60px;
+
   }
   #quantity_update_btn{
     color: #000000;
@@ -223,10 +226,7 @@ html{
   #quantity_update_btn:hover{
     color:#212121 ;
   }
-  #delete_from_panier{
-    color: rgb(238, 15, 15);
-   padding-left: 40px;
-  }
+
   #quantity{
     border: none;
     font-size: 15px;
@@ -308,6 +308,17 @@ text-align: center;
   .message i:hover {
     transform: rotate(90deg);
   }
+
+  .BtnsQuantity{
+
+    border: none;
+    background-color: white;
+  }
+  .BtnsQuantity:hover{
+  
+     cursor: pointer;
+  }
+
   
   .footer{
     background-color: rgb(255, 255, 255);

@@ -83,7 +83,8 @@ if(isset($Messages)){
                      <h1 class="title">CONNEXION</h1>
                      <div id="input_container" >
                          <div class="form-group">
-                        <input type="text" name="email" id="email" class="form-control" autocomplete="off" required placeholder="Email">
+                         <input type="email" name="email" id="email" class="form-control" autocomplete="off" required placeholder="E-mail">
+                          <small style="padding-right: -30px;" id="emailCondition"></small>
                     </div>
 
                     <div class="form-group">
@@ -102,6 +103,23 @@ if(isset($Messages)){
             </div>
         </div>
     </div>
+    <script>
+    var emailInput = document.getElementById('email');
+    var emailCondition = document.getElementById('emailCondition');
+
+
+    emailInput.addEventListener('input', function () {
+        var Email = emailInput.value;
+
+        if (/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(Email)) {
+            emailCondition.textContent = 'valid';
+            emailCondition.style.color = 'green';
+        } else {
+            emailCondition.textContent = 'exemple@gmail.com';
+            emailCondition.style.color = 'red';
+        }
+    });
+</script>
 
 </body>
 </html>

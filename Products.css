@@ -214,3 +214,51 @@ margin-left: 20px;
   font-size: 18px;
   margin-top: 10px;
 }   
+
+/* Add this to your existing CSS */
+
+@media only screen and (max-width: 768px) {
+  .details-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .details_img {
+    margin-right: 0;
+  }
+
+  #caract_titre {
+    margin-left: 0;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .details {
+    width: 90%;
+    margin-top: 60px;
+  }
+
+  .details_img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  #price_container {
+    text-align: center;
+  }
+
+  .add-to-cart {
+    width: 120px;
+    margin-top: 20px;
+    margin-left: -280px;
+  }
+
+  #description {
+    text-align: center;
+  }
+
+  #form_add_to_cart {
+    text-align: center;
+  }
+}

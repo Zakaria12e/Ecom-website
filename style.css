@@ -72,7 +72,7 @@ html{
 }
 
 .home{
-  min-height: 70vh;
+  min-height: 100vh;
    background-position: center;
    display: flex;
    align-items: center;
@@ -118,9 +118,6 @@ html{
 #profile :hover{
 color: #344be1;
 }
-
-
-
 
 
 .hidden-section {
