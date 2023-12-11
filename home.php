@@ -69,8 +69,9 @@ if(isset($_SESSION['id'])){
 </span>
 <a style="margin-top: 10px;" href="Profile.php"> <?php echo $_SESSION['username'];?></a>
                
-                 
+         
     </nav>
+     <button class="mobile-menu-button">&#9776;</button>       
     </header>
 
     

@@ -31,6 +31,7 @@
      <a href="Profile.php"> <?php echo $_SESSION['username'];?></a>
 
 </nav>
+<button style="margin-right:-70px;" class="mobile-menu-button">&#9776;</button>  
 </header>
 
 <?php
@@ -74,7 +75,7 @@
 <div class="container">
 
 
-<div style="margin-top: -200px;" class="ticket-display" id="tickets">
+<div style="margin-top: -100px;" class="ticket-display" id="tickets">
 
      <table id="table" class="ticket_table">
 
@@ -98,39 +99,39 @@
             $productDetails = mysqli_fetch_assoc($productDetailsResult);
       ?>
          <tr>
-               <td > <img style="width: 160px;  border-radius: 6px;" src="images/<?php  echo  $productDetails['image'];?>"></td>
+               <td > <img id="Product_img_panier" style="width: 160px;  border-radius: 6px;" src="images/<?php  echo  $productDetails['image'];?>"></td>
                <td><?php echo $row['product_name'];?></td>
                <td><?php echo $productDetails['price'];?>$</td>
                <td>
                 
                     <form id="quantity_panier" method="POST" action="panier.php">
-
+                    <div class="quantity-controls">
                       <input type="hidden" name="productName" value="<?php echo $row['product_name'];?>">
-
-                      <button class="BtnsQuantity" type="submit" name="less"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8"/>
-                                    </svg></button>
-                      <span class="spanquantity"> <?php echo $row['quantity'];?></span>
-
                       <button class="BtnsQuantity" type="submit" name="plus"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
-                                                           </svg></button>
-
-                      <button id="delete_from_panier" type="submit" name="SUPPRIMER" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
-</svg></button>
-                   </form>
-
+                                                        </svg></button>
+                     
+                      <span class="spanquantity"> <?php echo $row['quantity'];?></span>
+                       <button class="BtnsQuantity" type="submit" name="less"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8"/>
+                                    </svg></button>
                    
-               </td>
-
-               <td></td>
+                   </form> 
+                   <form  action="" method="post">
+                   <input type="hidden" name="productName" value="<?php echo $row['product_name'];?>">
+                   <button  id="delete_from_panier" type="submit" name="SUPPRIMER" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                            </svg></button>
+                   </form>
+                </td>
+              </div>
+                   
+    
                 <?php
 
 
 if (isset($_POST['plus'])) {
     $productName = $_POST['productName'];
-
   
     $currentQuantityQuery = "SELECT SUM(quantity) AS total_quantity FROM panier WHERE product_name = '$productName'";
     $currentQuantityResult = mysqli_query($con, $currentQuantityQuery);
@@ -167,22 +168,16 @@ if (isset($_POST['plus'])) {
  
     }
   
-  
-  
 }
-
 
 if (isset($_POST['less'])) {
     $productName = $_POST['productName'];
-
  
     $currentQuantityQuery = "SELECT quantity AS total_quantity FROM panier WHERE product_name =  '$productName' and Id = '$userId'";
     $currentQuantityResult = mysqli_query($con, $currentQuantityQuery);
     $currentQuantityRow = mysqli_fetch_assoc($currentQuantityResult);
     $currentQuantity = $currentQuantityRow['total_quantity']; 
-
-
-    
+   
     if ($currentQuantity > 1) {
         
         $updateQuery = "UPDATE panier SET quantity = (quantity - 1) WHERE product_name = '$productName' and Id = '$userId'";
@@ -294,7 +289,7 @@ if (isset($_POST['less'])) {
 
 <hr style=" margin: 100px  0 ">
     <div><?php include 'footer.php'; ?></div>
-
+<script src="script.js"></script>
 </body>
 </html>
 

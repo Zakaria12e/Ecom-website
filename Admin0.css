@@ -55,23 +55,6 @@ html{
     background-color: #2f2f2f;
 }
 
-.confirmationmsg{
-    border: 1px solid green;
-    color: darkgreen;
-    padding: 15px;
-    border-radius: 6px;
-    background-color:rgb(145, 228, 145);
-    text-align: center;
-    max-width: 700px;
-    }
-    div.erreurmsg{
-        border: 1px solid darkred;
-        color: darkred;
-        padding: 6px;
-        border-radius: 6px;
-        background-color:rgb(228, 145, 145);
-        text-align: center;
-}
 
 .hide-message{
     display: none;
@@ -202,7 +185,6 @@ html{
      color:#adc6ed ;
  }
 
-
   .total{
     padding: 100px;
   }
@@ -217,47 +199,10 @@ html{
     background-color: white;
     cursor: pointer; 
     color: rgb(238, 15, 15);
-   margin-left: 60px;
 
-  }
-  #quantity_update_btn{
-    color: #000000;
-  }
-  #quantity_update_btn:hover{
-    color:#212121 ;
+   
   }
 
-  #quantity{
-    border: none;
-    font-size: 15px;
-    font-weight: 600;
-  }
-
-@media (max-width:990px)  {
-    html{
-        font-size: 55%;
-    }
-
-}
-
-@media (max-width:768px)  {
-
-    .product-display , .ticket-display{
-        overflow-y: scroll;
-    }
-    
-    .product-display .product_table , .ticket-display .ticket_table{
-        width: 80rem;
-    }
-
-}
-
-@media (max-width:450px)  {
-    html{
-        font-size: 50%;
-    }
-
-}
 .hidden-section {
     display: none;
   }
@@ -318,7 +263,7 @@ text-align: center;
   
      cursor: pointer;
   }
-
+ 
   
   .footer{
     background-color: rgb(255, 255, 255);
@@ -365,3 +310,56 @@ text-align: center;
     margin: 2.5rem  0;
     padding-top: 2.5rem;
   }
+
+ 
+#quantity_panier{
+  display: flex;
+  padding-right: -30px;
+}
+  @media (max-width:990px)  {
+    html{
+        font-size: 55%;
+    }
+
+}
+
+@media (max-width:768px)  {
+     
+    .product-display , .ticket-display{
+        overflow-x: scroll;
+    }
+    
+    .product-display .product_table , .ticket-display .ticket_table{
+        width: 80rem;
+    }
+    .quantity-controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .BtnsQuantity {
+      padding: 8px; 
+      font-size: 14px; 
+      margin: 5px; 
+    }
+  
+    #quantity_panier {
+      text-align: center; 
+    }
+  
+    #delete_from_panier {
+      margin-top: 10px; 
+    }
+    #Product_img_panier{
+      max-width: 100px;
+    }
+
+}
+
+@media (max-width:450px)  {
+    html{
+        font-size: 50%;
+    }
+
+}

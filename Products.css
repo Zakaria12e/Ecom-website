@@ -2,7 +2,6 @@ section {
     padding: 20px;
 }
 
-
 .product-category {
     display: flex;
     flex-wrap: wrap;
@@ -215,7 +214,6 @@ margin-left: 20px;
   margin-top: 10px;
 }   
 
-/* Add this to your existing CSS */
 
 @media only screen and (max-width: 768px) {
   .details-container {

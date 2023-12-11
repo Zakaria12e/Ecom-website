@@ -41,3 +41,23 @@
    var noProductMessage = document.querySelector('.no-product-message');
    noProductMessage.style.display = foundProduct ? 'none' : 'block';
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const mobileMenuButton = document.querySelector(".mobile-menu-button");
+    const navbar = document.querySelector(".navbar");
+  
+    mobileMenuButton.addEventListener("click", function () {
+      navbar.classList.toggle("active");
+    });
+  
+    window.addEventListener("click", function (event) {
+      if (!event.target.matches('.mobile-menu-button')) {
+        if (navbar.classList.contains('active')) {
+          navbar.classList.remove('active');
+        }
+      }
+    });
+  });
+  
+  

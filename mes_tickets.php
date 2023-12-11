@@ -11,7 +11,10 @@ else{
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="Admin0.css">
+
+    
     <title>mes tickets</title>
 
 </head>
@@ -24,6 +27,7 @@ else{
     <a href="Profile.php">Profile</a>
 
   </nav>
+  <button style="margin-right:-70px;" class="mobile-menu-button">&#9776;</button>  
 </header>
 
 
@@ -102,7 +106,7 @@ while ($row = mysqli_fetch_assoc($result)) {
  
 </div>
 
-
+<script src="script.js"></script>
 </body>
 </html>
 <?php

@@ -97,4 +97,73 @@ html{
  a.vd:hover{
      color:#adc6ed ;
  }
+ .mobile-menu-button{
+    display: none;
+ }
 
+@media only screen and (max-width: 768px) {
+    .header {
+      padding: 20px 20px;
+    }
+  
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: none;
+    }
+  
+    .navbar.active {
+      display: flex;
+    }
+  
+    .navbar a {
+      margin: 10px 0;
+      text-align: center;
+      width: 100%;
+    }
+  
+    .dropdown-content {
+      position: static;
+      box-shadow: none;
+    }
+  
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  
+    .navbar a:not(.logo):hover {
+      background-color: #e2e7e9;
+    }
+  
+    .mobile-menu-button {
+      display: block;
+    }
+  
+    .navbar.active .mobile-menu-button,
+    .navbar.active a:not(.mobile-menu-button),
+    #panier-icon,
+    span {
+      display: block;
+    }
+  
+    .navbar a:not(.mobile-menu-button),
+    #panier-icon,
+    span {
+      display: block;
+    }
+
+    .mobile-menu-button {
+      display: block;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 30px;
+    }
+  }
+  

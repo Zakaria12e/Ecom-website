@@ -105,6 +105,7 @@ echo"0";
 
 
 </nav>
+<button class="mobile-menu-button">&#9776;</button>  
 </header>
 
     <div class="container">
