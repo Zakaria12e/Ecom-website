@@ -73,6 +73,22 @@ if (!isset($_SESSION['username'])) {
 
 </head>
 <body>
+  <style>
+    @media only screen and (max-width: 768px) {
+     #logout_para{
+      margin-bottom: 20px;
+     }
+      #logout-btn{
+         
+        margin-left: 2px;
+      }
+      .form-control{
+        padding: 5px;
+      }
+}
+
+
+  </style>
 <header class="header">
 
          
@@ -135,7 +151,7 @@ echo"0";
                    </div>
                    <div style="display: flex;  justify-content: space-between;">
                         <span class="form-group">
-                       <input type="text" name="NumberPhone" id="numphone" class="form-control" autocomplete="off" placeholder="Number Phone"  value="<?php  echo $_SESSION['PhoneNumber']; ?>">
+                       <input type="number" name="NumberPhone" id="numphone" class="form-control" autocomplete="off" placeholder="Number Phone"  value="<?php  echo $_SESSION['PhoneNumber']; ?>">
                    </span>
                    <span class="form-group">
                        <input type="text" name="Address" id="address" class="form-control" autocomplete="off"  placeholder="Address" value="<?php  echo $_SESSION['Address']; ?>">

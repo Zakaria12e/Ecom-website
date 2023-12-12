@@ -172,3 +172,23 @@ p{
   margin-top: 2.5rem;
   padding-top: 2.5rem;
 }
+
+@media (max-width:990px)  {
+  html{
+      font-size: 55%;
+  }
+
+}
+@media (max-width:768px)  {
+
+  html{
+    font-size: 50%;
+}
+}
+
+@media (max-width:450px)  {
+  html{
+      font-size: 47%;
+  }
+
+}

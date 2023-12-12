@@ -32,77 +32,67 @@ else{
     <a href="tickets.php">Tickets</a>
     <a href="logout.php"><img style="width: 21px; height: 23px; padding-top:4px;" src="images/logout_icon_151219.png"></a>
   </nav>
+  <button class="mobile-menu-button">&#9776;</button>
 </header>
 
-<section  id="dashboard">
-   <?php
+
+  <section class="dashboard">
+
+   <h1 class="title">dashboard</h1>
+
+   <div class="box-container">
+
    
-   include('config.php');
-  // number of clients
-   $query = "SELECT COUNT(*) AS total_clients FROM clients WHERE user_type = 'normal user'";
-   $result = mysqli_query($con,$query);
-   if ($result) {
-      $row = mysqli_fetch_assoc($result);
-      echo'<div class="total">';
-      echo'<h3>Clients</h3>';
-      echo '<h3>'. $row['total_clients'].'</h3>';
-      echo'</div>';
-   }
-     // number of products
-   $productsquery = "SELECT COUNT(*) AS total_products FROM products";
-   $productsresult = mysqli_query($con,$productsquery);
-   if ($productsresult) {
-      $row = mysqli_fetch_assoc($productsresult);
-      echo'<div class="total">';
-      echo'<h3>Products</h3>';
-      echo '<h3>'. $row['total_products'].'</h3>';
-      echo'</div>';
-   }
-     // number of tickts
-     $ticketsquery = "SELECT COUNT(*) AS total_tickets FROM tickets";
-     $ticketsresult = mysqli_query($con, $ticketsquery);
-       // number of tickts en attente
-     $en_attente_query = "SELECT COUNT(*) AS tickets_en_attente FROM tickets WHERE status = 'en attente'";
-     $tickets_en_attente = mysqli_query($con, $en_attente_query);
-     // number of tickts en cours
-     $en_cours_query = "SELECT COUNT(*) AS tickets_en_cours FROM tickets WHERE status = 'en cours'";
-     $tickets_en_cours = mysqli_query($con, $en_cours_query);
-     //number of tickets termine
-     $termine_query = "SELECT COUNT(*) AS tickets_termine FROM tickets WHERE status = 'termine'";
-     $tickets_termine = mysqli_query($con, $termine_query); 
+      <div class="box">
+         <?php 
+         require_once('config.php');
+            $select_products = mysqli_query($con, "SELECT * FROM products") or die('query failed');
+            $number_of_products = mysqli_num_rows($select_products);
+         ?>
+         <h3><?php echo $number_of_products; ?></h3>
+         <p>products added</p>
+      </div>
 
-   if ($ticketsresult) {
-      $row = mysqli_fetch_assoc($ticketsresult);
+      <div class="box">
+         <?php 
+            $select_users = mysqli_query($con, "SELECT * FROM clients WHERE user_type = 'normal user'") or die('query failed');
+            $number_of_users = mysqli_num_rows($select_users);
+         ?>
+         <h3><?php echo $number_of_users; ?></h3>
+         <p>normal users</p>
+      </div>
 
-      echo'<div class="total">';
-      echo'<h3>Tickets</h3>';
-      
+      <div class="box">
+         <?php 
+            $select_admins = mysqli_query($con, "SELECT * FROM clients WHERE user_type = 'admin'") or die('query failed');
+            $number_of_admins = mysqli_num_rows($select_admins);
+         ?>
+         <h3><?php echo $number_of_admins; ?></h3>
+         <p>admin users</p>
+      </div>
 
-        echo'<span id="tickets_container">';
-        if ( $tickets_en_attente) {
-            $row = mysqli_fetch_assoc($tickets_en_attente);
-            echo '<span class="tickets" style="color:red;">'. $row['tickets_en_attente'].'</span>';
-        }
-        
-        if ($tickets_en_cours) {
-            $row = mysqli_fetch_assoc($tickets_en_cours);
-            echo '<span class="tickets" style="color:orange;">'. $row['tickets_en_cours'].'</span>';
-        }
     
-        if ($tickets_termine) {
-            $row = mysqli_fetch_assoc($tickets_termine);
-            echo '<span class="tickets"  style="color:green;">'. $row['tickets_termine'].'</span>';
-        }
-       
-         
-        echo'</span>';
 
-      echo'</div>';
-   }
+      <div class="box">
+         <?php 
+            $select_messages = mysqli_query($con, "SELECT * FROM tickets") or die('query failed');
+            $number_of_messages = mysqli_num_rows($select_messages);
+         ?>
+         <h3><?php echo $number_of_messages; ?></h3>
+         <p>messages</p>
+      </div>
+      <div class="box">
+         <?php 
+            $select_orders = mysqli_query($con, "SELECT * FROM orders") or die('query failed');
+            $number_of_orders = mysqli_num_rows($select_orders);
+         ?>
+         <h3><?php echo $number_of_orders; ?></h3>
+         <p>orders</p>
+      </div>
 
+   </div>
 
-   ?>
-  </section>
+</section>
 
 <?php
     require_once 'config.php';
@@ -231,10 +221,8 @@ if(isset($Messages)){
      </table>
 </div>
 
-
-
 </div>
-
+<script src="script.js"></script>
 </body>
 </html>
 

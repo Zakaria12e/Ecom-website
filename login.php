@@ -22,6 +22,15 @@
     .form-control{
         width: 100%;
     }
+    
+@media only screen and (max-width: 768px) {
+
+    .container{
+        margin-left: 25px;
+    
+    }
+
+}
 </style>
    
 

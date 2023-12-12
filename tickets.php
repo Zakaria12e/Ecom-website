@@ -12,7 +12,6 @@ else{
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Admin0.css">
-    <link rel="stylesheet" href="nav.css">
     <title>Tickets</title>
 </head>
 <body>
@@ -26,7 +25,7 @@ else{
     <a href="#">Orders</a>
     <a href="logout.php">Log out</a>
   </nav>
-  <button style="margin-right:-70px;" class="mobile-menu-button">&#9776;</button>  
+  <button class="mobile-menu-button">&#9776;</button>  
 </header>
 
 <?php

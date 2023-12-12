@@ -55,6 +55,7 @@ if(isset($_SESSION['id'])){
       
            
     </nav>
+    <button class="mobile-menu-button">&#9776;</button>     
     </header>
 
 

@@ -12,15 +12,16 @@ html{
 }
 
 .header{
-    position: fixed;
+    position:fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 20px 100px;
     display: flex;
-    background: rgba(211, 211, 211, 0.1);
+    background: rgba(251, 251, 251, 0.184);
     justify-content: space-between;
     align-items: center;
+    z-index: 1000;
 }
 .logo{
     font-size: 25px;
@@ -144,7 +145,6 @@ html{
     .mobile-menu-button {
       display: block;
     }
-  
     .navbar.active .mobile-menu-button,
     .navbar.active a:not(.mobile-menu-button),
     #panier-icon,

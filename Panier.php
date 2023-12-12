@@ -84,7 +84,7 @@
                <th>Product Image</th>
                <th>Product Name</th>
                <th>Price</th>
-               <th colspan="2">Quantity</th>
+               <th>Quantity</th>
        </tr>
     
       </thead>
@@ -103,7 +103,7 @@
                <td><?php echo $row['product_name'];?></td>
                <td><?php echo $productDetails['price'];?>$</td>
                <td>
-                
+                     
                     <form id="quantity_panier" method="POST" action="panier.php">
                     <div class="quantity-controls">
                       <input type="hidden" name="productName" value="<?php echo $row['product_name'];?>">
@@ -115,14 +115,8 @@
                        <button class="BtnsQuantity" type="submit" name="less"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8"/>
                                     </svg></button>
-                   
                    </form> 
-                   <form  action="" method="post">
-                   <input type="hidden" name="productName" value="<?php echo $row['product_name'];?>">
-                   <button  id="delete_from_panier" type="submit" name="SUPPRIMER" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
-                            </svg></button>
-                   </form>
+                  
                 </td>
               </div>
                    
@@ -189,17 +183,16 @@ if (isset($_POST['less'])) {
             
         }
     }
+    else{
+        $productName = $_POST["productName"];
+        $deleteQuery = "DELETE FROM panier WHERE Id = '$userId' AND product_name = '$productName'";
+       $Result = mysqli_query($con, $deleteQuery);
+            if ($Result) {
+                 header('location: Panier.php');
+             } 
+
+    }
 }
-
-                if (isset($_POST["SUPPRIMER"])) {
-
-                    $productName = $_POST["productName"];
-                    $deleteQuery = "DELETE FROM panier WHERE Id = '$userId' AND product_name = '$productName'";
-                    $Result = mysqli_query($con, $deleteQuery);
-                    if ($Result) {
-                        header('location: Panier.php');
-                    } 
-                }
 
             }
               
@@ -209,6 +202,7 @@ if (isset($_POST['less'])) {
       
      <?php } ?>
      </table> 
+
      
 </div>
 <?php  

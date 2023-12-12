@@ -70,7 +70,7 @@ text-align: center;
 border: 1px solid rgb(215, 214, 217);
 border-radius: 13px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-margin-top: 200px;
+margin: 200px 0 400px  0;
 }
 .product-display thead , .ticket-display thead{
    
@@ -322,9 +322,73 @@ text-align: center;
     }
 
 }
+.mobile-menu-button{
+  display: none;
+}
+
+.title{
+  text-align: center;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color:black;
+  font-size: 4rem;
+  margin-top: 130px;
+}
+.dashboard{
+  margin-bottom: 200px;
+}
+.dashboard .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap:1.5rem;
+  max-width: 1200px;
+  margin:0 auto;
+  align-items: flex-start;
+}
+
+.dashboard .box-container .box{
+  border-radius: 10px;
+  box-shadow:0 8px 16px rgba(0, 0, 0, 0.2);;
+  text-align: center;
+}
+
+.dashboard .box-container .box h3{
+  font-size: 5rem;
+  color:black; 
+}
+
+.dashboard .box-container .box p{
+  margin-top: 1.5rem;
+  padding:1.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
 
 @media (max-width:768px)  {
      
+
+  .title {
+    font-size: 3rem;
+    margin-top: 80px;
+  }
+
+  .dashboard .box-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 100px;
+  }
+
+  .dashboard .box-container .box {
+    width: 100%;
+  }
+
+  .dashboard .box-container .box h3 {
+    font-size: 3rem;
+  }
+
+  .dashboard .box-container .box p {
+    font-size: 1.5rem;
+  }
     .product-display , .ticket-display{
         overflow-x: scroll;
     }
@@ -353,6 +417,68 @@ text-align: center;
     }
     #Product_img_panier{
       max-width: 100px;
+    }
+    .header {
+      padding: 20px 20px;
+    }
+  
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: none;
+    }
+  
+    .navbar.active {
+      display: flex;
+    }
+  
+    .navbar a {
+      margin: 10px 0;
+      text-align: center;
+      width: 100%;
+    }
+  
+    .dropdown-content {
+      position: static;
+      box-shadow: none;
+    }
+  
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  
+    .navbar a:not(.logo):hover {
+      background-color: #e2e7e9;
+    }
+  
+    .mobile-menu-button {
+      display: block;
+    }
+    .navbar.active .mobile-menu-button,
+    .navbar.active a:not(.mobile-menu-button),
+    #panier-icon,
+    span {
+      display: block;
+    }
+  
+    .navbar a:not(.mobile-menu-button),
+    #panier-icon,
+    span {
+      display: block;
+    }
+  
+    .mobile-menu-button {
+      display: block;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 30px;
     }
 
 }

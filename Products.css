@@ -140,7 +140,7 @@ html{
      }
      .price{
       color: rgb(11, 194, 11);
-      font-size: 30px;
+      font-size: 20px;
       font-weight: 600;
      }
      
@@ -153,7 +153,6 @@ html{
       display: flex;
       justify-content: space-between;
       align-items: center;
-     
 
   }
 
@@ -174,7 +173,6 @@ width: 70%;
  margin: 0 auto;
  margin-top: 90px;
  
-
   }
   p{
     font-weight: 600;
@@ -248,13 +246,9 @@ margin-left: 20px;
 
   .add-to-cart {
     width: 120px;
-    margin-top: 20px;
-    margin-left: -280px;
+    margin: 25px 0 25px -257px ;
   }
 
-  #description {
-    text-align: center;
-  }
 
   #form_add_to_cart {
     text-align: center;

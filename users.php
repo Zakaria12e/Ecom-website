@@ -26,6 +26,7 @@ else{
     <a href="logout.php"><img style="width: 21px; height: 23px; padding-top:4px;" src="images/logout_icon_151219.png"></a>
 
   </nav>
+  <button class="mobile-menu-button">&#9776;</button>   
 </header>
 
 <?php
@@ -183,7 +184,7 @@ echo '
 </section>
 </div>
 
-
+<script src="script.js"></script>
 </body>
 </html>
 <?php
