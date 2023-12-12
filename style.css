@@ -127,6 +127,42 @@ p{
   font-weight: 600;
 }
 
+
+.placed-orders .box-container{
+  width: 50%;
+  margin:0 auto;
+  display:flex;
+  flex-wrap: wrap;
+
+  gap:1.5rem;
+}
+
+.placed-orders .box-container .empty{
+  flex:1;
+}
+
+.placed-orders .box-container .box{
+  border-radius: .5rem;
+  padding:2rem;
+  border: solid 1px black;
+  padding:1rem 2rem;
+}
+
+.placed-orders .box-container .box p{
+  padding:1rem 0;
+  font-size: 13px;
+}
+
+.placed-orders .box-container .box p span{
+  color:rgba(49, 49, 154, 0.819);
+}
+.title{
+  text-align: center;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-size: 4rem;
+}
+
 .footer{
   background-color: rgb(255, 255, 255);
 }
@@ -173,6 +209,7 @@ p{
   padding-top: 2.5rem;
 }
 
+
 @media (max-width:990px)  {
   html{
       font-size: 55%;
@@ -183,6 +220,15 @@ p{
 
   html{
     font-size: 50%;
+}
+
+.footer .box-container .box p,
+.footer .box-container .box a,
+.footer .box-container .box h3{
+
+  font-size: 14px;
+  text-align: center;
+  margin-left: 10px;
 }
 }
 

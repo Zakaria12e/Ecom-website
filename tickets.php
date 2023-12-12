@@ -20,10 +20,10 @@ else{
 <header class="header">
   <a href="Admin0.php" class="logo">Gravey</a>
   <nav class="navbar">
-    <a href="Admin0.php">Home</a>
-    <a href="#">Clients</a>
-    <a href="#">Orders</a>
-    <a href="logout.php">Log out</a>
+    <a href="Admin0.php">Home</a> 
+    <a href="orders.php">Orders</a>
+    <a href="users.php">Users</a>
+    <a href="logout.php"><img style="width: 21px; height: 23px; padding-top:4px;" src="images/logout_icon_151219.png"></a>
   </nav>
   <button class="mobile-menu-button">&#9776;</button>  
 </header>

@@ -27,10 +27,8 @@ else{
     <a href="Profile.php">Profile</a>
 
   </nav>
-  <button style="margin-right:-70px;" class="mobile-menu-button">&#9776;</button>  
+  <button class="mobile-menu-button">&#9776;</button>  
 </header>
-
-
 <?php
 
 require_once 'config.php';

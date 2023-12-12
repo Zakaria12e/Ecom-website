@@ -29,6 +29,7 @@ else{
   </div>
 
     <a href="users.php">Users</a>
+    <a href="Orders.php">Orders</a>
     <a href="tickets.php">Tickets</a>
     <a href="logout.php"><img style="width: 21px; height: 23px; padding-top:4px;" src="images/logout_icon_151219.png"></a>
   </nav>
@@ -42,10 +43,32 @@ else{
 
    <div class="box-container">
 
-   
+   <div class="box">
+         <?php
+         require_once('config.php');
+            $total_completed = 0;
+            $select_completed = mysqli_query($con, "SELECT total_price FROM orders WHERE payment_status = 'completed'") or die('query failed');
+            if(mysqli_num_rows($select_completed) > 0){
+               while($row = mysqli_fetch_assoc($select_completed)){
+                  $total_price = $row['total_price'];
+                  $total_completed += $total_price;
+               };
+            };
+         ?>
+         <h3><?php echo $total_completed; ?>$</h3>
+         <p>completed payments</p>
+      </div>
       <div class="box">
          <?php 
-         require_once('config.php');
+            $select_orders = mysqli_query($con, "SELECT * FROM orders") or die('query failed');
+            $number_of_orders = mysqli_num_rows($select_orders);
+         ?>
+         <h3><?php echo $number_of_orders; ?></h3>
+         <p>orders</p>
+      </div>
+      <div class="box">
+         <?php 
+         
             $select_products = mysqli_query($con, "SELECT * FROM products") or die('query failed');
             $number_of_products = mysqli_num_rows($select_products);
          ?>
@@ -81,14 +104,7 @@ else{
          <h3><?php echo $number_of_messages; ?></h3>
          <p>messages</p>
       </div>
-      <div class="box">
-         <?php 
-            $select_orders = mysqli_query($con, "SELECT * FROM orders") or die('query failed');
-            $number_of_orders = mysqli_num_rows($select_orders);
-         ?>
-         <h3><?php echo $number_of_orders; ?></h3>
-         <p>orders</p>
-      </div>
+   
 
    </div>
 
