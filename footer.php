@@ -7,7 +7,7 @@
          <a href="home.php">Home</a>
          <a href="support.php">Contact</a>
          <a href="mes_tickets.php">Tickets</a>
-      
+
       </div>
 
       <div class="box">
@@ -27,6 +27,6 @@
 
    </div>
 
-   <p class="credit"> &copy; copyright  @ <?php echo date('Y'); ?> by <span> Zakaria El Bidali</span> </p>
+   <p class="credit"> &copy; copyright @ <?php echo date('Y'); ?> by <span> Zakaria El Bidali</span> </p>
 
 </section>

@@ -366,7 +366,24 @@ text-align: center;
 
 @media (max-width:768px)  {
      
+  .product-display .product_table,
+  .ticket-display .ticket_table {
+      margin: 140px 10px;
+      
+  }
 
+  .product-display td,
+  .ticket-display td,
+  .product-display th,
+  .ticket-display th {
+      font-size: 1.5rem;
+      padding: 0.8rem;
+  }
+
+  .product-display,
+  .ticket-display {
+      margin: 1rem 0;
+  }
   .title {
     font-size: 3rem;
     margin-top: 80px;
@@ -389,13 +406,7 @@ text-align: center;
   .dashboard .box-container .box p {
     font-size: 1.5rem;
   }
-    .product-display , .ticket-display{
-        overflow-x: scroll;
-    }
-    
-    .product-display .product_table , .ticket-display .ticket_table{
-        width: 80rem;
-    }
+   
     .quantity-controls {
       display: flex;
       flex-direction: column;
