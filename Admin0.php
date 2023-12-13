@@ -48,7 +48,7 @@ if (!isset($_SESSION['username'])) {
                <?php
                require_once('config.php');
                $total_completed = 0;
-               $select_completed = mysqli_query($con, "SELECT total_price FROM orders WHERE payment_status = 'termine'") or die('query failed');
+               $select_completed = mysqli_query($con, "SELECT total_price FROM order_history WHERE order_status = 'termine'") or die('query failed');
                if (mysqli_num_rows($select_completed) > 0) {
                   while ($row = mysqli_fetch_assoc($select_completed)) {
                      $total_price = $row['total_price'];

@@ -31,26 +31,37 @@ if (!isset($_SESSION['username'])) {
   }
 
 
-
+ $errorMsg = "";
   if (isset($_POST['submit'])) {
     $newname = $_POST['username'];
     $newemail = $_POST['email'];
-    //Update Username and Email 
-    $query = "UPDATE clients SET Username='$newname', Email='$newemail' WHERE Id = $id";
-    $result = mysqli_query($con, $query);
-    $_SESSION['username'] = $newname;
-    $_SESSION['email'] = $newemail;
-    //Update Address
     $newAddress = $_POST['Address'];
-    $query = "UPDATE clients SET Address='$newAddress' WHERE Id = $id";
-    mysqli_query($con, $query);
-    $_SESSION['Address'] = $newAddress;
-    //Update Phone Number
     $newPhoneNumber = $_POST['NumberPhone'];
-    $query = "UPDATE clients SET PhoneNumber ='$newPhoneNumber' WHERE Id = $id";
-    mysqli_query($con, $query);
-    $_SESSION['PhoneNumber'] =  $newPhoneNumber;
-  }
+
+    // Check if the new email is unique
+    $checkEmailQuery = "SELECT Id FROM clients WHERE Email = '$newemail' AND Id != $id";
+    $checkEmailResult = mysqli_query($con, $checkEmailQuery);
+
+    if (mysqli_num_rows($checkEmailResult) > 0) {
+        // Email is not unique
+        $errorMsg = "This email is already in use";
+    } else {
+        // Update Username, Email,PhoneNumber and Address
+        $updateQuery = "UPDATE clients SET Username='$newname', Email='$newemail', Address='$newAddress', PhoneNumber='$newPhoneNumber' WHERE Id = $id";
+        $updateResult = mysqli_query($con, $updateQuery);
+
+        if ($updateResult) {
+            // Update session variables
+            $_SESSION['username'] = $newname;
+            $_SESSION['email'] = $newemail;
+            $_SESSION['Address'] = $newAddress;
+            $_SESSION['PhoneNumber'] = $newPhoneNumber;
+            
+            
+        }
+    }
+}
+
 
 ?>
 
@@ -138,6 +149,7 @@ if (!isset($_SESSION['username'])) {
             <div class="form-group">
               <label> Email:</label>
               <input type="text" name="email" id="email" class="form-control" autocomplete="off" placeholder="Email" value="<?php echo $_SESSION['email']; ?>">
+              <?php echo "<p style='color: red;'>$errorMsg</p>";?>
             </div>
           </div>
           <div style="display: flex;  justify-content: space-between;">
@@ -180,20 +192,25 @@ if (!isset($_SESSION['username'])) {
         require_once('config.php');
         $userID =  $_SESSION['id'];
 
-        $order_query = mysqli_query($con, "SELECT * FROM orders WHERE user_id = '$userID' ") or die('query failed');
+        $order_query = mysqli_query($con, "SELECT * FROM order_history WHERE user_id = '$userID' ") or die('query failed');
         if (mysqli_num_rows($order_query) > 0) {
           while ($row = mysqli_fetch_assoc($order_query)) {
         ?>
             <div class="box">
-              <p> payment method : <span><?php echo $row['method']; ?></span> </p>
-              <p> your orders : <span><?php echo $row['total_products']; ?></span> </p>
+              <p> payment method : <span><?php echo $row['payment_method']; ?></span> </p>
+              <p> your orders : <span><?php echo $row['products']; ?></span> </p>
               <p> placed on : <span><?php echo $row['placed_on']; ?></span> </p>
+              <p> Address : <span><?php echo $row['address']; ?></span> </p>
               <p> total price : <span><?php echo $row['total_price']; ?>$</span> </p>
-              <p> payment status : <span style="color:<?php if ($row['payment_status'] == 'en attente') {
+              <p> payment status : <span style="color:<?php if ($row['order_status'] == 'En attente') {
                                                         echo 'red';
-                                                      } else {
+                                                      }
+                                                      else if($row['order_status'] == 'En cours'){
+                                                        echo 'orange';
+                                                      }
+                                                      else {
                                                         echo 'green';
-                                                      } ?>;"><?php echo $row['payment_status']; ?></span> </p>
+                                                      } ?>;"><?php echo $row['order_status']; ?></span> </p>
             </div>
         <?php
           }

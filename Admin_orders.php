@@ -56,12 +56,24 @@ if (!isset($_SESSION['username'])) {
         $orderId = $_POST['order_id'];
         $newStatus = $_POST['new_status'];
 
-        $Query = "UPDATE orders SET payment_status = '$newStatus' WHERE id = $orderId";
-
-        mysqli_query($con, $Query);
-        if (mysqli_query($con, $Query)) {
-          header('location: Admin_orders.php');
+     $selectquery = "SELECT * FROM orders WHERE id =  $orderId";
+        mysqli_query($con,$selectquery);
+        if ( mysqli_query($con,$selectquery) ) {
+           $row = mysqli_fetch_assoc( mysqli_query($con,$selectquery));
+           if ($row) {
+            $userid =  $row['user_id'];
+           }
         }
+         
+        $Query = "UPDATE orders SET payment_status = '$newStatus' WHERE  user_id = '$userid' AND id = '$orderId' ";
+         mysqli_query($con, $Query);
+
+        $HistoryQuery = "UPDATE order_history SET order_status = '$newStatus' WHERE user_id = '$userid' AND order_id = '$orderId '";
+        mysqli_query($con, $HistoryQuery);
+
+        if (mysqli_query($con, $Query) && mysqli_query($con, $HistoryQuery)) {
+          header('location: Admin_orders.php');
+      }
       }
       ?>
 
@@ -80,6 +92,7 @@ if (!isset($_SESSION['username'])) {
           while ($fetch_orders = mysqli_fetch_assoc($select_orders)) {
         ?>
             <div class="box">
+              <p> order id : <span><?php echo $fetch_orders['id']; ?></span> </p>
               <p> user id : <span><?php echo $fetch_orders['user_id']; ?></span> </p>
               <p> placed on : <span><?php echo $fetch_orders['placed_on']; ?></span> </p>
               <p> name : <span><?php echo $fetch_orders['name']; ?></span> </p>
@@ -94,10 +107,10 @@ if (!isset($_SESSION['username'])) {
                                   $status = $fetch_orders['payment_status'];
 
                                   switch ($status) {
-                                    case 'termine':
+                                    case 'Termine':
                                       echo '<span style="color:green;">Termine</span>';
                                       break;
-                                    case 'en cours':
+                                    case 'En cours':
                                       echo '<span style="color:orange;">En cours</span>';
                                       break;
 
@@ -107,19 +120,26 @@ if (!isset($_SESSION['username'])) {
                                   }
                                   ?></span> </p>
 
+                
+             
               <form action="" method="post">
                 <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>">
-                <select name="new_status">
+                <select name="new_status"> 
                   <?php
                   echo '<option value="En attente" ' . ($row['payment_status'] == 'En attente' ? 'selected' : '') . '>En attente</option>
-                                        <option value="en cours" ' . ($row['payment_status'] == 'en cours' ? 'selected' : '') . '>en cours</option>
-                                        <option value="termine" ' . ($row['payment_status'] == 'termine' ? 'selected' : '') . '>termine</option>  ';
+                        <option value="En cours" ' . ($row['payment_status'] == 'En cours' ? 'selected' : '') . '>En cours</option>
+                        <option value="Termine" ' . ($row['payment_status'] == 'Termine' ? 'selected' : '') . '>Termine</option>  ';
                   ?>
                 </select>
                 <button class="btn" type="submit" name="Update_order">Update</button>
                 <button class="btn" type="submit" name="Delete_order">Delete</button>
               </form>
+
+              
             </div>
+
+
+
         <?php
           }
         } else {
