@@ -17,12 +17,39 @@ if (!isset($_SESSION['username'])) {
 
   <body>
 
+ <style>
+  @media only screen and (max-width: 600px) {
+   
+    .product-display table,
+    .ticket-display table {
+        margin: 20px;
 
+    }
+
+    .product-display td,
+    .ticket-display td,
+    .product-display th,
+    .ticket-display th {
+        font-size: 1rem;
+        padding: 0.1rem;
+    }
+
+    .product-display,
+    .ticket-display {
+        margin: 0.5rem 0;
+    }
+    .btn {
+        font-size: 1rem;
+        padding: 8px;
+        width: 90px; 
+    }
+}
+ </style>
     <header class="header">
       <a href="Admin0.php" class="logo">Gravey</a>
       <nav class="navbar">
         <a href="Admin0.php">Home</a>
-        <a href="orders.php">Orders</a>
+        <a href="Admin_orders.php">Orders</a>
         <a href="#AddAdmin">Add Admin</a>
         <a href="tickets.php">Tickets</a>
         <a href="logout.php"><img style="width: 21px; height: 23px; padding-top:4px;" src="images/logout_icon_151219.png"></a>
@@ -37,7 +64,7 @@ if (!isset($_SESSION['username'])) {
     $selectQuery = "SELECT * FROM clients";
     $result = mysqli_query($con, $selectQuery);
     ?>
-
+    
     <div class="container">
 
 
@@ -80,11 +107,7 @@ if (!isset($_SESSION['username'])) {
 
 
               <td>
-
-                <?php if ($row['user_type'] != 'admin') {   ?>
-                  <a href="users.php?order=<?php echo $row['Username']; ?>" class="btn">Order</a>
-                  <a href="users.php?delete=<?php echo $row['Username']; ?>" class="btn">Supprimer</a>
-                  <?php  } else {
+                <?php 
                   if ($row['Username'] != $_SESSION['username']) { ?>
 
                     <a href="users.php?delete=<?php echo $row['Username']; ?>" class="btn">Supprimer</a>
@@ -94,11 +117,8 @@ if (!isset($_SESSION['username'])) {
                   } else {
                     echo '<h3>YOU</h3>';
                   }
-                } ?>
-
-
+                 ?>
               </td>
-
 
 
             </tr>

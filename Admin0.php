@@ -30,7 +30,7 @@ if (!isset($_SESSION['username'])) {
             </div>
 
             <a href="users.php">Users</a>
-            <a href="Orders.php">Orders</a>
+            <a href="Admin_orders.php">Orders</a>
             <a href="tickets.php">Tickets</a>
             <a href="logout.php"><img style="width: 21px; height: 23px; padding-top:4px;" src="images/logout_icon_151219.png"></a>
          </nav>
@@ -48,7 +48,7 @@ if (!isset($_SESSION['username'])) {
                <?php
                require_once('config.php');
                $total_completed = 0;
-               $select_completed = mysqli_query($con, "SELECT total_price FROM orders WHERE payment_status = 'completed'") or die('query failed');
+               $select_completed = mysqli_query($con, "SELECT total_price FROM orders WHERE payment_status = 'termine'") or die('query failed');
                if (mysqli_num_rows($select_completed) > 0) {
                   while ($row = mysqli_fetch_assoc($select_completed)) {
                      $total_price = $row['total_price'];

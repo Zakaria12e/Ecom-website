@@ -162,7 +162,7 @@ if (!isset($_SESSION['email'])) {
         }
         $token_input = $_POST['verification-code'];
 
-        if ($Order_token == $token_input) {
+        if ($Order_token === $token_input) {
 
             $Messages[] = ' payment valid  !';
             $query = "SELECT products.product_name, products.price, panier.quantity

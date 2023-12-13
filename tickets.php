@@ -16,13 +16,43 @@ if (!isset($_SESSION['username'])) {
   </head>
 
   <body>
+  <style>
+  @media only screen and (max-width: 600px) {
+   
+    .product-display table,
+    .ticket-display table {
+        margin: 20px;
 
+    }
+
+    .product-display td,
+    .ticket-display td,
+    .product-display th,
+    .ticket-display th {
+        font-size: 1rem;
+        padding: 0.34rem;
+    }
+
+    .product-display,
+    .ticket-display {
+        margin: 0.5rem 0;
+    }
+    .btn {
+        font-size: 1rem;
+        padding: 0.8rem; 
+        width: 100px;
+    }
+    textarea{
+      padding: -1rem; 
+    }
+}
+ </style>
 
     <header class="header">
       <a href="Admin0.php" class="logo">Gravey</a>
       <nav class="navbar">
         <a href="Admin0.php">Home</a>
-        <a href="orders.php">Orders</a>
+        <a href="Admin_orders.php">Orders</a>
         <a href="users.php">Users</a>
         <a href="logout.php"><img style="width: 21px; height: 23px; padding-top:4px;" src="images/logout_icon_151219.png"></a>
       </nav>
@@ -147,12 +177,6 @@ if (!isset($_SESSION['username'])) {
 
     </div>
 
-    <script>
-      let UpdateTicketmsg = document.getElementById('updateTicket');
-      setTimeout(function() {
-        UpdateTicketmsg.classList.add('hide-message');
-      }, 2000);
-    </script>
     <script src="script.js"></script>
   </body>
 
