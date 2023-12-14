@@ -1,0 +1,552 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+*{
+    
+    text-decoration: none;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Poppins';
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+.container{
+    max-width: 1200px;
+    padding: 2rem;
+    margin: 100px auto;
+   
+}
+.admin-product-form-container form{
+
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.admin-product-form-container form .box{
+
+    width: 100%;
+    border-radius: 5px;
+    padding: 1.2rem  1.5rem;
+    font-size: 1.7rem;
+    margin: 1rem 0;
+    border: 1px solid #a7a7a7;
+    text-transform: none;
+}
+.admin-product-form-container form h3{
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.btn{
+    display: block;
+    width: 100%;
+    background-color: #000000;
+    color: white;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    padding: 1rem 3rem ;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #2f2f2f;
+}
+
+
+.hide-message{
+    display: none;
+}
+.product-display , .ticket-display{
+    margin: 2rem 0;
+   
+}
+.product-display .product_table , .ticket-display .ticket_table{
+
+width: 100%;
+text-align: center;
+border: 1px solid rgb(215, 214, 217);
+border-radius: 13px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+margin: 200px 0 400px  0;
+}
+.product-display thead , .ticket-display thead{
+   
+    background-color: #f5f5f5;
+    border-radius: 6px;
+}
+
+.product-display td , .ticket-display td{
+    padding: 1rem;
+    font-size: 2rem;
+    border-bottom: 1px solid #dbdada;
+}
+
+.product-display th , .ticket-display th{
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+.product-display .btn:last-child , .ticket-display .btn:last-child{
+
+    background-color: rgb(239, 12, 12);
+}
+.product-display .btn:last-child:hover , .ticket-display .btn:last-child:hover{
+
+    background-color: rgb(181, 21, 21);
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    background: rgba(211, 211, 211, 0.1);
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+.navbar a{
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 35px;
+    font-weight: 600;
+
+}
+.navbar a:hover{
+   color: #1241db;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding: 9rem;
+  }
+  #title{
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: -100px;
+  }
+  #dashboard{
+
+    display: flex;
+    font-size: 50px;
+    text-align: center;
+    justify-content: center;
+    margin: 200px 0;
+   
+  }
+  .dropdown {
+    display: inline-block;
+ }
+ 
+ div.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:#fff;
+    min-width: 160px;
+    box-shadow:0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 200px;
+ }
+ 
+ .dropdown:hover .dropdown-content {
+    display: block;
+    border-radius: 6px;
+ }
+ .dropdown-content a {
+    color: #000000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 6px;
+    margin-left: -3px;
+ }
+ 
+ .dropdown-content a:hover {
+    background-color: #e2e7e9;
+ }
+ 
+ a.vd{
+      color:#1866e3 ;
+      cursor: pointer;
+ }
+ a.vd:hover{
+     color:#adc6ed ;
+ }
+
+  .total{
+    padding: 100px;
+  }
+  .tickets{
+    padding: 30px;
+    font-size: 50px;
+    font-weight: 1000;
+  }
+
+  #delete_from_panier{
+    border: none;
+    background-color: white;
+    cursor: pointer; 
+    color: rgb(238, 15, 15);
+
+   
+  }
+
+.hidden-section {
+    display: none;
+  }
+  #empty_panier{
+text-align: center;
+margin: 300px 0;
+
+  }
+  .empty{
+    text-align: center;
+    font-size: 25px;
+  }
+  #form_buy_now{
+text-align: center;
+  }
+#buy_now_btn{
+    width: 300px;
+    border: none;
+    background-color: #000000;
+    border-radius: 6px;
+    padding: 10px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#buy_now_btn:hover{
+    background-color: #2a2a2a;
+    color: gainsboro;
+}
+.message {
+  text-align: center;
+    margin-top: 10px;
+    margin-bottom: -70px; 
+    max-width: 100%; 
+    background-color: rgba(255, 255, 255, 0.987);
+    border-radius: 20px;
+  }
+  
+  .message span {
+    font-size: 2rem;
+    color: black;
+  }
+  
+  .message i {
+    cursor: pointer;
+    color: rgb(156, 28, 28);
+    font-size: 2.5rem;
+    transition: transform 0.4s ease; 
+  }
+  
+  .message i:hover {
+    transform: rotate(90deg);
+  }
+
+  .BtnsQuantity{
+
+    border: none;
+    background-color: white;
+  }
+  .BtnsQuantity:hover{
+  
+     cursor: pointer;
+  }
+
+  .orders .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 30rem);
+    justify-content: center;
+    gap:1.5rem;
+    max-width: 1200px;
+    margin:0 auto;
+    align-items: flex-start;
+ }
+ 
+ .orders .box-container .box{
+    background-color:white;
+    padding:1rem;
+    border: 1px solid black;
+    box-shadow:0 0 10px rgba(0, 0, 0, 0.1);;
+    border-radius: .5rem;
+ }
+ 
+ .orders .box-container .box p{
+  
+    font-size: 15px;
+
+ }
+ 
+ .orders .box-container .box p span{
+    color:rgb(13, 29, 203);
+ }
+ 
+ .orders .box-container .box form{
+    text-align: center;
+ }
+ 
+ .orders .box-container .box form select{
+    border-radius: .5rem;
+    margin:.5rem 0;
+    width: 70%;
+    border: 1px solid black;
+    padding:1rem;
+    font-size: 1.5rem;
+ }
+ 
+  
+  .footer{
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .footer .box-container{
+    max-width: 1200px;
+    margin:0 auto;
+    display: flex;
+    justify-content: space-between;
+  
+  }
+  
+  .footer .box-container .box h3{
+    text-transform: uppercase;
+    color:black;
+    font-size: 17px;
+    padding-bottom: 2rem;
+  }
+  
+  .footer .box-container .box p,
+  .footer .box-container .box a{
+    display: block;
+   font-size: 13px;
+    padding:1rem 0;
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  .footer .box-container .box p i,
+  .footer .box-container .box a i{
+    color:rgb(0, 0, 0);
+    padding-right: .5rem;
+  }
+  
+  .footer .box-container .box a:hover{
+    color:rgb(19, 159, 205);
+  
+  }
+  
+  .footer .credit{
+    text-align: center;
+   font-size: 12px;
+    margin: 2.5rem  0;
+    padding-top: 2.5rem;
+  }
+
+ 
+#quantity_panier{
+  display: flex;
+  padding-right: -30px;
+}
+  @media (max-width:990px)  {
+    html{
+        font-size: 55%;
+    }
+
+}
+.mobile-menu-button{
+  display: none;
+}
+
+.title{
+  text-align: center;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color:black;
+  font-size: 4rem;
+  margin-top: 100px;
+}
+.dashboard{
+  margin-bottom: 200px;
+}
+.dashboard .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap:1.5rem;
+  max-width: 1000px;
+  margin:0 auto;
+  align-items: flex-start;
+}
+
+.dashboard .box-container .box{
+  border-radius: 10px;
+  box-shadow:0 8px 16px rgba(0, 0, 0, 0.2);;
+  text-align: center;
+}
+
+.dashboard .box-container .box h3{
+  font-size: 5rem;
+  color:black; 
+}
+
+.dashboard .box-container .box p{
+  margin-top: 1.5rem;
+  padding:1.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+@media (max-width:768px)  {
+     
+  .product-display .product_table,
+  .ticket-display .ticket_table {
+      margin: 140px 10px;
+      
+  }
+
+  .product-display td,
+  .ticket-display td,
+  .product-display th,
+  .ticket-display th {
+      font-size: 1.5rem;
+      padding: 0.4rem;
+  }
+  .btn{
+    width: 100px;
+    padding: 6px;
+  }
+
+  .product-display,
+  .ticket-display {
+      margin: 1rem 0;
+  }
+  .title {
+    font-size: 3rem;
+    margin-top: 80px;
+  }
+
+  .dashboard .box-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 100px;
+  }
+
+  .dashboard .box-container .box {
+    width: 100%;
+  }
+
+  .dashboard .box-container .box h3 {
+    font-size: 3rem;
+  }
+
+  .dashboard .box-container .box p {
+    font-size: 1.5rem;
+  }
+   
+    .quantity-controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .BtnsQuantity {
+      padding: 8px; 
+      font-size: 14px; 
+      margin: 5px; 
+    }
+  
+    #quantity_panier {
+      text-align: center; 
+    }
+  
+    #delete_from_panier {
+      margin-top: 10px; 
+    }
+    #Product_img_panier{
+      max-width: 100px;
+    }
+    .header {
+      padding: 20px 20px;
+    }
+  
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: none;
+    }
+  
+    .navbar.active {
+      display: flex;
+    }
+  
+    .navbar a {
+      margin: 10px 0;
+      text-align: center;
+      width: 100%;
+    }
+  
+    .dropdown-content {
+      position: static;
+      box-shadow: none;
+    }
+  
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  
+    .navbar a:not(.logo):hover {
+      background-color: #e2e7e9;
+    }
+  
+    .mobile-menu-button {
+      display: block;
+    }
+    .navbar.active .mobile-menu-button,
+    .navbar.active a:not(.mobile-menu-button),
+    #panier-icon,
+    span {
+      display: block;
+    }
+  
+    .navbar a:not(.mobile-menu-button),
+    #panier-icon,
+    span {
+      display: block;
+    }
+  
+    .mobile-menu-button {
+      display: block;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 30px;
+    }
+
+}
+
+@media (max-width:450px)  {
+    html{
+        font-size: 50%;
+    }
+
+}

@@ -36,12 +36,12 @@ if (!isset($_SESSION['email'])) {
             $mail->isSMTP();
             $mail->Host       = 'smtp.gmail.com';
             $mail->SMTPAuth   = true;
-            $mail->Username   = 'virusox899@gmail.com';
-            $mail->Password   = 'dxbvrrrgzntfmsbu';
+            $mail->Username   = 'gravey.company0@gmail.com';
+            $mail->Password   = 'lbtquufgqeokwdoc';
             $mail->SMTPSecure = 'ssl';
             $mail->Port       = 465;
 
-            $mail->setFrom('virusox899@gmail.com', 'Gravey');
+            $mail->setFrom('gravey.company0@gmail.com', 'Gravey');
             $mail->addAddress($email);
 
             $mail->isHTML(true);
@@ -263,12 +263,12 @@ if (!isset($_SESSION['email'])) {
                 $mail->isSMTP();
                 $mail->Host       = 'smtp.gmail.com';
                 $mail->SMTPAuth   = true;
-                $mail->Username   = 'virusox899@gmail.com';
-                $mail->Password   = 'dxbvrrrgzntfmsbu';
+                $mail->Username   = 'gravey.company0@gmail.com';
+                $mail->Password   = 'lbtquufgqeokwdoc';
                 $mail->SMTPSecure = 'ssl';
                 $mail->Port       = 465;
 
-                $mail->setFrom('virusox899@gmail.com', 'Gravey');
+                $mail->setFrom('gravey.company0@gmail.com', 'Gravey');
                 $mail->addAddress($email);
 
                 $mail->isHTML(true);

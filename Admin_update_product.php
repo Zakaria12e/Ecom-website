@@ -11,11 +11,12 @@ else{
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logogravey.jpg" type="image/png" sizes="16x16">
     <title>Update Products</title>
-    <link rel="stylesheet" href="Admin0.css">
+    <link rel="stylesheet" href="css/Admin0.css">
 </head>
 <body>
-    
+
 <?php
     require_once 'config.php';
     $PRname = $_GET['edit'];
@@ -61,17 +62,9 @@ else{
     }
 
 ?>
-
-<div class="container">
 <?php if (!empty($confirmationMessage)) : ?>
            <div style=" margin-left: 220px ;margin-bottom:15px; margin-top: -100px; font-size:20px;" id="updateproduct" class="confirmationmsg"><?php echo $confirmationMessage; ?></div>
-        <?php endif; ?>
-<div class="admin-product-form-container">
-  
-<form action="" method="POST" enctype="multipart/form-data">
-      <h3>UPDATE PRODUCT</h3>
-               
-      <?php
+        <?php endif; ?>  <?php
  
           if (isset($_GET['edit'])) {
              
@@ -95,6 +88,14 @@ if(isset($Messages)){
    }
 }
 ?>
+<div class="container">
+
+<div class="admin-product-form-container">
+  
+<form action="" method="POST" enctype="multipart/form-data">
+      <h3>UPDATE PRODUCT</h3>
+               
+    
 
             <input type="text" name="product_name" class="box" required  value="<?php echo $rowinfo['product_name']; ?>">
             

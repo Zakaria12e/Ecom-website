@@ -12,9 +12,10 @@ if (!isset($_SESSION['username'])) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="Products.css">
-        <link rel="stylesheet" href="nav.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/Products.css">
+        <link rel="stylesheet" href="css/nav.css">
+        <link rel="icon" href="images/logogravey.jpg" type="image/png" sizes="16x16">
         <title>Gravey</title>
     </head>
 
@@ -120,7 +121,7 @@ if (!isset($_SESSION['username'])) {
                             echo '<img class="pimg" src="images/' . $row["image"] . '" alt="' . $row["product_name"] . '">';
                             echo '<div class="product-info">';
                             echo '<h3>' . $row["product_name"] . '</h3>';
-                            echo '<p>Upgrade your computing power with our cutting-edge CPUs</p>';
+                            echo '<p>Améliorez votre puissance de calcul avec nos processeurs de pointe</p>';
                             echo '<div style="display: flex; justify-content: space-between;">';
                             echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">Voir les détails</a>';
                             echo '<span><b>' . $row["price"] . ' MAD</b></span>';
@@ -150,7 +151,7 @@ if (!isset($_SESSION['username'])) {
                             echo '<img class="pimg" src="images/' . $row["image"] . '" alt="' . $row["product_name"] . '">';
                             echo '<div class="product-info">';
                             echo '<h3>' . $row["product_name"] . '</h3>';
-                            echo '<p>Upgrade your graphics performance with our state-of-the-art GPUs</p>';
+                            echo '<p>Améliorez les performances graphiques avec nos unités de traitement graphique</p>';
                             echo '<div style="display: flex; justify-content: space-between;">';
                             echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">Voir les détails</a>';
                             echo '<span><b>' . $row["price"] . ' MAD</b></span>';
@@ -178,7 +179,7 @@ if (!isset($_SESSION['username'])) {
                             echo '<img class="pimg" src="images/' . $row["image"] . '" alt="' . $row["product_name"] . '">';
                             echo '<div class="product-info">';
                             echo '<h3>' . $row["product_name"] . '</h3>';
-                            echo '<p>experience superior connectivity and performance with our cutting-edge motherboards</p>';
+                            echo '<p>Profitez d\'une connectivité et de performances supérieures avec nos cartes mères à la pointe de la technologie</p>';
                             echo '<div style="display: flex; justify-content: space-between;">';
                             echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">Voir les détails</a>';
                             echo '<span><b>' . $row["price"] . ' MAD</b></span>';
@@ -206,7 +207,7 @@ if (!isset($_SESSION['username'])) {
                             echo '<img class="pimg" src="images/' . $row["image"] . '" alt="' . $row["product_name"] . '">';
                             echo '<div class="product-info">';
                             echo '<h3>' . $row["product_name"] . '</h3>';
-                            echo '<p>enhance multitasking capabilities with high-speed RAM</p>';
+                            echo '<p>Optimisez les capacités de multitâche avec une mémoire vive haute vitesse</p>';
                             echo '<div style="display: flex; justify-content: space-between;">';
                             echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">Voir les détails</a>';
                             echo '<span><b>' . $row["price"] . ' MAD</b></span>';
@@ -235,7 +236,7 @@ if (!isset($_SESSION['username'])) {
                             echo '<img class="pimg" src="images/' . $row["image"] . '" alt="' . $row["product_name"] . '">';
                             echo '<div class="product-info">';
                             echo '<h3>' . $row["product_name"] . '</h3>';
-                            echo '<p>store and access data seamlessly with lightning-fast ROM</p>';
+                            echo '<p>Stockez et accédez aux données de manière transparente avec une mémoire morte ultrarapide</p>';
                             echo '<div style="display: flex; justify-content: space-between;">';
                             echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">Voir les détails</a>';
                             echo '<span><b>' . $row["price"] . ' MAD</b></span>';
@@ -264,7 +265,7 @@ if (!isset($_SESSION['username'])) {
                             echo '<img class="pimg" src="images/' . $row["image"] . '" alt="' . $row["product_name"] . '">';
                             echo '<div class="product-info">';
                             echo '<h3>' . $row["product_name"] . '</h3>';
-                            echo '<p>ensure stable power delivery with our advanced power supply units</p>';
+                            echo '<p>Assurez une alimentation stable avec nos unités d\'alimentation avancées</p>';
                             echo '<div style="display: flex; justify-content: space-between;">';
                             echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">Voir les détails</a>';
                             echo '<span><b>' . $row["price"] . ' MAD</b></span>';
@@ -294,7 +295,7 @@ if (!isset($_SESSION['username'])) {
                             echo '<img class="pimg" src="images/' . $row["image"] . '" alt="' . $row["product_name"] . '">';
                             echo '<div class="product-info">';
                             echo '<h3>' . $row["product_name"] . '</h3>';
-                            echo '<p>protect and showcase your components with a sleek and durable case</p>';
+                            echo '<p>Protégez et mettez en valeur vos composants avec un boîtier élégant et durable</p>';
                             echo '<div style="display: flex; justify-content: space-between;">';
                             echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">Voir les détails</a>';
                             echo '<span><b>' . $row["price"] . ' MAD</b></span>';
@@ -321,7 +322,7 @@ if (!isset($_SESSION['username'])) {
                             echo '<img class="pimg" src="images/' . $row["image"] . '" alt="' . $row["product_name"] . '">';
                             echo '<div class="product-info">';
                             echo '<h3>' . $row["product_name"] . '</h3>';
-                            echo '<p>Upgrade your graphics performance with our state-of-the-art GPUs</p>';
+                            echo '<p>Sublimez votre expérience visuelle avec nos écrans haute résolution et couleurs éclatantes</p>';
                             echo '<div style="display: flex; justify-content: space-between;">';
                             echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">Voir les détails</a>';
                             echo '<span><b>' . $row["price"] . ' MAD</b></span>';

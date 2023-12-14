@@ -11,8 +11,9 @@ if (!isset($_SESSION['username'])) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="Products.css">
-        <link rel="stylesheet" href="nav.css">
+        <link rel="stylesheet" href="css/Products.css">
+        <link rel="stylesheet" href="css/nav.css">
+        <link rel="icon" href="images/logogravey.jpg" type="image/png" sizes="16x16">
         <title>Product Details</title>
 
     </head>
