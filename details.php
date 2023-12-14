@@ -25,7 +25,7 @@ if (!isset($_SESSION['username'])) {
 
             <a class="logo" href="home.php">Gravey</a>
             <nav class="navbar">
-                <a href="home.php">Home</a>
+                <a href="home.php">Accueil</a>
 
 
                 <a id="panier-icon" href="Panier.php"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">

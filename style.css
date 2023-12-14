@@ -75,32 +75,42 @@ html {
   scroll-behavior: smooth;
 }
 
+
 .home {
-  margin: 80px 0 200px 0;
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   overflow: hidden;
+}
+
+.background-img {
+  position: absolute;
+  width: 60%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin-top: 100px;
+ 
 }
 
 .content {
   text-align: center;
-  z-index: 1;
+
   position: relative;
+  max-width: 40%;
+  padding: 0 20px; 
 }
 
 .title-home {
   font-size: 40px;
-  color: white;
 }
 
 .content p {
   font-size: 1.4rem;
   padding: 1rem 0;
   line-height: 1.5;
-  color: white;
 }
 
 #btn-to-products {
@@ -118,22 +128,25 @@ html {
 #btn-to-products:hover {
   background-color: #1b1b1d;
 }
-
-.background-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .home {
+      flex-direction: column;
+      text-align: center;
+  } 
   .title-home {
     font-size: 32px;
   }
+
+  .background-img {
+      width: 100%;
+      position: static;
+  }
+
+  .content {
+      max-width: 100%;
+  }
 }
+
 
 #logo {
   font-family: 'Poppins';

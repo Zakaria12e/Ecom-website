@@ -221,7 +221,7 @@ if (!isset($_SESSION['username'])) {
                   <tr>
                      <td><img style="width: 100px;  border-radius: 6px;" src="images/<?php echo $row['image']; ?>"></td>
                      <td><?php echo $row['product_name']; ?></td>
-                     <td><?php echo $row['price']; ?>$</td>
+                     <td><?php echo "{$row['price']} "; ?>MAD</td>
                      <td>
                         <a href="Admin_update_product.php?edit=<?php echo $row['product_name']; ?>" class="btn">Modifier</a>
                         <a href="Admin0.php?delete=<?php echo $row['product_name']; ?>" class="btn">Supprimer</a>

@@ -100,7 +100,7 @@ if (!isset($_SESSION['username'])) {
               <p> E-mail : <span><?php echo $fetch_orders['email']; ?></span> </p>
               <p> Adresse : <span><?php echo $fetch_orders['address']; ?></span> </p>
               <p> produits : <span><?php echo $fetch_orders['total_products']; ?></span> </p>
-              <p> prix total  : <span><?php echo $fetch_orders['total_price']; ?>$</span> </p>
+              <p> prix total  : <span><?php echo "{$fetch_orders['total_price']} MAD";?></span> </p>
               <p> methode de payment  : <span><?php echo $fetch_orders['method']; ?></span> </p>
               <p> status : <span><?php
 

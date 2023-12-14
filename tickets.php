@@ -51,7 +51,7 @@ if (!isset($_SESSION['username'])) {
     <header class="header">
       <a href="Admin0.php" class="logo">Gravey</a>
       <nav class="navbar">
-        <a href="Admin0.php">Home</a>
+        <a href="Admin0.php">Accueil</a>
         <a href="Admin_orders.php">Commandes</a>
         <a href="users.php">Utilisateurs</a>
         <a href="logout.php"><img style="width: 21px; height: 23px; padding-top:4px;" src="images/logout_icon_151219.png"></a>

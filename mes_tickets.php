@@ -40,9 +40,9 @@ if (!isset($_SESSION['username'])) {
     <header class="header">
       <a href="home.php" class="logo">Gravey</a>
       <nav class="navbar">
-        <a href="home.php">Home</a>
+        <a href="home.php">Accueil</a>
         <a href="support.php">Support</a>
-        <a href="Profile.php">Profile</a>
+        <a href="Profile.php">Profil</a>
 
       </nav>
       <button class="mobile-menu-button">&#9776;</button>

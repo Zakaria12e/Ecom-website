@@ -25,60 +25,63 @@ if (!isset($_SESSION['username'])) {
 
             <a class="logo" href="home.php">Gravey</a>
             <nav class="navbar">
-                <a href="home.php">Home</a>
+                <a href="home.php">Accueil</a>
 
                 <div class="dropdown">
-                    <a href="#">Products</a>
+                    <a href="#">Produits</a>
                     <div class="dropdown-content">
-                        <a href="#CPUS">CPUs</a>
-                        <a href="#GPUS">GPUs</a>
-                        <a href="#MD">Motherboards</a>
-                        <a href="#RAM">RAM</a>
-                        <a href="#ROM">ROM</a>
-                        <a href="#PS">Power Supplies</a>
-                        <a href="#CASES">Cases</a>
-                        <a href="#MONITORS">Monitors</a>
+
+                        <a href="#CPUS">Processeurs</a>
+                        <a href="#GPUS">Cartes graphiques</a>
+                        <a href="#MD">Cartes mères</a>
+                        <a href="#RAM">Mémoire RAM</a>
+                        <a href="#ROM">Stockage ROM</a>
+                        <a href="#PS">Alimentations</a>
+                        <a href="#CASES">Boîtiers</a>
+                        <a href="#MONITORS">Écrans</a>
+
                     </div>
-                </div>
+                    </div>
 
-                <a href="support.php">Support</a>
+                
+                    <a href="support.php">Support</a>
 
-                <a id="panier-icon" href="Panier.php"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
-                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                    </svg></a>
+                    <a id="panier-icon" href="Panier.php"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                        </svg></a>
 
-                <?php
-                require_once 'config.php';
-                //totale des produits dans panier
-                $totalQuantity = "";
+                    <?php
+                    require_once 'config.php';
+                    //totale des produits dans panier
+                    $totalQuantity = "";
 
-                if (isset($_SESSION['id'])) {
-                    $user_id = $_SESSION['id'];
-                    $totaleQuery = "SELECT SUM(quantity) AS totalQuantity FROM panier WHERE Id = $user_id;";
-                    $result = mysqli_query($con, $totaleQuery);
+                    if (isset($_SESSION['id'])) {
+                        $user_id = $_SESSION['id'];
+                        $totaleQuery = "SELECT SUM(quantity) AS totalQuantity FROM panier WHERE Id = $user_id;";
+                        $result = mysqli_query($con, $totaleQuery);
 
-                    if ($result) {
-                        $row = mysqli_fetch_assoc($result);
+                        if ($result) {
+                            $row = mysqli_fetch_assoc($result);
 
-                        if (!empty($row['totalQuantity'])) {
-                            $totalQuantity = $row['totalQuantity'];
+                            if (!empty($row['totalQuantity'])) {
+                                $totalQuantity = $row['totalQuantity'];
+                            }
                         }
                     }
-                }
-                ?>
+                    ?>
 
-                <span id="quantitySpan" style="color:white; background-color: black; border-radius:50%; padding:0 6px; font-size:14px; font-weight: 600;">
-                    <?php echo $totalQuantity; ?>
-                </span>
+                    <span id="quantitySpan" style="color:white; background-color: black; border-radius:50%; padding:0 6px; font-size:14px; font-weight: 600;">
+                        <?php echo $totalQuantity; ?>
+                    </span>
 
-                <script>
-                    var quantitySpan = document.getElementById("quantitySpan");
-                    if (quantitySpan.innerHTML.trim() === "") {
-                        quantitySpan.style.display = "none";
-                    }
-                </script>
+                    <script>
+                        var quantitySpan = document.getElementById("quantitySpan");
+                        if (quantitySpan.innerHTML.trim() === "") {
+                            quantitySpan.style.display = "none";
+                        }
+                    </script>
 
-                <a style="margin-top: 10px;" href="Profile.php"> <?php echo $_SESSION['username']; ?></a>
+                    <a style="margin-top: 10px;" href="Profile.php"> <?php echo $_SESSION['username']; ?></a>
 
 
             </nav>
@@ -87,28 +90,24 @@ if (!isset($_SESSION['username'])) {
 
 
         <section class="home">
-
             <div class="content">
+                <h1 class="title-home">Bienvenue chez Gravey votre magasin de matériel informatique</h1>
+                <p>Découvrez une large gamme de processeurs, cartes graphiques, barrettes de RAM, SSD et bien plus encore</p>
 
-                <h1 class="title-home">Welcome to Gravey Your Hardware Store</h1>
-                <p>Explore a wide range of CPUs, GPUs, RAMs, SSDs, and more.</p>
                 <a href="#CPUS" id="btn-to-products">Achetez maintenant</a>
             </div>
-            <video class="background-video" autoplay loop muted>
-                <source src="images/GeForce RTX 4090  Beyond Fast.mp4" type="video/mp4">
-
-            </video>
-
+            <img class="background-img" src="images/newsroom-intel-core-14th-gen-desktop-feat.jpg" alt="Background Image">
         </section>
 
         <main>
+
             </div>
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="Recherche..." required>
                 <button id="search_btn" onclick="searchProducts()">Recherche</button>
             </div>
             <section id="CPUS">
-                <h2 class="title">CPUs INTEL & AMD</h2>
+                <h2 class="title">PROCESSEURS INTEL & AMD</h2>
 
                 <div class="product-category">
                     <?php
@@ -136,7 +135,7 @@ if (!isset($_SESSION['username'])) {
             </section>
             <!-- GPUs section  -->
             <section id="GPUS">
-                <h2 class="title">GPUs NVIDIA & AMD</h2>
+                <h2 class="title">CARTES GRAPHIQUES NVIDIA & AMD</h2>
 
                 <div class="product-category">
 
@@ -164,7 +163,7 @@ if (!isset($_SESSION['username'])) {
             </section>
             <!-- MotherBoards section  -->
             <section id="MD">
-                <h2 class="title">MotherBoards</h2>
+                <h2 class="title">CARTES MÈRES</h2>
 
                 <div class="product-category">
 
@@ -193,7 +192,7 @@ if (!isset($_SESSION['username'])) {
 
             <!-- RAM section  -->
             <section id="RAM">
-                <h2 class="title">RAM</h2>
+                <h2 class="title">MÉMOIRE RAM</h2>
 
                 <div class="product-category">
                     <?php
@@ -221,7 +220,7 @@ if (!isset($_SESSION['username'])) {
 
             <!-- ROM section  -->
             <section id="ROM">
-                <h2 class="title">ROM</h2>
+                <h2 class="title">STOCKAGE ROM</h2>
 
                 <div class="product-category">
 
@@ -251,7 +250,7 @@ if (!isset($_SESSION['username'])) {
 
             <!-- POWER SUPPLYs section  -->
             <section id="PS">
-                <h2 class="title">POWER SUPPLYs</h2>
+                <h2 class="title">ALIMENTATIONS</h2>
 
                 <div class="product-category">
                     <?php
@@ -280,7 +279,7 @@ if (!isset($_SESSION['username'])) {
 
             <!-- CASEs section  -->
             <section id="CASES">
-                <h2 class="title">CASEs</h2>
+                <h2 class="title">BOÎTIERS</h2>
 
                 <div class="product-category">
 
@@ -307,7 +306,7 @@ if (!isset($_SESSION['username'])) {
 
             </section>
             <!-- MONITORS section  -->
-            <h2 class="title">MONITORS</h2>
+            <h2 class="title">ÉCRANS</h2>
             <section id="MONITORS">
                 <div class="product-category">
 

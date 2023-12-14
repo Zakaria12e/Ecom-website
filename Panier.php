@@ -25,7 +25,7 @@ if (!isset($_SESSION['username'])) {
             <a class="logo" href="home.php">Gravey</a>
             <nav class="navbar">
 
-                <a href="home.php">Home</a>
+                <a href="home.php">Accueil</a>
                 <a href="#Payment">Paiement</a>
                 <a href="support.php">Support</a>
                 <a href="Profile.php"> <?php echo $_SESSION['username']; ?></a>

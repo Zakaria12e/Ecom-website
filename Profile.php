@@ -98,7 +98,7 @@ if (!isset($_SESSION['username'])) {
       <a class="logo" href="home.php">Gravey</a>
       <nav class="navbar">
 
-        <a href="home.php">Home</a>
+        <a href="home.php">Accueil</a>
         <a href="support.php">Support</a>
 
 
@@ -212,7 +212,7 @@ if (!isset($_SESSION['username'])) {
               <p> Produits : <span><?php echo $row['products']; ?></span> </p>
               <p> Acheté le : <span><?php echo $row['placed_on']; ?></span> </p>
               <p> Adresse : <span><?php echo $row['address']; ?></span> </p>
-              <p> Prix total : <span><?php echo $row['total_price']; ?>$</span> </p>
+              <p> Prix total : <span><?php echo " {$row['total_price']} MAD"; ?></span> </p>
               <p> Statut de paiement : <span style="color:<?php if ($row['order_status'] == 'En attente') {
                                                             echo 'red';
                                                           } else if ($row['order_status'] == 'En cours') {

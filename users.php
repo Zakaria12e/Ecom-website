@@ -48,7 +48,7 @@ if (!isset($_SESSION['username'])) {
     <header class="header">
       <a href="Admin0.php" class="logo">Gravey</a>
       <nav class="navbar">
-        <a href="Admin0.php">Home</a>
+        <a href="Admin0.php">Accueil</a>
         <a href="Admin_orders.php">Commandes</a>
         <a href="#AddAdmin">Ajouter Admin</a>
         <a href="tickets.php">Tickets</a>
