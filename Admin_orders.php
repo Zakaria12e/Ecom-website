@@ -83,7 +83,7 @@ if (!isset($_SESSION['username'])) {
 
     <section class="orders">
 
-      <h1 class="title">placed orders</h1>
+      <h1 class="title">COMMANDES</h1>
 
       <div class="box-container">
         <?php
@@ -92,16 +92,16 @@ if (!isset($_SESSION['username'])) {
           while ($fetch_orders = mysqli_fetch_assoc($select_orders)) {
         ?>
             <div class="box">
-              <p> order id : <span><?php echo $fetch_orders['id']; ?></span> </p>
-              <p> user id : <span><?php echo $fetch_orders['user_id']; ?></span> </p>
+              <p> commande id : <span><?php echo $fetch_orders['id']; ?></span> </p>
+              <p> id de utilisateur : <span><?php echo $fetch_orders['user_id']; ?></span> </p>
               <p> placed on : <span><?php echo $fetch_orders['placed_on']; ?></span> </p>
-              <p> name : <span><?php echo $fetch_orders['name']; ?></span> </p>
+              <p> nom : <span><?php echo $fetch_orders['name']; ?></span> </p>
               <p> number : <span><?php echo $fetch_orders['phone_number']; ?></span> </p>
-              <p> email : <span><?php echo $fetch_orders['email']; ?></span> </p>
-              <p> address : <span><?php echo $fetch_orders['address']; ?></span> </p>
-              <p> total products : <span><?php echo $fetch_orders['total_products']; ?></span> </p>
-              <p> total price : <span><?php echo $fetch_orders['total_price']; ?>$</span> </p>
-              <p> payment method : <span><?php echo $fetch_orders['method']; ?></span> </p>
+              <p> E-mail : <span><?php echo $fetch_orders['email']; ?></span> </p>
+              <p> Adresse : <span><?php echo $fetch_orders['address']; ?></span> </p>
+              <p> produits : <span><?php echo $fetch_orders['total_products']; ?></span> </p>
+              <p> prix total  : <span><?php echo $fetch_orders['total_price']; ?>$</span> </p>
+              <p> methode de payment  : <span><?php echo $fetch_orders['method']; ?></span> </p>
               <p> status : <span><?php
 
                                   $status = $fetch_orders['payment_status'];
@@ -131,8 +131,8 @@ if (!isset($_SESSION['username'])) {
                         <option value="Termine" ' . ($row['payment_status'] == 'Termine' ? 'selected' : '') . '>Termine</option>  ';
                   ?>
                 </select>
-                <button class="btn" type="submit" name="Update_order">Update</button>
-                <button class="btn" type="submit" name="Delete_order">Delete</button>
+                <button class="btn" type="submit" name="Update_order">Mise à jour</button>
+                <button class="btn" type="submit" name="Delete_order">Supprimer</button>
               </form>
 
               

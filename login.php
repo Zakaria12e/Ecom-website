@@ -55,6 +55,8 @@
                 if ($row['user_type'] == 'admin') {
 
                     $_SESSION['username'] = $row['Username'];
+                    $_SESSION['email'] = $row['Email'];
+                    
                     header("Location: Admin0.php");
                 } else {
 

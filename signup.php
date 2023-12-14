@@ -18,6 +18,7 @@
     if (isset($_POST['submit'])) {
 
         $_SESSION['email'] =  $email = $_POST['email'];
+
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
         $confPassword = password_hash($_POST['confpassword'], PASSWORD_DEFAULT);
@@ -28,13 +29,16 @@
         if (mysqli_num_rows($verify_query) != 0) {
 
             $Messages[] =  'Cet e-mail est déjà utilisé veuillez en choisir un autre !';
-        } else {
+        } 
+        else {
             if ($_POST['password'] === $_POST['confpassword']) {
 
                 $username = $_POST['username'];
                 $PhoneNumber = $_POST['Numberhone'];
                 $Address = $_POST['Address'];
-
+                  
+                  
+                 
                 mysqli_query($con, "INSERT INTO clients(Username,Email,Password,Address,PhoneNumber) VALUES('$username','$email','$password','$Address','$PhoneNumber')") or die("Erreur");
 
                 $Messages[] = 'Inscription réussie !';

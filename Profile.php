@@ -139,15 +139,15 @@ if (!isset($_SESSION['username'])) {
       <section class="section-info">
         <form action="" method="post">
 
-          <h1 class="title">PROFILE</h1>
+          <h1 class="title">PROFIL</h1>
           <div style="display: flex;  justify-content: space-between;">
             <div class="form-group">
-              <label>Username:</label>
+              <label>Nom d'utilisateur:</label>
               <input type="text" name="username" id="username" class="form-control" autocomplete="off" placeholder="Nom d'utilisateur" value="<?php echo $_SESSION['username']; ?>">
             </div>
 
             <div class="form-group">
-              <label> Email:</label>
+              <label> E-mail:</label>
               <input type="text" name="email" id="email" class="form-control" autocomplete="off" placeholder="Email" value="<?php echo $_SESSION['email']; ?>">
               <?php echo "<p style='color: red;'>$errorMsg</p>";?>
             </div>
@@ -157,11 +157,11 @@ if (!isset($_SESSION['username'])) {
           </div>
           <div style="display: flex;  justify-content: space-between;">
             <span class="form-group">
-              <label>Phone Numer:</label>
+              <label>Numéro de téléphone:</label>
               <input type="number" name="NumberPhone" id="numphone" class="form-control" autocomplete="off" placeholder="Number Phone" value="<?php echo $_SESSION['PhoneNumber']; ?>">
             </span>
             <span class="form-group">
-              <label>Addeess:</label>
+              <label>Adresse:</label>
               <input type="text" name="Address" id="address" class="form-control" autocomplete="off" placeholder="Address" value="<?php echo $_SESSION['Address']; ?>">
             </span>
           </div>
@@ -172,7 +172,7 @@ if (!isset($_SESSION['username'])) {
         </form>
 
         <span>
-          <span id="logout_para">Appuyez ici pour vous déconnecter</span><a id="logout-btn" href="logout.php">Log out</a>
+          <span id="logout_para">Appuyez ici pour vous déconnecter</span><a id="logout-btn" href="logout.php">Se déconnecter</a>
         </span>
     </div>
 
@@ -184,7 +184,7 @@ if (!isset($_SESSION['username'])) {
 
     <section class="placed-orders">
 
-      <h1 class="title">placed orders</h1>
+      <h1 class="title">COMMANDES PASSÉES</h1>
 
       <div class="box-container">
 
@@ -197,12 +197,12 @@ if (!isset($_SESSION['username'])) {
           while ($row = mysqli_fetch_assoc($order_query)) {
         ?>
             <div class="box">
-              <p> payment method : <span><?php echo $row['payment_method']; ?></span> </p>
-              <p> your orders : <span><?php echo $row['products']; ?></span> </p>
-              <p> placed on : <span><?php echo $row['placed_on']; ?></span> </p>
-              <p> Address : <span><?php echo $row['address']; ?></span> </p>
-              <p> total price : <span><?php echo $row['total_price']; ?>$</span> </p>
-              <p> payment status : <span style="color:<?php if ($row['order_status'] == 'En attente') {
+              <p> Mode de paiement : <span><?php echo $row['payment_method']; ?></span> </p>
+              <p> Produits : <span><?php echo $row['products']; ?></span> </p>
+              <p> Acheté le : <span><?php echo $row['placed_on']; ?></span> </p>
+              <p> Adresse : <span><?php echo $row['address']; ?></span> </p>
+              <p> Prix total  : <span><?php echo $row['total_price']; ?>$</span> </p>
+              <p> Statut de paiement : <span style="color:<?php if ($row['order_status'] == 'En attente') {
                                                         echo 'red';
                                                       }
                                                       else if($row['order_status'] == 'En cours'){
@@ -215,7 +215,7 @@ if (!isset($_SESSION['username'])) {
         <?php
           }
         } else {
-          echo '<p class="empty">No orders placed yet!</p>';
+          echo '<p class="empty">Aucune commande passée pour l\'instant !</p>';
         }
         ?>
       </div>

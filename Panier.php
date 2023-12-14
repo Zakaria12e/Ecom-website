@@ -26,7 +26,7 @@ if (!isset($_SESSION['username'])) {
             <nav class="navbar">
 
                 <a href="home.php">Home</a>
-                <a href="#Payment">Payment</a>
+                <a href="#Payment">Paiement</a>
                 <a href="support.php">Support</a>
                 <a href="Profile.php"> <?php echo $_SESSION['username']; ?></a>
 
@@ -81,10 +81,10 @@ if (!isset($_SESSION['username'])) {
 
                     <thead>
                         <tr>
-                            <th>Product Image</th>
-                            <th>Product Name</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
+                            <th>Image du produit</th>
+                            <th>Nom du produit</th>
+                            <th>Prix</th>
+                            <th>Quantité</th>
                         </tr>
 
                     </thead>
@@ -101,7 +101,7 @@ if (!isset($_SESSION['username'])) {
                             <tr>
                                 <td> <img id="Product_img_panier" style="width: 160px;  border-radius: 6px;" src="images/<?php echo  $productDetails['image']; ?>"></td>
                                 <td><?php echo $row['product_name']; ?></td>
-                                <td><?php echo $productDetails['price']; ?>$</td>
+                                <td><?php echo $productDetails['price']; ?> MAD</td>
                                 <td>
 
                                     <form id="quantity_panier" method="POST" action="panier.php">
@@ -207,10 +207,10 @@ if (!isset($_SESSION['username'])) {
             if ($total != 0) {
                 echo '<div id="Payment">';
 
-                echo '<div style="text-align: center; margin-top:40px;"><h1><b>Shipping Address</h1></b><br></div>';
+                echo '<div style="text-align: center; margin-top:40px;"><h1><b>Informations d\'expédition</h1></b><br></div>';
 
                 echo '<div style="display:flex">';
-                echo '<h2 style="padding-right:70px;"><b>Client Name </h2>';
+                echo '<h2 style="padding-right:70px;"><b> Nom du client</h2>';
                 echo ' <h2>' . $_SESSION['username'] . '</h2>';
                 echo '</div>';
 
@@ -223,12 +223,12 @@ if (!isset($_SESSION['username'])) {
                     $row = mysqli_fetch_assoc($result);
 
                     echo '<div style="display:flex">';
-                    echo '<h2 style="padding-right:50px;"><b>Client Email</h2>';
+                    echo '<h2 style="padding-right:50px;"><b> E-mail du client</h2>';
                     echo '<h2 id="phone_number">' . $row['Email'] . '</h2>';
                     echo '</div>';
 
                     echo '<div style="display:flex">';
-                    echo '<h2 style="padding-right:50px;"><b>Phone Number </h2>';
+                    echo '<h2 style="padding-right:50px;"><b>Numéro de téléphone</h2>';
                     echo '<h2 id="phone_number">' . $row['PhoneNumber'] . '</h2>';
                     echo '</div>';
 
@@ -236,25 +236,25 @@ if (!isset($_SESSION['username'])) {
                     echo '</div>';
 
 
-                    echo '<h2><b>Client Address</h2>';
+                    echo '<h2><b>Adresse du client</h2>';
                     echo '<h2>' . $row['Address'] . '</h2><br>';
                 }
                 echo '<div style=" display:flex; justify-content: space-between; align-items: center;">';
-                echo '<b><h1>Total shipping</h1></b>';
-                echo '<b><h1>free</h1></b>';
+                echo '<b><h1>Expédition totale</h1></b>';
+                echo '<b><h1>gratuite</h1></b>';
                 echo '</div>';
 
                 echo '<hr>';
 
                 echo '<div style=" display:flex; justify-content: space-between; align-items: center;">';
-                echo '<b><h1 style="margin-top:-40px;">Totale</h1></b>';
-                echo '<b><h1>' . $total . '$</h1><br><br><br></b>';
+                echo '<b><h1 style="margin-top:-40px;">Total</h1></b>';
+                echo '<b><h1>' . $total . ' MAD</h1><br><br><br></b>';
                 echo '</div>';
                 //buy now btn
                 echo '<form id="form_buy_now"  method="POST" action="email.php">';
                 echo '<input type="hidden" name="client_id" value="' . $userId . '">';
 
-                echo '<button id="buy_now_btn"  type="submit" name="buynow_btn">BUY NOW</button>';
+                echo '<button id="buy_now_btn"  type="submit" name="buynow_btn">ACHETER MAINTENANT</button>';
                 echo '</form>';
 
                 echo '</div>';
@@ -265,7 +265,7 @@ if (!isset($_SESSION['username'])) {
         section.classList.add('hidden-section');
     </script>";
 
-                echo '<div id="empty_panier" ><h1>No products yet</h1></div>';
+                echo '<div id="empty_panier" ><h1>Aucun produit pour l\'instant</h1></div>';
             }
         }
         ?>

@@ -248,7 +248,13 @@ if (!isset($_SESSION['email'])) {
                     ];
                 }
             }
+            
             $email = $_SESSION['email'];
+            $Query = "SELECT * FROM clients where Id = $userid";
+            $result = mysqli_query($con, $Query);
+            if ($result) {
+                $clientrow = mysqli_fetch_assoc($result);
+            }
 
 
             try {
@@ -308,6 +314,13 @@ if (!isset($_SESSION['email'])) {
     <body>
         <div class="container">
             <h3>Bonjour Mr ' . $_SESSION['username'] . ',</h3>
+
+    
+               <p>Numéro de téléphone <b>' . $clientrow['PhoneNumber'] . '</b></p>
+               <p>Adresse de livraison <b>' . $clientrow['Address'] . '</b></p>
+               <p>Mode de paiement <b>payment à laivraison</b></p> 
+               <p>Acheté le <b>' . $date . '</b></p>
+            
             <p>Nous vous remercions d\'avoir choisi notre boutique, Gravey, pour votre achat.</p>
             <p>Voici votre commande :</p>
             <table>
@@ -329,7 +342,7 @@ if (!isset($_SESSION['email'])) {
         </tr>';
                 }
 
-                $body .= '
+        $body .= '
                 </tbody>
                 <tfoot>
                     <tr>

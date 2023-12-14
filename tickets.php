@@ -52,8 +52,8 @@ if (!isset($_SESSION['username'])) {
       <a href="Admin0.php" class="logo">Gravey</a>
       <nav class="navbar">
         <a href="Admin0.php">Home</a>
-        <a href="Admin_orders.php">Orders</a>
-        <a href="users.php">Users</a>
+        <a href="Admin_orders.php">Commandes</a>
+        <a href="users.php">Utilisateurs</a>
         <a href="logout.php"><img style="width: 21px; height: 23px; padding-top:4px;" src="images/logout_icon_151219.png"></a>
       </nav>
       <button class="mobile-menu-button">&#9776;</button>
@@ -76,11 +76,11 @@ if (!isset($_SESSION['username'])) {
           <thead>
             <tr>
               <th>Ticket Id</th>
-              <th>Client Name</th>
-              <th>Client Email</th>
+              <th>Nom du client</th>
+              <th>E-mail</th>
               <th>Message</th>
-              <th>Created At</th>
-              <th>Ticket status</th>
+              <th>Créé à</th>
+              <th>Statut du Ticket</th>
               <th colspan="2">action</th>
             </tr>
 

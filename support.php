@@ -108,8 +108,8 @@ if (!isset($_SESSION['username'])) {
         <div class="container">
 
             <div class="titre">
-                <h2 style=" font-size:50px; margin-top:70px;">Contact Support</h2>
-                <p>Fill out the form below to get in touch with our support team</p>
+                <h2 style=" font-size:50px; margin-top:70px;">Contactez le Support</h2>
+                <p>Remplissez le formulaire ci-dessous pour entrer en contact avec notre équipe d'assistance</p>
             </div>
 
             <form class="support" action="support.php" method="post" id="contactForm" name="contactForm" novalidate="novalidate">
@@ -126,10 +126,10 @@ if (!isset($_SESSION['username'])) {
                     <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" value="<?php echo $email; ?>">
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" name="message" id="message" cols="30" rows="7" placeholder="Your Message"></textarea>
+                    <textarea class="form-control" name="message" id="message" cols="30" rows="7" placeholder="Votre Massage"></textarea>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn" name="submit">Submit</button>
+                    <button type="submit" class="btn" name="submit">Soumettre</button>
                 </div>
             </form>
         </div>

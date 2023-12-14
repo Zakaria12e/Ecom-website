@@ -43,7 +43,6 @@ if (!isset($_SESSION['username'])) {
 
                 <a href="support.php">Support</a>
 
-
                 <a id="panier-icon" href="Panier.php"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
                     </svg></a>
@@ -80,7 +79,7 @@ if (!isset($_SESSION['username'])) {
 
                 <h1 class="title-home">Welcome to Gravey Your Hardware Store</h1>
                 <p>Explore a wide range of CPUs, GPUs, RAMs, SSDs, and more.</p>
-                <a href="#CPUS" id="btn-to-products">Shop Now</a>
+                <a href="#CPUS" id="btn-to-products">Achetez maintenant</a>
             </div>
 
         </section>
@@ -88,8 +87,8 @@ if (!isset($_SESSION['username'])) {
         <main>
             </div>
             <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Search..." required>
-                <button id="search_btn" onclick="searchProducts()">Search</button>
+                <input type="text" id="searchInput" placeholder="Recherche..." required>
+                <button id="search_btn" onclick="searchProducts()">Recherche</button>
             </div>
             <section id="CPUS">
                 <h2 class="title">CPUs INTEL & AMD</h2>
@@ -107,8 +106,8 @@ if (!isset($_SESSION['username'])) {
                             echo '<h3>' . $row["product_name"] . '</h3>';
                             echo '<p>Upgrade your computing power with our cutting-edge CPUs</p>';
                             echo '<div style="display: flex; justify-content: space-between;">';
-                            echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">View Details</a>';
-                            echo '<span>Price: <span style="color: green;">$' . $row["price"] . '</span></span>';
+                            echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">Voir les détails</a>';
+                            echo '<span><b>' . $row["price"] . ' MAD</b></span>';
                             echo '</div></div></div>';
                         }
                     }
@@ -137,8 +136,8 @@ if (!isset($_SESSION['username'])) {
                             echo '<h3>' . $row["product_name"] . '</h3>';
                             echo '<p>Upgrade your graphics performance with our state-of-the-art GPUs</p>';
                             echo '<div style="display: flex; justify-content: space-between;">';
-                            echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">View Details</a>';
-                            echo '<span>Price: <span style="color: green;">$' . $row["price"] . '</span></span>';
+                            echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">Voir les détails</a>';
+                            echo '<span><b>' . $row["price"] . ' MAD</b></span>';
                             echo '</div></div></div>';
                         }
                     }
@@ -165,8 +164,8 @@ if (!isset($_SESSION['username'])) {
                             echo '<h3>' . $row["product_name"] . '</h3>';
                             echo '<p>experience superior connectivity and performance with our cutting-edge motherboards</p>';
                             echo '<div style="display: flex; justify-content: space-between;">';
-                            echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">View Details</a>';
-                            echo '<span>Price: <span style="color: green;">$' . $row["price"] . '</span></span>';
+                            echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">Voir les détails</a>';
+                           echo '<span><b>' . $row["price"] . ' MAD</b></span>';
                             echo '</div></div></div>';
                         }
                     }
@@ -193,8 +192,8 @@ if (!isset($_SESSION['username'])) {
                             echo '<h3>' . $row["product_name"] . '</h3>';
                             echo '<p>enhance multitasking capabilities with high-speed RAM</p>';
                             echo '<div style="display: flex; justify-content: space-between;">';
-                            echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">View Details</a>';
-                            echo '<span>Price: <span style="color: green;">$' . $row["price"] . '</span></span>';
+                            echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">Voir les détails</a>';
+                           echo '<span><b>' . $row["price"] . ' MAD</b></span>';
                             echo '</div></div></div>';
                         }
                     }
@@ -222,8 +221,8 @@ if (!isset($_SESSION['username'])) {
                             echo '<h3>' . $row["product_name"] . '</h3>';
                             echo '<p>store and access data seamlessly with lightning-fast ROM</p>';
                             echo '<div style="display: flex; justify-content: space-between;">';
-                            echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">View Details</a>';
-                            echo '<span>Price: <span style="color: green;">$' . $row["price"] . '</span></span>';
+                            echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">Voir les détails</a>';
+                            echo '<span><b>' . $row["price"] . ' MAD</b></span>';
                             echo '</div></div></div>';
                         }
                     }
@@ -251,8 +250,8 @@ if (!isset($_SESSION['username'])) {
                             echo '<h3>' . $row["product_name"] . '</h3>';
                             echo '<p>ensure stable power delivery with our advanced power supply units</p>';
                             echo '<div style="display: flex; justify-content: space-between;">';
-                            echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">View Details</a>';
-                            echo '<span>Price: <span style="color: green;">$' . $row["price"] . '</span></span>';
+                            echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">Voir les détails</a>';
+                            echo '<span><b>' . $row["price"] . ' MAD</b></span>';
                             echo '</div></div></div>';
                         }
                     }
@@ -281,8 +280,8 @@ if (!isset($_SESSION['username'])) {
                             echo '<h3>' . $row["product_name"] . '</h3>';
                             echo '<p>protect and showcase your components with a sleek and durable case</p>';
                             echo '<div style="display: flex; justify-content: space-between;">';
-                            echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">View Details</a>';
-                            echo '<span>Price: <span style="color: green;">$' . $row["price"] . '</span></span>';
+                            echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">Voir les détails</a>';
+                            echo '<span><b>' . $row["price"] . ' MAD</b></span>';
                             echo '</div></div></div>';
                         }
                     }
@@ -308,8 +307,8 @@ if (!isset($_SESSION['username'])) {
                             echo '<h3>' . $row["product_name"] . '</h3>';
                             echo '<p>Upgrade your graphics performance with our state-of-the-art GPUs</p>';
                             echo '<div style="display: flex; justify-content: space-between;">';
-                            echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">View Details</a>';
-                            echo '<span>Price: <span style="color: green;">$' . $row["price"] . '</span></span>';
+                            echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">Voir les détails</a>';
+                           echo '<span><b>' . $row["price"] . ' MAD</b></span>';
                             echo '</div></div></div>';
                         }
                     }

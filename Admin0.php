@@ -21,16 +21,16 @@ if (!isset($_SESSION['username'])) {
          <a href="Admin0.php" class="logo">Gravey</a>
          <nav class="navbar">
             <div class="dropdown">
-               <a href="#">Product</a>
+               <a href="#">Produit</a>
                <div class="dropdown-content">
 
-                  <a href="#Add product">Add Product</a>
-                  <a href="#Product_list">Product List</a>
+                  <a href="#Add product">Ajouter un produit</a>
+                  <a href="#Product_list">Liste de produits</a>
                </div>
             </div>
 
-            <a href="users.php">Users</a>
-            <a href="Admin_orders.php">Orders</a>
+            <a href="users.php">Utilisateurs</a>
+            <a href="Admin_orders.php">Commandes</a>
             <a href="tickets.php">Tickets</a>
             <a href="logout.php"><img style="width: 21px; height: 23px; padding-top:4px;" src="images/logout_icon_151219.png"></a>
          </nav>
@@ -40,7 +40,7 @@ if (!isset($_SESSION['username'])) {
 
       <section class="dashboard">
 
-         <h1 class="title">dashboard</h1>
+         <h1 class="title">Dashboard</h1>
 
          <div class="box-container">
 
@@ -56,8 +56,8 @@ if (!isset($_SESSION['username'])) {
                   };
                };
                ?>
-               <h3><?php echo $total_completed; ?>$</h3>
-               <p>completed payments</p>
+             <h3><?php echo "{$total_completed} MAD"; ?></h3>
+               <p>paiements effectués</p>
             </div>
             <div class="box">
                <?php
@@ -65,7 +65,7 @@ if (!isset($_SESSION['username'])) {
                $number_of_orders = mysqli_num_rows($select_orders);
                ?>
                <h3><?php echo $number_of_orders; ?></h3>
-               <p>orders</p>
+               <p>commandes</p>
             </div>
             <div class="box">
                <?php
@@ -74,7 +74,7 @@ if (!isset($_SESSION['username'])) {
                $number_of_products = mysqli_num_rows($select_products);
                ?>
                <h3><?php echo $number_of_products; ?></h3>
-               <p>products added</p>
+               <p>produits ajoutés</p>
             </div>
 
             <div class="box">
@@ -83,7 +83,7 @@ if (!isset($_SESSION['username'])) {
                $number_of_users = mysqli_num_rows($select_users);
                ?>
                <h3><?php echo $number_of_users; ?></h3>
-               <p>normal users</p>
+               <p>utilisateurs normaux</p>
             </div>
 
             <div class="box">
@@ -92,7 +92,7 @@ if (!isset($_SESSION['username'])) {
                $number_of_admins = mysqli_num_rows($select_admins);
                ?>
                <h3><?php echo $number_of_admins; ?></h3>
-               <p>admin users</p>
+               <p>utilisateurs administrateurs</p>
             </div>
 
 
@@ -176,13 +176,13 @@ if (!isset($_SESSION['username'])) {
          <div class="admin-product-form-container">
 
             <form id="Add product" action="" method="POST" enctype="multipart/form-data">
-               <h3>ADD PRODUCT</h3>
+               <h3>AJOUTER UN PRODUIT</h3>
 
-               <input type="text" name="product_name" class="box" required placeholder="Product Name">
+               <input type="text" name="product_name" class="box" required placeholder="Nom du produit">
 
-               <input type="number" name="quantity" class="box" required placeholder="Quantity" min="1">
+               <input type="number" name="quantity" class="box" required placeholder="Quantité" min="1">
 
-               <input type="number" name="price" class="box" required placeholder="price" min="1">
+               <input type="number" name="price" class="box" required placeholder="prix" min="1">
 
                <input type="file" accept="image/png,image/jpeg,image/jpg" name="image" class="box" required>
 
@@ -192,7 +192,7 @@ if (!isset($_SESSION['username'])) {
 
                <input type="text" name="category" class="box" required placeholder="Category">
 
-               <input type="submit" class="btn" name="add_product" value="Add Product">
+               <input type="submit" class="btn" name="add_product" value="AJOUTER">
             </form>
 
          </div>
@@ -207,9 +207,9 @@ if (!isset($_SESSION['username'])) {
 
                <thead>
                   <tr>
-                     <th>Product Image</th>
-                     <th>Product Name</th>
-                     <th>Product Price</th>
+                     <th>Image du produit</th>
+                     <th>Nom du produit</th>
+                     <th>Prix ​​du produit</th>
                      <th colspan="2">action</th>
                   </tr>
 

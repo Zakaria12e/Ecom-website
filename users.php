@@ -49,8 +49,8 @@ if (!isset($_SESSION['username'])) {
       <a href="Admin0.php" class="logo">Gravey</a>
       <nav class="navbar">
         <a href="Admin0.php">Home</a>
-        <a href="Admin_orders.php">Orders</a>
-        <a href="#AddAdmin">Add Admin</a>
+        <a href="Admin_orders.php">Commandes</a>
+        <a href="#AddAdmin">Ajouter Admin</a>
         <a href="tickets.php">Tickets</a>
         <a href="logout.php"><img style="width: 21px; height: 23px; padding-top:4px;" src="images/logout_icon_151219.png"></a>
 
@@ -75,11 +75,11 @@ if (!isset($_SESSION['username'])) {
           <thead>
             <tr>
 
-              <th>Name</th>
-              <th>Email</th>
-              <th>Address</th>
-              <th>Phone Number</th>
-              <th>User Type</th>
+              <th>Nom</th>
+              <th>E-mail</th>
+              <th>Adresse</th>
+              <th>Numéro de téléphone</th>
+              <th>Type d'utilisateur</th>
               <th colspan="2">Action</th>
             </tr>
 
@@ -108,9 +108,9 @@ if (!isset($_SESSION['username'])) {
 
               <td>
                 <?php 
-                  if ($row['Username'] != $_SESSION['username']) { ?>
+                  if ($row['Email'] != $_SESSION['email']) { ?>
 
-                    <a href="users.php?delete=<?php echo $row['Username']; ?>" class="btn">Supprimer</a>
+                    <a href="users.php?delete=<?php echo $row['Email']; ?>" class="btn">Supprimer</a>
 
                 <?php
 
@@ -159,8 +159,8 @@ if (!isset($_SESSION['username'])) {
       //delete product
       if (isset($_GET['delete'])) {
 
-        $username = $_GET['delete'];
-        $DeleteQuery = "DELETE FROM clients WHERE Username ='$username'";
+        $email = $_GET['delete'];
+        $DeleteQuery = "DELETE FROM clients WHERE Email ='$email'";
         mysqli_query($con, $DeleteQuery);
         if (mysqli_query($con, $DeleteQuery)) {
 

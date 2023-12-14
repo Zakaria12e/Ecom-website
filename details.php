@@ -128,17 +128,17 @@ if (!isset($_SESSION['username'])) {
                         echo "<div id='price_container' style='display: inline-block;'>
               <p style='display: inline;font-size: 20px;'>Price: </p>
               <p class='price' style='display: inline; margin: 0;'>$price</p>
-              <p style='display: inline;' class='price'>$</p>
+              <p style='display: inline;' class='price'> MAD</p>
               </div>";
                     }
                 }
             }
             echo '<form id="form_add_to_cart" method="POST" action="Panier.php">';
             echo '<input type="hidden" name="productName" value="' . $productName . '">';
-            echo '<button type="submit" class="add-to-cart" id="add-to-cart-btn" name="addToCart">ADD TO CART</button>';
+            echo '<button type="submit" class="add-to-cart" id="add-to-cart-btn" name="addToCart">AJOUTER AU PANIER</button>';
             echo '</form>';
 
-            echo '<a id="goback" href="home.php">GO BACK</a>';
+            echo '<a id="goback" href="home.php">RETOURNER</a>';
 
             echo '</div>';
             ?>
