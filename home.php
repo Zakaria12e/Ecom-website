@@ -46,25 +46,38 @@ if (!isset($_SESSION['username'])) {
                 <a id="panier-icon" href="Panier.php"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
                     </svg></a>
-                <span style=" color:white ;background-color: black; border-radius:50%; padding:0 6px; font-size:14px; font-weight: 600;">
-                    <?php
-                    require_once 'config.php';
-                    if (isset($_SESSION['id'])) {
-                        $user_id = $_SESSION['id'];
-                        $totaleQuery = "SELECT SUM(quantity) FROM panier WHERE Id = $user_id;";
-                        $result = mysqli_query($con, $totaleQuery);
-                        if ($result) {
-                            $row = mysqli_fetch_assoc($result);
-                            if (!empty($row['SUM(quantity)'])) {
-                                $totalQuantity = $row['SUM(quantity)'];
-                                echo $totalQuantity;
-                            } else {
-                                echo "0";
-                            }
+
+                <?php
+                require_once 'config.php';
+                //totale des produits dans panier
+                $totalQuantity = "";
+
+                if (isset($_SESSION['id'])) {
+                    $user_id = $_SESSION['id'];
+                    $totaleQuery = "SELECT SUM(quantity) AS totalQuantity FROM panier WHERE Id = $user_id;";
+                    $result = mysqli_query($con, $totaleQuery);
+
+                    if ($result) {
+                        $row = mysqli_fetch_assoc($result);
+
+                        if (!empty($row['totalQuantity'])) {
+                            $totalQuantity = $row['totalQuantity'];
                         }
                     }
-                    ?>
+                }
+                ?>
+
+                <span id="quantitySpan" style="color:white; background-color: black; border-radius:50%; padding:0 6px; font-size:14px; font-weight: 600;">
+                    <?php echo $totalQuantity; ?>
                 </span>
+
+                <script>
+                    var quantitySpan = document.getElementById("quantitySpan");
+                    if (quantitySpan.innerHTML.trim() === "") {
+                        quantitySpan.style.display = "none";
+                    }
+                </script>
+
                 <a style="margin-top: 10px;" href="Profile.php"> <?php echo $_SESSION['username']; ?></a>
 
 
@@ -81,6 +94,10 @@ if (!isset($_SESSION['username'])) {
                 <p>Explore a wide range of CPUs, GPUs, RAMs, SSDs, and more.</p>
                 <a href="#CPUS" id="btn-to-products">Achetez maintenant</a>
             </div>
+            <video class="background-video" autoplay loop muted>
+                <source src="images/GeForce RTX 4090  Beyond Fast.mp4" type="video/mp4">
+
+            </video>
 
         </section>
 
@@ -165,7 +182,7 @@ if (!isset($_SESSION['username'])) {
                             echo '<p>experience superior connectivity and performance with our cutting-edge motherboards</p>';
                             echo '<div style="display: flex; justify-content: space-between;">';
                             echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">Voir les détails</a>';
-                           echo '<span><b>' . $row["price"] . ' MAD</b></span>';
+                            echo '<span><b>' . $row["price"] . ' MAD</b></span>';
                             echo '</div></div></div>';
                         }
                     }
@@ -193,7 +210,7 @@ if (!isset($_SESSION['username'])) {
                             echo '<p>enhance multitasking capabilities with high-speed RAM</p>';
                             echo '<div style="display: flex; justify-content: space-between;">';
                             echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">Voir les détails</a>';
-                           echo '<span><b>' . $row["price"] . ' MAD</b></span>';
+                            echo '<span><b>' . $row["price"] . ' MAD</b></span>';
                             echo '</div></div></div>';
                         }
                     }
@@ -308,7 +325,7 @@ if (!isset($_SESSION['username'])) {
                             echo '<p>Upgrade your graphics performance with our state-of-the-art GPUs</p>';
                             echo '<div style="display: flex; justify-content: space-between;">';
                             echo '<a class="vd" href="details.php?name=' . urlencode($row["product_name"]) . '">Voir les détails</a>';
-                           echo '<span><b>' . $row["price"] . ' MAD</b></span>';
+                            echo '<span><b>' . $row["price"] . ' MAD</b></span>';
                             echo '</div></div></div>';
                         }
                     }

@@ -284,7 +284,6 @@ if (!isset($_SESSION['email'])) {
         font-family: Arial, sans-serif;
           }
 
-
             .container {
                 background-color: white;
                 padding: 20px;
@@ -313,7 +312,7 @@ if (!isset($_SESSION['email'])) {
     </head>
     <body>
         <div class="container">
-            <h3>Bonjour Mr ' . $_SESSION['username'] . ',</h3>
+            <h3>Bonjour Mr <b>' . $_SESSION['username'] . '</b></h3>
 
     
                <p>Numéro de téléphone <b>' . $clientrow['PhoneNumber'] . '</b></p>

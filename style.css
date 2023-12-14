@@ -76,27 +76,31 @@ html {
 }
 
 .home {
+  margin: 80px 0 200px 0;
+  position: relative;
   min-height: 100vh;
-  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
-.home .content {
+.content {
   text-align: center;
-  width: 60rem;
+  z-index: 1;
+  position: relative;
 }
 
-.home .content h1 {
+.title-home {
   font-size: 40px;
-  color: #000000;
+  color: white;
 }
 
-.home .content p {
+.content p {
   font-size: 1.4rem;
   padding: 1rem 0;
   line-height: 1.5;
+  color: white;
 }
 
 #btn-to-products {
@@ -113,6 +117,22 @@ html {
 
 #btn-to-products:hover {
   background-color: #1b1b1d;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .title-home {
+    font-size: 32px;
+  }
 }
 
 #logo {
